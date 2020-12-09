@@ -1,0 +1,4 @@
+.idea/
+node_modules/
+wp-content/themes/tomoveit/dist/
+wp-config.php
