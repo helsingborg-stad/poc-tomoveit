@@ -21,12 +21,12 @@ jobs:
       run: |
         rm -rf .git .gitignore .github 
         cd wp-content/themes/tomoveit
-        rm -rf config .babelrc .eslintrc.js .postcssrc.js package-lock.json package.json
+        rm -rf config .babelrc .eslintrc.js .postcssrc.js package-lock.json package.json node_modules
       
     - name: rsync deployment to www-data user.
       uses: burnett01/rsync-deployments@4.1
       with:
-        switches: -avzrog --rsync-path="sudo rsync" --delete --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_TOMOVEIT_HBGTEST_SE }}/$GITHUB_SHA --chown=www-data:www-data --chmod=g+rw --exclude config --exclude wp-content/uploads --exclude wp-content/plugins/advanced-custom-fields-pro
+        switches: -avzrog --rsync-path="sudo rsync" --delete --backup --backup-dir=${{ secrets.DEPLOY_REMOTE_BACKUP_DIR_TOMOVEIT_HBGTEST_SE }}/$GITHUB_SHA --chown=www-data:www-data --chmod=g+rw --exclude wp-config.php --exclude wp-content/uploads --exclude wp-content/plugins/advanced-custom-fields-pro
         path: .
         remote_path: ${{ secrets.DEPLOY_REMOTE_PATH_TOMOVEIT_HBGTEST_SE }}
         remote_host: ${{ secrets.DEPLOY_REMOTE_HOST_TOMOVEIT_HBGTEST_SE }}
