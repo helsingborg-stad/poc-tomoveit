@@ -2,9 +2,12 @@ import 'babel-polyfill';
 import React from 'react';
 import RenderDOM from 'react-dom';
 
-const root = document.getElementById('root');
+import App from './include/components/App/App.jsx';
 
-const App = require('./include/components/App/App.jsx').default;
+import './include/scss/reset.scss';
+import './include/scss/general.scss';
+
+const root = document.getElementById('root');
 
 const renderApp = () => { RenderDOM.render(<App />, root); };
 
