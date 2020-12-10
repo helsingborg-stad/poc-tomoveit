@@ -11,5 +11,4 @@
         </div>
         <?php wp_footer(); ?>
     </body>
-   <?php echo get_template_directory(); ?>
 </html>
