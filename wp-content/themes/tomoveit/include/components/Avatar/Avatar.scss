@@ -1,0 +1,16 @@
+@import '../../scss/config';
+
+.avatar {
+  font-size: 10px;
+  color: blue;
+  margin-top: 5.3rem;
+  margin-bottom: 3.75rem;
+  display: flex;
+  justify-content: center;
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .avatar {
+    //display: block;
+  }
+}

@@ -1,8 +1,13 @@
 import React from 'react';
+import Container from '../../components/Container/Container.jsx';
+import Input from '../../components/Input/Input.jsx';
 
 const Login = () => {
   return (
-    <h1>Login</h1>
+    <Container>
+      <h1>Login</h1>
+      <Input/>
+    </Container>
   );
 };
 
