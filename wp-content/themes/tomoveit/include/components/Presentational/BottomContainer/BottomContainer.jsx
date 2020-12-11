@@ -1,19 +1,19 @@
 import React from 'react';
 import classNames from 'classnames/bind';
-import styles from './Container.scss';
+import styles from './BottomContainer.scss';
 import PropTypes from 'prop-types';
 
 const style = classNames.bind(styles);
 
-const Container = (props) => {
+const BottomContainer = (props) => {
   return (
-    <div className={ style('wrapper', 'container', 'container__inner')}>
+    <div className={ style('bottom-container')}>
       {props.children}
     </div>
   );
 };
 
-Container.propTypes = {
+BottomContainer.propTypes = {
   children: PropTypes.any.isRequired,
 };
-export default Container;
+export default BottomContainer;

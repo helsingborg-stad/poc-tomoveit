@@ -1,0 +1,20 @@
+@import '../../scss/config';
+
+.header {
+  height: 6.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 1.25rem;
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .header {
+    height: 13.75rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 0 0 33%;
+    margin: 0 5.5rem;
+  }
+}

@@ -5,7 +5,7 @@ const style = classNames.bind(styles);
 
 const Input = (props) => {
   return (
-    <input type="text" maxLength='4'/>
+    <input type="password" maxLength='4'/>
   );
 };
 

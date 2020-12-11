@@ -3,10 +3,11 @@
 .avatar {
   font-size: 10px;
   color: blue;
-  margin-top: 5.3rem;
-  margin-bottom: 3.75rem;
-  display: flex;
-  justify-content: center;
+
+  svg {
+    height: 5rem;
+    width: 5rem;
+  }
 }
 
 @media all and (min-width: $breakpoint-m) {

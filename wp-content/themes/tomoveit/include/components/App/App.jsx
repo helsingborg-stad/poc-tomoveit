@@ -5,14 +5,16 @@ import store from '../../store/store';
 
 import Home from '../../pages/Home/Home.jsx';
 import Login from '../../pages/Login/Login.jsx';
+import Header from '../Header/Header.jsx';
 
 const App = () => {
   return (
     <Provider store={store}>
+      <Header/>
       <HashRouter>
         <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/login" component={Login} />
+          <Route exact path="/" component={Login} />
+          <Route path="/login" component={Home} />
         </Switch>
       </HashRouter>
     </Provider>
