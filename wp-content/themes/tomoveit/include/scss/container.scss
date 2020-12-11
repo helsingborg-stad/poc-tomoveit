@@ -1,0 +1,80 @@
+@import './config';
+
+.container {
+  &__inner {
+    margin: 0 auto;
+    max-width: $width-large + ($margin-horizontal-large * 2);
+
+    &:not(&--wide) {
+      padding-left: $margin-horizontal-small;
+      padding-right: $margin-horizontal-small;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .container {
+    &__inner {
+      &:not(&--wide) {
+        padding-left: $margin-horizontal-medium;
+        padding-right: $margin-horizontal-medium;
+      }
+
+      &--tiny {
+        max-width: 28.375rem;
+      }
+
+      &--slim {
+        max-width: 45rem;
+      }
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-l) {
+  .container {
+    &__inner {
+      &--page {
+        max-width: 60rem;
+      }
+
+      &--centered {
+        text-align: center;
+      }
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-xl) {
+  .container {
+    &__inner {
+      &:not(&--wide) {
+        padding-left: 21.4375rem;
+        padding-right: 21.4375rem;
+      }
+
+      &--tiny {
+        max-width: 32.375rem;
+      }
+
+      &--slim {
+        max-width: 51.75rem;
+      }
+
+      &--page {
+        max-width: 70rem;
+      }
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-xxxl) {
+  .container {
+    &__inner {
+      &:not(&--wide) {
+        padding-left: $margin-horizontal-large;
+        padding-right: $margin-horizontal-large;
+      }
+    }
+  }
+}

@@ -1,0 +1,82 @@
+@import './config';
+
+.section {
+  width: 100%;
+  margin: 0 auto;
+
+  &__inner {
+    padding-top: $margin-vertical-small;
+    padding-bottom: $margin-vertical-small;
+
+    &.listing__inner {
+      padding-top: $margin-horizontal-small;
+      padding-bottom: $margin-horizontal-small;
+    }
+  }
+
+  &__header {
+    max-width: 45.625rem;
+    text-align: center;
+    margin: 0 auto 2rem;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+
+  &__background {
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+    z-index: -1;
+    position: absolute;
+
+    display: block;
+    object-fit: cover;
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .section {
+    &__inner {
+      padding-top: $margin-vertical-medium;
+      padding-bottom: $margin-vertical-medium;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-xl) {
+  .section {
+    &__inner {
+      padding-top: $margin-vertical-large;
+      padding-bottom: $margin-vertical-large;
+    }
+
+    &__header {
+      margin-bottom: 3rem;
+    }
+
+    &__title {
+      margin-bottom: 1.5rem;
+    }
+
+    &__caption {
+      font-size: 1.5rem;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-xxxl) {
+  .section {
+    &__inner {
+      padding-top: $margin-vertical-xlarge;
+      padding-bottom: $margin-vertical-xlarge;
+    }
+  }
+}

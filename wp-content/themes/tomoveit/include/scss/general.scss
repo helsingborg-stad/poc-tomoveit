@@ -1,3 +1,131 @@
+@import './config';
+@import './colors';
+
+html {
+  font-size: 100%;
+}
+
+body {
+  color: $color-black;
+  background: $color-white;
+  font-family: $font-monserant;
+}
+
+/* To not show the svg spritemap */
+body > svg:first-of-type {
+  display: none;
+}
+
+a {
+  color: $color-dark-purple;
+  transition: color 200ms ease-in-out;
+}
+
+b, strong {
+  font-weight: 600;
+}
+
+i, em {
+  font-style: italic;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
 p {
   font-size: 1rem;
+  text-align: center;
+  line-height: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
+  color: $color-black;
+  font-family: $font-monserant;
+}
+
+h1, .h1 {
+  font-weight: 600;
+  font-size: 2.75rem;
+  margin-bottom: 1rem;
+  line-height: 3.4375rem;
+}
+
+h2, .h2 {
+  font-weight: 600;
+  font-size: 1.625rem;
+  margin-bottom: .5rem;
+  line-height: 1.875rem;
+}
+
+h3, .h3 {
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  line-height: 1.5625rem;
+}
+
+h4, .h4 {
+  font-weight: 600;
+  font-size: 1.125rem;
+  margin-bottom: .5rem;
+  line-height: 1.375rem;
+}
+
+h5, .h5 {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.25rem;
+  margin-bottom: .25rem;
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .alignleft {
+    float: left;
+    margin-right: 1.875rem;
+    margin-bottom: 1.875rem;
+  }
+
+  .alignright {
+    float: right;
+    margin-left: 1.875rem;
+    margin-bottom: 1.875rem;
+  }
+}
+
+@media all and (min-width: $breakpoint-xl) {
+  p {
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.6875rem;
+    line-height: 2.0625rem;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  h1, .h1 {
+    font-size: 4rem;
+    line-height: 5rem;
+    margin-bottom: 1rem;
+  }
+
+  h2, .h2 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+    margin-bottom: 1rem;
+  }
+
+  h3, .h3 {
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    margin-bottom: 1.25rem;
+  }
+
+  h4, .h4 {
+    font-size: 1.125rem;
+    line-height: 1.25rem;
+    margin-bottom: .5rem;
+  }
 }
