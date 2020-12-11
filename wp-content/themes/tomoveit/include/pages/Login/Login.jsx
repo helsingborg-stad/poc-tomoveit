@@ -22,7 +22,7 @@ const Login = () => {
   }, [logedIn]);
 
   const handleClick = (e) => {
-    axios.post('https://tomoveit.hbgtest.se//wp-json/TomoveitRestApi/v1/login', {
+    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
     ).then((response) => {
