@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
+
 import store from '../../store/store';
 
 import Home from '../../pages/Home/Home.jsx';
@@ -14,7 +15,7 @@ const App = () => {
       <HashRouter>
         <Switch>
           <Route exact path="/" component={Login} />
-          <Route path="/login" component={Home} />
+          <Route path="/welcome" component={Home} />
         </Switch>
       </HashRouter>
     </Provider>

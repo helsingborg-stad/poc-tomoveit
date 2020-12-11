@@ -18,7 +18,7 @@ const Home = () => {
             Flash Unicorn, men du kan kalla mig Flashy Flash, och jag kommer att hänga med dig genom dina nya äventyr.
           </p>
           <BottomContainer>
-            <Button to={'#/login'} text={'OKEJ'} />
+            <Button to={'/'} text={'OKEJ'} />
           </BottomContainer>
         </div>
       </Container>

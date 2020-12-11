@@ -22,6 +22,22 @@ class TomoveitRestApi_Routes {
                 'callback' => [$this, 'rest_get_data'],
             ],
         ]);
+
+        register_rest_route($namespace, '/login', [
+            [
+                'methods' => WP_REST_Server::CREATABLE,
+                'callback' => [$this, 'rest_login'],
+                'args' => [
+                    'pin' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
+                ],
+            ],
+        ]);
     }
 
     public function rest_get_data() {
@@ -36,5 +52,12 @@ class TomoveitRestApi_Routes {
             'TableName' => 'ToMoveItBandData'
         ));
         return $result['Table'];
+    }
+
+    public function rest_login($request) {
+        $pin = $request->get_param('pin');
+
+        if($pin === '1234') return 'ok';
+        else return 'no';
     }
 }
