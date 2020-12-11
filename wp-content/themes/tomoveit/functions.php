@@ -15,9 +15,14 @@ class EC_Theme {
      */
     public function __construct(){
         add_action('wp_enqueue_scripts', [&$this, 'load_plugin_scripts']);
+        add_action('output_spritemaps', [&$this, 'output_plugin_spritemap']);
     }
 
     public function load_plugin_scripts() {
             wp_enqueue_script('theme', get_template_directory_uri() . '/dist/bundle.js', [], null, true);
+    }
+
+    public function output_plugin_spritemap() {
+        include_once('dist/spritemap.svg');
     }
 }
