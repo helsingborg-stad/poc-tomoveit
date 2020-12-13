@@ -70,8 +70,9 @@ class TomoveitRestApi_Routes {
         $result = array();
 
         $posts = get_posts([
-            'numberposts' => -1,
-            'post_type' => 'activities'
+            'numberposts' => 3,
+            'post_type' => 'activities',
+            'orderby' => 'rand'
         ]);
 
         foreach ($posts as $item) {
