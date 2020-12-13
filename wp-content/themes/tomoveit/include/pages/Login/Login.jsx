@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useDispatch } from 'react-redux';
 import Container from '../../components/Container/Container.jsx';
 import Input from '../../components/Input/Input.jsx';
 import Button from '../../components/Button/Button.jsx';
@@ -7,11 +8,14 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
+import { addActivities } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
 const Login = () => {
   const history = useHistory();
+  const dispatch = useDispatch();
+
   const [pin, setPin] = useState('');
   const [logedIn, setLogedIn] = useState(false);
   const [errorText, setErrorText] = useState(false);
@@ -22,6 +26,14 @@ const Login = () => {
 
   useEffect(() => {
     if (logedIn) {
+      axios.get('http://tomoveit.test/wp-json/TomoveitRestApi/v1/activities')
+        .then((response) => {
+          console.log(response.data);
+          dispatch(addActivities(response.data));
+        }, (error) => {
+          console.log(error);
+        });
+
       history.push('/welcome');
     }
   }, [logedIn]);

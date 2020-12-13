@@ -1,7 +1,8 @@
-export const INCREMENT = 'INCREMENT';
+export const ADD_ACTIVITIES = 'ADD_ACTIVITIES';
 
-export const increaseCounter = () => {
+export const addActivities = activities => {
   return {
-    type: INCREMENT,
+    type: ADD_ACTIVITIES,
+    activities,
   };
 };

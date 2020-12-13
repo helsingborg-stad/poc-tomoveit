@@ -1,14 +1,15 @@
-import { INCREMENT } from '../actions/app';
+import { ADD_ACTIVITIES } from '../actions/app';
 
 const INITIAL_STATE = {
-  count: 0,
+  activities: [],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {
-    case INCREMENT:
+    case ADD_ACTIVITIES:
       return {
-        ...state, count: state.count + 1,
+        ...state,
+        activities: action.activities,
       };
     default: return state;
   }
