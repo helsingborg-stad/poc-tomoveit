@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className={ style('header')}>
       <Avatar/>
-      <span>LOGGA IN</span>
+      <span>TITLE</span>
       <div>
 
       </div>

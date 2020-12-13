@@ -5,6 +5,8 @@ import { Provider } from 'react-redux';
 import store from '../../store/store';
 
 import Home from '../../pages/Home/Home.jsx';
+import Activities from '../../pages/Activities/Activities.jsx';
+import Introduction from '../../pages/Introduction/Introduction.jsx';
 import Login from '../../pages/Login/Login.jsx';
 import Header from '../Header/Header.jsx';
 
@@ -16,6 +18,8 @@ const App = () => {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route path="/welcome" component={Home} />
+          <Route path="/activities" component={Activities} />
+          <Route path="/introduction" component={Introduction} />
         </Switch>
       </HashRouter>
     </Provider>

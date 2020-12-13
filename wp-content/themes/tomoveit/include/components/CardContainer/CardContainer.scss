@@ -1,0 +1,51 @@
+@import '../../scss/colors';
+
+.card-conatiner {
+  height: 100%;
+}
+
+.card {
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 24px rgba(149, 157, 165, .2);
+
+  p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  &__svg {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 1.6875rem;
+    height: 1.6875rem;
+    transform: translate(-50%, -50%);
+    fill: $color-white;
+  }
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__text {
+    padding: 1.25rem;
+
+    &--blue {
+      color: $color-light-blue;
+    }
+
+    &--green {
+      color: $color-light-green;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    height: 6.875rem;
+    width: 100%;
+    object-fit: cover;
+  }
+}

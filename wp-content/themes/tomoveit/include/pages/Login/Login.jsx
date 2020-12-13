@@ -26,9 +26,8 @@ const Login = () => {
 
   useEffect(() => {
     if (logedIn) {
-      axios.get('http://tomoveit.test/wp-json/TomoveitRestApi/v1/activities')
+      axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/activities')
         .then((response) => {
-          console.log(response.data);
           dispatch(addActivities(response.data));
         }, (error) => {
           console.log(error);
@@ -39,7 +38,7 @@ const Login = () => {
   }, [logedIn]);
 
   const handleClick = (e) => {
-    axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/login', {
+    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
     ).then((response) => {
