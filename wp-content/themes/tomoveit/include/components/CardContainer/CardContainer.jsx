@@ -6,7 +6,7 @@ import classNames from 'classnames/bind';
 const style = classNames.bind(styles);
 
 const CardContainer = () => {
-  const activities = useSelector(state => state.activities);
+  const activities = useSelector(state => state.app.activities);
 
   const cards = activities.map(item => {
     const titleColor = item.group ? 'card__text--blue' : 'card__text--green';
