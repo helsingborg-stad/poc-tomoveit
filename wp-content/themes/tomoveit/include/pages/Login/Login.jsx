@@ -5,11 +5,16 @@ import Button from '../../components/Button/Button.jsx';
 import BottomContainer from '../../components/Presentational/BottomContainer/BottomContainer.jsx';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
+import classNames from 'classnames/bind';
+import styles from '../Login/Login.scss';
+
+const style = classNames.bind(styles);
 
 const Login = () => {
   const history = useHistory();
   const [pin, setPin] = useState('');
   const [logedIn, setLogedIn] = useState(false);
+  const [errorText, setErrorText] = useState(false);
 
   const handleChange = (e) => {
     setPin(e.target.value);
@@ -22,12 +27,14 @@ const Login = () => {
   }, [logedIn]);
 
   const handleClick = (e) => {
-    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
+    axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
     ).then((response) => {
       if (response.data === 'ok') {
         setLogedIn(true);
+      } else {
+        setErrorText(true);
       }
     }, (error) => {
       console.log(error);
@@ -38,6 +45,7 @@ const Login = () => {
     <div>
       <Container>
         <p>Skriv in din PIN-kod:</p>
+        {errorText && <div className={ style('login__error')}><p>😩</p><p>Nånting funkar inte just nu. Prova ladda om sidan.</p></div>}
         <BottomContainer>
           <Input handleChange={handleChange} />
           <Button handleClick={handleClick} to={'/welcome'} text={'LOGGA IN'}/>

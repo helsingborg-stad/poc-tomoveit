@@ -12,15 +12,13 @@ const Home = () => {
   return (
     <div>
       <Container>
-        <div className={ style('home')}>
-          <p> Hej kompis! 👋 </p>
-          <p>
-            Flash Unicorn, men du kan kalla mig Flashy Flash, och jag kommer att hänga med dig genom dina nya äventyr.
-          </p>
-          <BottomContainer>
-            <Button to={'/'} text={'OKEJ'} />
-          </BottomContainer>
-        </div>
+        <p> Hej kompis! 👋 </p>
+        <p>
+          Flash Unicorn, men du kan kalla mig Flashy Flash, och jag kommer att hänga med dig genom dina nya äventyr.
+        </p>
+        <BottomContainer>
+          <Button to={'/'} text={'OKEJ'} />
+        </BottomContainer>
       </Container>
     </div>
   );
