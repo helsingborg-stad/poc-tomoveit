@@ -13,5 +13,10 @@
 @media all and (min-width: $breakpoint-l) {
   .activities {
     margin: 0 9.0625rem;
+
+    &__text {
+      padding-right: 12.375rem;
+      padding-left: 12.375rem;
+    }
   }
 }
