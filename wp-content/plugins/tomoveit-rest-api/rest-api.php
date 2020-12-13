@@ -4,10 +4,10 @@ if ( ! defined( 'ABSPATH' ) ) {
     die( 'Silence is golden.' );
 }
 
-/*require 'vendor/autoload.php';
+require 'vendor/autoload.php';
 use Aws\S3\S3Client;
 use Aws\DynamoDb\DynamoDbClient;
-use Aws\Credentials\CredentialProvider;*/
+use Aws\Credentials\CredentialProvider;
 
 class TomoveitRestApi_Routes {
 
@@ -16,13 +16,12 @@ class TomoveitRestApi_Routes {
         $version = '1';
         $namespace = 'TomoveitRestApi/v' . $version;
 
-        /*register_rest_route($namespace, '/data', [
+        register_rest_route($namespace, '/data', [
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'rest_get_data'],
             ],
-        ]);*/
-
+        ]);
         register_rest_route($namespace, '/login', [
             [
                 'methods' => WP_REST_Server::CREATABLE,
@@ -38,9 +37,15 @@ class TomoveitRestApi_Routes {
                 ],
             ],
         ]);
+        register_rest_route($namespace, '/activities', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_get_activities'],
+            ],
+        ]);
     }
 
-    /*public function rest_get_data() {
+    public function rest_get_data() {
         $provider = CredentialProvider::defaultProvider();
 
         $client = new DynamoDbClient([
@@ -52,12 +57,36 @@ class TomoveitRestApi_Routes {
             'TableName' => 'ToMoveItBandData'
         ));
         return $result['Table'];
-    }*/
+    }
 
     public function rest_login($request) {
         $pin = $request->get_param('pin');
 
         if($pin === '1234') return 'ok';
         else return 'no';
+    }
+
+    public function rest_get_activities() {
+        $result = array();
+
+        $posts = get_posts([
+            'numberposts' => -1,
+            'post_type' => 'activities'
+        ]);
+
+        foreach ($posts as $item) {
+            $title = get_the_title($item->ID);
+            $time = get_field('activity_time', $item->ID);
+            $image = get_field('activity_image', $item->ID);
+            $group = get_field('activity_group', $item->ID);
+
+            array_push($result, (object)[
+                'title' => $title ,
+                'time' => $time,
+                'image' => $image,
+                'group' => $group,
+            ]);
+        }
+        return $result;
     }
 }
