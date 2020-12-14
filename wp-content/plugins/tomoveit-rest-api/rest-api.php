@@ -27,7 +27,7 @@ class TomoveitRestApi_Routes {
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_login'],
                 'args' => [
-                    'postId' => [
+                    'pin' => [
                         'required' => true,
                         'validate_callback' => function($param, $request, $key) {
                             if(!is_string($param)) return false;
