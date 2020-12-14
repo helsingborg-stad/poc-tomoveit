@@ -27,7 +27,7 @@ class TomoveitRestApi_Routes {
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_login'],
                 'args' => [
-                    'pin' => [
+                    'postId' => [
                         'required' => true,
                         'validate_callback' => function($param, $request, $key) {
                             if(!is_string($param)) return false;
@@ -41,6 +41,13 @@ class TomoveitRestApi_Routes {
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'rest_get_activities'],
+            ],
+        ]);
+
+        register_rest_route($namespace, '/setActivity', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_set_activity'],
             ],
         ]);
     }
@@ -76,6 +83,7 @@ class TomoveitRestApi_Routes {
         ]);
 
         foreach ($posts as $item) {
+            $postId = $item->ID;
             $title = get_the_title($item->ID);
             $time = get_field('activity_time', $item->ID);
             $image = get_field('activity_image', $item->ID);
@@ -94,8 +102,19 @@ class TomoveitRestApi_Routes {
                 'needed' => $needed,
                 'numbers' => $numbers,
                 'instruction' => $instruction,
+                'postId' => $postId
             ]);
         }
         return $result;
+    }
+
+    public function rest_set_activity($request){
+        global $wpdb;
+
+        $post = $request->get_param('postId');
+
+        $table_name = 'tomoveit_activity';
+        $results = $wpdb->get_results( "SELECT * FROM $table_name");
+        var_dump($results);
     }
 }
