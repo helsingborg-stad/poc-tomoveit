@@ -1,4 +1,4 @@
-import { ADD_ACTIVITIES, SELECTED_CARD, CHANGE_HEADER } from '../actions/app';
+import { ADD_ACTIVITIES, SELECTED_CARD, CHANGE_HEADER, RUNNING_ACTIVITY } from '../actions/app';
 
 const INITIAL_STATE = {
   activities: [],
@@ -22,6 +22,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         headerParams: action.headerParams,
+      };
+    case RUNNING_ACTIVITY:
+      return {
+        ...state,
+        runningActivity: action.runningActivity,
       };
     default: return state;
   }

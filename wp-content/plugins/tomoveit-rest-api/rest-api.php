@@ -138,7 +138,7 @@ class TomoveitRestApi_Routes {
 
         $get_selected_post_data = $this->prepare_post_data($post);
 
-        return $get_selected_post_data;
+        return json_encode($get_selected_post_data);
     }
 
     public function prepare_post_data($post_id) {

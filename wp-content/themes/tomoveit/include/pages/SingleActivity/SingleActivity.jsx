@@ -1,23 +1,27 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import classNames from 'classnames/bind';
 import styles from '../../pages/SingleActivity/SingleActivity.scss';
-
+import { useHistory } from 'react-router-dom';
 import StickyButton from '../../components/StickyButton/StickyButton.jsx';
 import axios from 'axios';
+import { runningActivity } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
 const SingleActivity = () => {
   const selectedActivity = useSelector(state => state.app.selectedActivity);
+  const dispatch = useDispatch();
+  const history = useHistory();
 
   const handleClick = () => {
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setActivity', {
       selectedPostId: selectedActivity.postId.toString(),
       pin: '1234',
     },
-    ).then(() => {
-      console.log('ok');
+    ).then((response) => {
+      dispatch(runningActivity(response.data));
+      history.push({ pathname: '/runningActivity' });
     }, (error) => {
       console.log(error);
     });

@@ -11,6 +11,7 @@ import Introduction from '../../pages/Introduction/Introduction.jsx';
 import Login from '../../pages/Login/Login.jsx';
 import Header from '../Header/Header.jsx';
 import SingleActivity from '../../pages/SingleActivity/SingleActivity.jsx';
+import CurrentActivity from '../../pages/CurrentActivity/CurrentActivity.jsx';
 
 const store = configureStore();
 
@@ -26,6 +27,7 @@ const App = () => {
             <Route path="/activities" component={Activities} />
             <Route path="/introduction" component={Introduction} />
             <Route path="/activity" component={SingleActivity} />
+            <Route path="/runningActivity" component={CurrentActivity} />
           </Switch>
         </HashRouter>
       </PersistGate>
