@@ -2,7 +2,7 @@
 @import '../../scss/config';
 
 .single-activity {
-  margin: 0 2rem;
+  margin: 0 2rem 6.6875rem 2rem;
 
   h1 {
     font-style: italic;
@@ -11,6 +11,11 @@
     line-height: 29px;
     text-align: center;
     margin-bottom: 2.5rem;
+  }
+
+  p {
+    text-align: left;
+    font-style: italic;
   }
 
   &__text-title {

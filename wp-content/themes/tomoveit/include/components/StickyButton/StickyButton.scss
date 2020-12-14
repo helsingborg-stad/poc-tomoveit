@@ -1,0 +1,37 @@
+@import '../../scss/colors';
+@import '../../scss/config';
+
+.sticky-button {
+  position: fixed;
+  bottom: 2.1875rem;
+  right: 2.1875rem;
+
+  display: block;
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+
+  background: $color-blue;
+  color: $color-white;
+
+  font-style: italic;
+  font-weight: 900;
+  font-size: 18px;
+  line-height: 22px;
+
+  text-align: center;
+
+  outline: none;
+  border: none;
+
+  &:hover {
+    background: $color-black;
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .sticky-button {
+    bottom: 2.1875rem;
+    right: 15%;
+  }
+}

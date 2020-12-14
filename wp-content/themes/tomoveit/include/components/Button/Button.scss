@@ -1,7 +1,7 @@
 @import '../../scss/colors';
 @import '../../scss/config';
 
-button {
+.button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -29,7 +29,7 @@ button {
 }
 
 @media all and (min-width: $breakpoint-m) {
-  button {
+  .button {
     width: auto;
     padding: 1.0625rem 8.125rem;
     font-size: 1.6875rem;
