@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styles from './CardContainer.scss';
 import classNames from 'classnames/bind';
 import { useHistory } from 'react-router-dom';
-import { changeHeader, selectCard } from '../../actions/app';
+import { selectCard } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -14,7 +14,6 @@ const CardContainer = () => {
 
   const handleClick = (item) => {
     dispatch(selectCard(item));
-    dispatch(changeHeader({ image: true }));
     history.push({ pathname: '/activity' });
   };
 
