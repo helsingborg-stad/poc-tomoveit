@@ -12,8 +12,8 @@ const SingleActivity = () => {
   const selectedActivity = useSelector(state => state.app.selectedActivity);
 
   const handleClick = () => {
-    axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/setActivity', {
-      selectedPostId: selectedActivity.id,
+    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setActivity', {
+      selectedPostId: selectedActivity.postId.toString(),
       pin: '1234',
     },
     ).then(() => {

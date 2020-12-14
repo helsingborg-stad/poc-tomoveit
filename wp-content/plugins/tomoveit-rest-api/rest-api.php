@@ -128,11 +128,12 @@ class TomoveitRestApi_Routes {
     public function rest_set_activity($request){
         global $wpdb;
         $mac = '00:1B:44:11:3A:B7';
-        $table_name = 'tomoveit_activity';
 
         $post = $request->get_param('selectedPostId');
 
-        $wpdb->query($wpdb->prepare("UPDATE $table_name SET selected_activity='$post' WHERE mac=$mac"));
-        return 'Hej';
+        $table = 'tomoveit_activity';
+        $data = array('selected_activity'=> $post);
+        $where = array('mac' => $mac);
+        $wpdb->update( $table, $data, $where);
     }
 }
