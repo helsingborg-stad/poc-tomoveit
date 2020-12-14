@@ -46,9 +46,26 @@ class TomoveitRestApi_Routes {
 
         register_rest_route($namespace, '/setActivity', [
             [
-                'methods' => WP_REST_Server::READABLE,
+                'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_set_activity'],
             ],
+            'args' => [
+                'pin' => [
+                    'required' => true,
+                    'validate_callback' => function($param, $request, $key) {
+                        if(!is_string($param)) return false;
+                        return $request;
+                    },
+                ],
+                'selectedPostId' => [
+                    'required' => true,
+                    'validate_callback' => function($param, $request, $key) {
+                        if(!is_string($param)) return false;
+                        return $request;
+                    },
+                ],
+            ],
+
         ]);
     }
 
@@ -110,11 +127,12 @@ class TomoveitRestApi_Routes {
 
     public function rest_set_activity($request){
         global $wpdb;
-
-        $post = $request->get_param('postId');
-
+        $mac = '00:1B:44:11:3A:B7';
         $table_name = 'tomoveit_activity';
-        $results = $wpdb->get_results( "SELECT * FROM $table_name");
-        var_dump($results);
+
+        $post = $request->get_param('selectedPostId');
+
+        $wpdb->query($wpdb->prepare("UPDATE $table_name SET selected_activity='$post' WHERE mac=$mac"));
+        return 'Hej';
     }
 }
