@@ -1,3 +1,53 @@
+@import '../../scss/colors';
+@import '../../scss/config';
+
 .single-activity {
-  color: black;
+  margin: 0 2rem;
+
+  h1 {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+
+  &__text-title {
+    color: $color-gray;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  &__title {
+    &--blue {
+      color: $color-light-blue;
+    }
+
+    &--green {
+      color: $color-light-green;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .single-activity {
+    margin: 0 10.6875rem;
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-l) {
+  .single-activity {
+    margin: 0 22.6875rem;
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  }
 }

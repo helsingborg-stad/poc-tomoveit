@@ -80,12 +80,19 @@ class TomoveitRestApi_Routes {
             $time = get_field('activity_time', $item->ID);
             $image = get_field('activity_image', $item->ID);
             $group = get_field('activity_group', $item->ID);
+            $description = get_field('activity_description', $item->ID);
+            $needed = get_field('activity_whats_needed', $item->ID);
+            $numbers = get_field('activity_numbers', $item->ID);
 
             array_push($result, (object)[
                 'title' => $title ,
                 'time' => $time,
                 'image' => $image,
                 'group' => $group,
+                'description' => $description,
+                'needed' => $needed,
+                'numbers' => $numbers,
+
             ]);
         }
         return $result;

@@ -51,18 +51,6 @@ span {
   line-height: 20px;
 }
 
-h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
-  color: $color-black;
-  font-family: $font-monserant;
-}
-
-h1, .h1 {
-  font-weight: 600;
-  font-size: 2.75rem;
-  margin-bottom: 1rem;
-  line-height: 3.4375rem;
-}
-
 h2, .h2 {
   font-weight: 600;
   font-size: 1.625rem;
@@ -115,12 +103,6 @@ h5, .h5 {
 }
 
 @media all and (min-width: $breakpoint-xl) {
-  h1, .h1 {
-    font-size: 4rem;
-    line-height: 5rem;
-    margin-bottom: 1rem;
-  }
-
   h2, .h2 {
     font-size: 2rem;
     line-height: 2.5rem;
