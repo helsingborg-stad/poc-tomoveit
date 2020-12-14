@@ -135,5 +135,37 @@ class TomoveitRestApi_Routes {
         $data = array('selected_activity'=> $post);
         $where = array('mac' => $mac);
         $wpdb->update( $table, $data, $where);
+
+        $get_selected_post_data = $this->prepare_post_data($post);
+
+        return $get_selected_post_data;
+    }
+
+    public function prepare_post_data($post_id) {
+            $result = array();
+
+            $postId = $$post_id;
+            $title = get_the_title($post_id);
+            $time = get_field('activity_time', $post_id);
+            $image = get_field('activity_image', $post_id);
+            $group = get_field('activity_group', $post_id);
+            $description = get_field('activity_description', $post_id);
+            $needed = get_field('activity_whats_needed', $post_id);
+            $numbers = get_field('activity_numbers', $post_id);
+            $instruction = get_field('activity_instruktioner', $post_id);
+
+            array_push($result, (object)[
+                'title' => $title ,
+                'time' => $time,
+                'image' => $image,
+                'group' => $group,
+                'description' => $description,
+                'needed' => $needed,
+                'numbers' => $numbers,
+                'instruction' => $instruction,
+                'postId' => $postId
+            ]);
+
+        return $result;
     }
 }
