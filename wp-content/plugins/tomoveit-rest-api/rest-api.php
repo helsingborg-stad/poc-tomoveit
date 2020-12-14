@@ -83,6 +83,7 @@ class TomoveitRestApi_Routes {
             $description = get_field('activity_description', $item->ID);
             $needed = get_field('activity_whats_needed', $item->ID);
             $numbers = get_field('activity_numbers', $item->ID);
+            $instruction = get_field('activity_instruktioner', $item->ID);
 
             array_push($result, (object)[
                 'title' => $title ,
@@ -92,7 +93,7 @@ class TomoveitRestApi_Routes {
                 'description' => $description,
                 'needed' => $needed,
                 'numbers' => $numbers,
-
+                'instruction' => $instruction,
             ]);
         }
         return $result;
