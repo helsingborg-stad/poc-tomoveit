@@ -65,7 +65,12 @@ class TomoveitRestApi_Routes {
                     },
                 ],
             ],
-
+        ]);
+        register_rest_route($namespace, '/randomize', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_randomize_post'],
+            ],
         ]);
     }
 
@@ -92,23 +97,22 @@ class TomoveitRestApi_Routes {
 
     public function rest_get_activities() {
         $result = array();
+        global $wpdb;
 
-        $posts = get_posts([
-            'numberposts' => 3,
-            'post_type' => 'activities',
-            'orderby' => 'rand'
-        ]);
+        $query = $wpdb->prepare("SELECT post1, post2, post3 FROM $table WHERE id = 1");
+        $query_result = $wpdb->get_row($query, ARRAY_A);
 
-        foreach ($posts as $item) {
-            $postId = $item->ID;
-            $title = get_the_title($item->ID);
-            $time = get_field('activity_time', $item->ID);
-            $image = get_field('activity_image', $item->ID);
-            $group = get_field('activity_group', $item->ID);
-            $description = get_field('activity_description', $item->ID);
-            $needed = get_field('activity_whats_needed', $item->ID);
-            $numbers = get_field('activity_numbers', $item->ID);
-            $instruction = get_field('activity_instruktioner', $item->ID);
+        foreach ($query_result as $id) {
+
+            $postId = $id;
+            $title = get_the_title($id);
+            $time = get_field('activity_time', $id);
+            $image = get_field('activity_image', $id);
+            $group = get_field('activity_group', $id);
+            $description = get_field('activity_description', $id);
+            $needed = get_field('activity_whats_needed', $id);
+            $numbers = get_field('activity_numbers', $id);
+            $instruction = get_field('activity_instruktioner', $id);
 
             array_push($result, (object)[
                 'title' => $title ,
@@ -122,6 +126,7 @@ class TomoveitRestApi_Routes {
                 'postId' => $postId
             ]);
         }
+
         return $result;
     }
 
@@ -139,6 +144,31 @@ class TomoveitRestApi_Routes {
         $get_selected_post_data = $this->prepare_post_data($post);
 
         return $get_selected_post_data;
+    }
+
+    public function rest_randomize_post() {
+        $postIds = array();
+        global $wpdb;
+
+        $posts = get_posts([
+            'numberposts' => 3,
+            'post_type' => 'activities',
+            'orderby' => 'rand'
+        ]);
+
+        foreach ($posts as $item) {
+            $postId = $item->ID;
+            array_push($postIds, $postId );
+        }
+
+        $table = 'tomoveit_daily_posts';
+        $data = array(
+            'post1'=> $postIds[0],
+            'post2'=> $postIds[1],
+            'post3'=> $postIds[2],
+        );
+        $where = array('id' => 1);
+        $wpdb->update( $table, $data, $where);
     }
 
     public function prepare_post_data($post_id) {
