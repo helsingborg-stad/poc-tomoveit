@@ -2,12 +2,29 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './CurrentActivity.scss';
 import { useSelector } from 'react-redux';
+import Button from '../../components/Button/Button.jsx';
+import axios from 'axios';
+import { useHistory } from 'react-router-dom';
 
 const style = classNames.bind(styles);
 
 const CurrentActivity = () => {
   const runningActivity = useSelector(state => state.app.runningActivity[0]);
   const titleColor = runningActivity.group ? 'card-current__text--blue' : 'card-current__text--green';
+  const history = useHistory();
+
+  const handleClickOk = () => {
+    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setDoneActivity', {
+      postId: runningActivity.postId,
+    },
+    ).then((response) => {
+      console.log('ok');
+    }, (error) => {
+      console.log(error);
+    });
+    history.push('/activities');
+  };
+
   return (
     <div className={ style('current-activity')} >
       <div className={ style('current-activity__title')}>
@@ -45,6 +62,9 @@ const CurrentActivity = () => {
         <p>{runningActivity.numbers}</p>
         <p className={ style('current-activity__text-title')}>Instruktioner</p>
         <p>{runningActivity.instruction}</p>
+      </div>
+      <div className={ style('current-activity__button')}>
+        <Button handleClick={handleClickOk} to={'/welcome'} text={'JAG KLARA DET!'}/>
       </div>
     </div>
   );

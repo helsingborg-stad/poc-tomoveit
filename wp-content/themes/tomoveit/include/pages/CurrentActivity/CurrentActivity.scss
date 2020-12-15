@@ -2,9 +2,14 @@
 @import '../../scss/config';
 
 .current-activity {
-  margin: 0 2rem 6.6875rem 2rem;
+  margin: 0 2rem 6.25rem 2rem;
 
   &__warp {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
     display: flex;
     justify-content: center;
   }
@@ -90,7 +95,7 @@
 
 @media all and (min-width: $breakpoint-m) {
   .current-activity {
-    margin: 0 10rem;
+    margin: 0 10rem 6.25rem 10rem;
 
     &__title {
       margin-bottom: 5rem;
@@ -120,6 +125,6 @@
 
 @media all and (min-width: $breakpoint-l) {
   .current-activity {
-    margin: 0 22.6875rem;
+    margin: 0 22.6875rem 6.25rem 22.6875rem;
   }
 }

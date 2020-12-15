@@ -78,6 +78,19 @@ class TomoveitRestApi_Routes {
                 'callback' => [$this, 'rest_running_activity'],
             ],
         ]);
+        register_rest_route($namespace, '/setDoneActivity', [
+            [
+                'methods' => WP_REST_Server::CREATABLE,
+                'callback' => [$this, 'rest_set_done_activity'],
+                'postId' => [
+                    'required' => true,
+                    'validate_callback' => function($param, $request, $key) {
+                        if(!is_string($param)) return false;
+                        return $request;
+                    },
+                ],
+            ],
+        ]);
     }
 
     public function rest_get_data() {
@@ -104,33 +117,40 @@ class TomoveitRestApi_Routes {
     public function rest_get_activities() {
         $result = array();
         global $wpdb;
-        $table = 'tomoveit_daily_posts';
+        $mac = '00:1B:44:11:3A:B7';
+        $table_daily = 'tomoveit_daily_posts';
+        $table_activity = 'tomoveit_activity';
 
-        $query = $wpdb->prepare("SELECT post1, post2, post3 FROM $table WHERE id = 1");
+        $query = $wpdb->prepare("SELECT post1, post2, post3 FROM $table_daily WHERE id = 1");
         $query_result = $wpdb->get_row($query, ARRAY_A);
 
-        foreach ($query_result as $id) {
-            $postId = $id;
-            $title = get_the_title($id);
-            $time = get_field('activity_time', $id);
-            $image = get_field('activity_image', $id);
-            $group = get_field('activity_group', $id);
-            $description = get_field('activity_description', $id);
-            $needed = get_field('activity_whats_needed', $id);
-            $numbers = get_field('activity_numbers', $id);
-            $instruction = get_field('activity_instruktioner', $id);
+        $query = $wpdb->prepare("SELECT used_activities FROM $table_activity WHERE mac = '$mac'");
+        $query_result_used = $wpdb->get_row($query);
 
-            array_push($result, (object)[
-                'title' => $title ,
-                'time' => $time,
-                'image' => $image,
-                'group' => $group,
-                'description' => $description,
-                'needed' => $needed,
-                'numbers' => $numbers,
-                'instruction' => $instruction,
-                'postId' => $postId
-            ]);
+        foreach ($query_result as $id) {
+            if (!preg_match("~\b$id\b~", $query_result_used->used_activities)) {
+                $postId = $id;
+                $title = get_the_title($id);
+                $time = get_field('activity_time', $id);
+                $image = get_field('activity_image', $id);
+                $group = get_field('activity_group', $id);
+                $description = get_field('activity_description', $id);
+                $needed = get_field('activity_whats_needed', $id);
+                $numbers = get_field('activity_numbers', $id);
+                $instruction = get_field('activity_instruktioner', $id);
+
+                array_push($result, (object)[
+                    'title' => $title,
+                    'time' => $time,
+                    'image' => $image,
+                    'group' => $group,
+                    'description' => $description,
+                    'needed' => $needed,
+                    'numbers' => $numbers,
+                    'instruction' => $instruction,
+                    'postId' => $postId
+                ]);
+            }
         }
 
         return $result;
@@ -193,6 +213,17 @@ class TomoveitRestApi_Routes {
         $where = array('id' => 1);
         $wpdb->update( $table, $data, $where);
     }
+
+    public function rest_set_done_activity($request) {
+        global $wpdb;
+        $post_id = $request->get_param('postId');
+        $table = 'tomoveit_activity';
+        $mac = '00:1B:44:11:3A:B7';
+
+        //$wpdb->query($wpdb->prepare("UPDATE $table SET used_activities = CONCAT(used_activities,'".",".$post_id."') WHERE mac = '$mac'"));
+        $wpdb->query($wpdb->prepare("UPDATE $table SET used_activities = CONCAT(used_activities, ' ', $post_id) WHERE mac = '$mac'"));
+    }
+
 
     public function prepare_post_data($post_id) {
             $result = array();
