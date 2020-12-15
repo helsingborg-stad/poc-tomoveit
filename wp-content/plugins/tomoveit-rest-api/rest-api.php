@@ -252,4 +252,14 @@ class TomoveitRestApi_Routes {
 
         return $result;
     }
+
+    public function find_mac($pin) {
+        $mac = array(
+            "1234"=>"00:1B:44:11:3A:B7",
+            "1235"=>"01:2E:D4:11:3A:B4",
+            "1122"=> "00:1B:A4:A1:3A:A7"
+        );
+
+        return $mac[$pin];
+    }
 }

@@ -1,24 +1,27 @@
 import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './CurrentActivity.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import Button from '../../components/Button/Button.jsx';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import { runningActivity, selectCard } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
 const CurrentActivity = () => {
-  const runningActivity = useSelector(state => state.app.runningActivity[0]);
-  const titleColor = runningActivity.group ? 'card-current__text--blue' : 'card-current__text--green';
+  const runningActivityData = useSelector(state => state.app.runningActivity[0]);
+  const titleColor = runningActivityData.group ? 'card-current__text--blue' : 'card-current__text--green';
   const history = useHistory();
+  const dispatch = useDispatch();
 
   const handleClickOk = () => {
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setDoneActivity', {
-      postId: runningActivity.postId,
+      postId: runningActivityData.postId,
     },
     ).then((response) => {
-      console.log('ok');
+      dispatch(runningActivity({}));
+      dispatch(selectCard({}));
     }, (error) => {
       console.log(error);
     });
@@ -32,36 +35,36 @@ const CurrentActivity = () => {
         <p>Försök göra aktiviteten under dagen. Glöm inte att ha skoj 😄</p>
       </div>
       <div className={ style('current-activity__warp')}>
-        <div key={runningActivity.title} className={style('card-current')}>
+        <div key={runningActivityData.title} className={style('card-current')}>
           <div className={style('card-current_image-container')}>
-            { !runningActivity.group &&
+            { !runningActivityData.group &&
             <svg className={style('card-current__svg')}>
               <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-single'}/>
             </svg>
             }
-            { runningActivity.group &&
+            { runningActivityData.group &&
             <svg className={style('card-current__svg')}>
               <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-group'}/>
             </svg>
             }
-            <img className={style('card-current__image')} src={runningActivity.image} alt={'Alt'} />
+            <img className={style('card-current__image')} src={runningActivityData.image} alt={'Alt'} />
           </div>
           <div className={style('card-current__text')}>
-            <p className={style(titleColor)}>{runningActivity.title}</p>
-            <p>{runningActivity.time}</p>
+            <p className={style(titleColor)}>{runningActivityData.title}</p>
+            <p>{runningActivityData.time}</p>
           </div>
         </div>
       </div>
 
       <div className={ style('current-activity__description')}>
         <p className={ style('current-activity__text-title')}>Beskrivning</p>
-        <p>{runningActivity.description}</p>
+        <p>{runningActivityData.description}</p>
         <p className={ style('current-activity__text-title')}>Vad du behöver</p>
-        <p>{runningActivity.needed}</p>
+        <p>{runningActivityData.needed}</p>
         <p className={ style('current-activity__text-title')}>Antal</p>
-        <p>{runningActivity.numbers}</p>
+        <p>{runningActivityData.numbers}</p>
         <p className={ style('current-activity__text-title')}>Instruktioner</p>
-        <p>{runningActivity.instruction}</p>
+        <p>{runningActivityData.instruction}</p>
       </div>
       <div className={ style('current-activity__button')}>
         <Button handleClick={handleClickOk} to={'/welcome'} text={'JAG KLARA DET!'}/>
