@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Button from '../../components/Button/Button.jsx';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import { runningActivity, selectCard } from '../../actions/app';
+import { runningActivity, selectCard, deleteActivity } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -20,6 +20,8 @@ const CurrentActivity = () => {
       postId: runningActivityData.postId,
     },
     ).then((response) => {
+      console.log(runningActivityData.postId);
+      dispatch(deleteActivity(runningActivityData.postId));
       dispatch(runningActivity({}));
       dispatch(selectCard({}));
     }, (error) => {

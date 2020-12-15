@@ -2,6 +2,7 @@ export const ADD_ACTIVITIES = 'ADD_ACTIVITIES';
 export const SELECTED_CARD = 'SELECTED_CARD';
 export const CHANGE_HEADER = 'CHANGE_HEADER';
 export const RUNNING_ACTIVITY = 'RUNNING_ACTIVITY';
+export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 
 export const addActivities = activities => {
   return {
@@ -28,5 +29,12 @@ export const runningActivity = runningActivity => {
   return {
     type: RUNNING_ACTIVITY,
     runningActivity,
+  };
+};
+
+export const deleteActivity = id => {
+  return {
+    type: DELETE_ACTIVITY,
+    id,
   };
 };
