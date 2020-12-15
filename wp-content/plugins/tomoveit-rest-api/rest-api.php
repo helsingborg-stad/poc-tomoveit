@@ -98,12 +98,12 @@ class TomoveitRestApi_Routes {
     public function rest_get_activities() {
         $result = array();
         global $wpdb;
+        $table = 'tomoveit_daily_posts';
 
         $query = $wpdb->prepare("SELECT post1, post2, post3 FROM $table WHERE id = 1");
         $query_result = $wpdb->get_row($query, ARRAY_A);
 
         foreach ($query_result as $id) {
-
             $postId = $id;
             $title = get_the_title($id);
             $time = get_field('activity_time', $id);
