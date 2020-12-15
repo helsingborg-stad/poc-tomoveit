@@ -72,6 +72,12 @@ class TomoveitRestApi_Routes {
                 'callback' => [$this, 'rest_randomize_post'],
             ],
         ]);
+        register_rest_route($namespace, '/getRunningActivity', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_running_activity'],
+            ],
+        ]);
     }
 
     public function rest_get_data() {
@@ -144,6 +150,23 @@ class TomoveitRestApi_Routes {
         $get_selected_post_data = $this->prepare_post_data($post);
 
         return $get_selected_post_data;
+    }
+
+    public function rest_running_activity() {
+        global $wpdb;
+        $table = 'tomoveit_activity';
+        $mac = '00:1B:44:11:3A:B7';
+
+        $query = $wpdb->get_results("SELECT selected_activity FROM $table WHERE mac = '$mac'");
+
+        $post_id = NULL;
+        foreach($query as $item) {
+            $post_id = $item->selected_activity;
+        }
+
+        if(!$post_id) return false;
+
+        return $this->prepare_post_data($post_id);
     }
 
     public function rest_randomize_post() {
