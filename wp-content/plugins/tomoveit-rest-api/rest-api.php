@@ -222,7 +222,7 @@ class TomoveitRestApi_Routes {
 
         //$wpdb->query($wpdb->prepare("UPDATE $table SET used_activities = CONCAT(used_activities,'".",".$post_id."') WHERE mac = '$mac'"));
         $wpdb->query($wpdb->prepare("UPDATE $table SET used_activities = CONCAT(used_activities, ' ', $post_id) WHERE mac = '$mac'"));
-        $wpdb->query( $wpdb->prepare("DELETE selected_activity FROM $table WHERE mac='$mac'" ));
+        $wpdb->query($wpdb->prepare("UPDATE $table SET selected_activity = '' WHERE mac = '$mac'"));
     }
 
 
