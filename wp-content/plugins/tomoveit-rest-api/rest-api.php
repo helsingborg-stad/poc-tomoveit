@@ -197,7 +197,7 @@ class TomoveitRestApi_Routes {
     public function prepare_post_data($post_id) {
             $result = array();
 
-            $postId = $$post_id;
+            $postId = $post_id;
             $title = get_the_title($post_id);
             $time = get_field('activity_time', $post_id);
             $image = get_field('activity_image', $post_id);

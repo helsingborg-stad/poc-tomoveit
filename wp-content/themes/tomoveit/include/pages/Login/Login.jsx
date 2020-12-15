@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
-import {addActivities, runningActivity} from '../../actions/app';
+import { addActivities, runningActivity } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -35,13 +35,13 @@ const Login = () => {
 
       axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getRunningActivity')
         .then((response) => {
-          if(response !== false) {
+          console.log(response);
+          if (response !== false) {
             dispatch(runningActivity(response.data));
           }
         }, (error) => {
           console.log(error);
         });
-
 
       history.push('/welcome');
     }
