@@ -1,3 +1,125 @@
+@import '../../scss/colors';
+@import '../../scss/config';
+
 .current-activity {
-  text-align: center;
+  margin: 0 2rem 6.6875rem 2rem;
+
+  &__warp {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__text-title {
+    color: $color-gray;
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  p {
+    text-align: left;
+    font-style: italic;
+  }
+
+  &__title {
+    margin-bottom: 2.5rem;
+
+    h1 {
+      font-style: italic;
+      font-weight: 900;
+      font-size: 24px;
+      line-height: 29px;
+      text-align: center;
+      margin-bottom: .625rem;
+    }
+
+    p {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+}
+
+.card-current {
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 24px rgba(149, 157, 165, .2);
+
+  p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  &__svg {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    width: 1.6875rem;
+    height: 1.6875rem;
+    transform: translate(-50%, -50%);
+    fill: $color-white;
+  }
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__text {
+    padding: 1.25rem;
+
+    &--blue {
+      color: $color-light-blue;
+    }
+
+    &--green {
+      color: $color-light-green;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    height: 6.875rem;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .current-activity {
+    margin: 0 10rem;
+
+    &__title {
+      margin-bottom: 5rem;
+    }
+
+    &__description {
+      font-size: 16px;
+      line-height: 24px;
+    }
+  }
+
+  .card-current {
+    margin-bottom: 5rem;
+    width: 305px;
+    height: auto;
+    padding-bottom: 0;
+
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
+
+    &__image {
+      height: auto;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-l) {
+  .current-activity {
+    margin: 0 22.6875rem;
+  }
 }
