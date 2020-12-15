@@ -8,11 +8,13 @@ import { useSelector } from 'react-redux';
 
 const Introduction = () => {
   const history = useHistory();
-  const runningActivity = useSelector(state => state.app.runningActivity[0]);
+  const runningActivity = useSelector(state => state.app.runningActivity);
   const handleClick = () => {
     if (runningActivity) {
+      console.log('runningActivity');
       history.push({ pathname: '/runningActivity' });
     } else {
+      console.log('/activities');
       history.push({ pathname: '/activities' });
     }
   };

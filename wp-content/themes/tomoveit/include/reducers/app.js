@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   activities: [],
   selectedActivity: {},
   headerParams: { image: false },
+  runningActivity: [{}],
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
