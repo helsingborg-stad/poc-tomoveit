@@ -13,8 +13,10 @@ const Button = (props) => {
     history.push(props.to);
   };
 
+  const color = props.whiteColor ? 'button--white' : '';
+
   return (
-    <button onClick={props.handleClick ? props.handleClick : handleClick} className={ style('button')}>
+    <button onClick={props.handleClick ? props.handleClick : handleClick} className={ style('button', color)}>
       {props.text}
     </button>
   );
@@ -24,5 +26,6 @@ Button.propTypes = {
   text: PropTypes.any.isRequired,
   to: PropTypes.any.isRequired,
   handleClick: PropTypes.func,
+  whiteColor: PropTypes.bool,
 };
 export default Button;

@@ -1,4 +1,4 @@
-import { ADD_ACTIVITIES, SELECTED_CARD, CHANGE_HEADER, RUNNING_ACTIVITY, DELETE_ACTIVITY } from '../actions/app';
+import { ADD_ACTIVITIES, SELECTED_CARD, CHANGE_HEADER, RUNNING_ACTIVITY, DELETE_ACTIVITY, SET_PIN } from '../actions/app';
 
 const INITIAL_STATE = {
   activities: [],
@@ -34,6 +34,11 @@ const reducer = (state = INITIAL_STATE, action) => {
         //activities: state.activities.filter(({ id }) => id !== action.id),
         ...state,
         activities: state.activities.filter(item => item.postId !== action.id),
+      };
+    case SET_PIN:
+      return {
+        ...state,
+        pin: action.pin,
       };
 
     default: return state;

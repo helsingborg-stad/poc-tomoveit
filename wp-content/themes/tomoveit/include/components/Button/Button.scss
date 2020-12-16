@@ -23,6 +23,11 @@
   outline: none;
   height: 3.75rem;
 
+  &--white {
+    background: $color-white;
+    color: $color-blue;
+  }
+
   &:hover {
     background: $color-black;
   }

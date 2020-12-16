@@ -212,6 +212,10 @@ class TomoveitRestApi_Routes {
         );
         $where = array('id' => 1);
         $wpdb->update( $table, $data, $where);
+
+        $table = 'tomoveit_activity';
+        $wpdb->query($wpdb->prepare("UPDATE $table SET selected_activity='', used_activities=''"));
+
     }
 
     public function rest_set_done_activity($request) {

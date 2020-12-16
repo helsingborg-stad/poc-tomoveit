@@ -70,6 +70,7 @@ const CurrentActivity = () => {
       </div>
       <div className={ style('current-activity__button')}>
         <Button handleClick={handleClickOk} to={'/welcome'} text={'JAG KLARA DET!'}/>
+        <Button handleClick={handleClickOk} whiteColor={true} to={'/welcome'} text={'JAG ÅNGRA MIG!'}/>
       </div>
     </div>
   );
