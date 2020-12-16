@@ -12,6 +12,7 @@ import Login from '../../pages/Login/Login.jsx';
 import Header from '../Header/Header.jsx';
 import SingleActivity from '../../pages/SingleActivity/SingleActivity.jsx';
 import CurrentActivity from '../../pages/CurrentActivity/CurrentActivity.jsx';
+import Statistics from '../../pages/Statistics/Statistics.jsx';
 
 const store = configureStore();
 
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="/introduction" component={Introduction} />
             <Route path="/activity" component={SingleActivity} />
             <Route path="/runningActivity" component={CurrentActivity} />
+            <Route path="/statistics" component={Statistics} />
           </Switch>
         </HashRouter>
       </PersistGate>
