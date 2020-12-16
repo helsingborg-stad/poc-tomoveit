@@ -22,7 +22,7 @@ const CurrentActivity = () => {
     ).then((response) => {
       console.log(runningActivityData.postId);
       dispatch(deleteActivity(runningActivityData.postId));
-      dispatch(runningActivity({}));
+      dispatch(runningActivity(false));
       dispatch(selectCard({}));
     }, (error) => {
       console.log(error);
