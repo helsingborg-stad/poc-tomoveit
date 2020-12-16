@@ -15,7 +15,12 @@ const Activities = () => {
       <div className={style('activities__text')}>
         {activities.length !== 0 && <p>Hej! Här kommer dagens 3 förslag på vad du kan göra för att komma upp i dina 10 000 steg Dags att röra på sig! 💪</p>}
       </div>
-      { activities.length === 0 && <h3>Boom! 🎉💪️👏 Du har provat dig igenom alla aktiviteterna idag. Men imorgon kommer det 3 nya! ⚡️</h3> }
+      { activities.length === 0 &&
+        <div className={style('activities__celebrate')}>
+          <h3>Boom! 🎉💪️👏<br/>Du har provat dig igenom alla aktiviteterna idag.<br/>Men imorgon kommer det 3 nya! ⚡️</h3>
+          <img src="https://tomoveit.hbgtest.se/wp-content/uploads/2020/12/tomoveit-celebrate.gif" alt="tomoveit-celebrate"/>
+        </div>
+      }
       <CardContainer />
     </div>
   );
