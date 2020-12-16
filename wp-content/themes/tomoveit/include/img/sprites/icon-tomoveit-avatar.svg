@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink= "http://www.w3.org/1999/xlink" preserveAspectRatio="none" viewBox="0 0 512 512" style="background-color:#FFFFFF; overflow:visible">
+    <title>sporty-unicorn</title>
+    <!-- Layers -->
+    <!-- Layer: unicorn -->
+    <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+        <g label="flipped" transform="scale(1 1)">
+            <g label="layerRotation" transform="rotate(0)">
+                <svg x="-0" y="-0" width="512" height="512" style ="overflow:visible" opacity="1" label="unicornContainer">
+                    <g clip-path="" label="maskPath">
+                        <g label="layerShadow" filter="">
+                        <rect fill="#FFFFFF" height="100%" rx="0" stroke-width="0" width="100%" x="0" y="0"/>
+                        <!-- Layer: Background -->
+                        <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="512" height="512" style ="overflow:visible" opacity="1" label="BackgroundContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <path d="M256,512c140.8,0,256,-115.2,256,-256 0,-140.8,-115.2,-256,-256,-256 -140.8,0,-256,115.2,-256,256 0,140.8,115.2,256,256,256zM256,512" fill="#FFD064" id="background" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Left Hand -->
+                        <svg x="285.02" y="346.03" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <animate attributeName="y" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0.215 0.61 0.355 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.555556;0.888889;1" repeatCount="indefinite" values="346.03;475;346.03;346.05"/>
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="204.03" height="134.63" style ="overflow:visible" opacity="1" label="Left HandContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="146.65" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="57.38" height="96.17" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M57.38,16.04c-13.83,30.36,-33.43,57.53,-57.38,80.13 0,0,0,-96.17,0,-96.17 0,0,26.93,0,26.93,0 12.64,0,23.8,6.36,30.45,16.04 0,0,0,0,0,0zM57.38,16.04" fill="#DA387D" id="vector" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="109.73" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="73.83" height="104.83" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M73.83,36.918c0,0,0,15.729,0,15.729 -10.67,15.859,-23.06,30.449,-36.91,43.518 -2.92,2.76,-5.91,5.45,-8.96,8.07 -3.28,2.82,-6.64,-5.455,-10.07,-2.805 -10.72,-6.46,-17.89,-7.195,-17.89,-20.624 0,0,0,-43.888,0,-43.888 0,-20.389,16.53,-36.918,36.92,-36.918 10.19,0,19.42,4.13,26.1,10.81 6.68,6.68,10.81,15.919,10.81,26.109 0,0,0,0,0,0 0,0,0,0,0,0zM73.83,36.918" fill="#C3247D" id="vector_1" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="36.91" y="30.01" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="116.65" height="57.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M109.738,0c0,0,-109.738,0,-109.738,0 0,0,0,57.72,0,57.72 0,0,109.738,0,109.738,0 3.811,0,6.912,-3.101,6.912,-6.912 0,0,0,-43.897,0,-43.897 0,-3.81,-3.101,-6.911,-6.912,-6.911 0,0,0,0,0,0 0,0,0,0,0,0zM109.738,0" fill="#DA387D" id="vector_2" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="93.8" y="59.81" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="43.89" height="74.82" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M43.89,17.68c0,0,0,26.75,0,26.75 -13.48,11.59,-28.19,21.79,-43.89,30.39 0,0,0,-74.82,0,-74.82 0,0,26.21,0,26.21,0 9.77,0,17.68,7.91,17.68,17.68 0,0,0,0,0,0zM43.89,17.68" fill="#FFDDF1" id="vector_3" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="93.8" y="59.81" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="17.29" height="74.82" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M17.29,17.68c0,0,0,46.76,0,46.76 -5.61,3.68,-11.38,7.14,-17.29,10.38 0,0,0,-74.82,0,-74.82 0,0,10.33,0,10.33,0 3.84,0,6.96,7.91,6.96,17.68 0,0,0,0,0,0 0,0,0,0,0,0zM17.29,17.68" fill="#FFCEEC" id="vector_4" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="93.81" y="17.63" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="43.89" height="59.86" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M43.89,17.68c0,0,0,42.18,0,42.18 0,0,-43.89,0,-43.89,0 0,0,0,-59.86,0,-59.86 0,0,26.21,0,26.21,0 9.77,0,17.68,7.91,17.68,17.68 0,0,0,0,0,0zM43.89,17.68" fill="#453D81" id="vector_5" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="36.91" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="63.85" height="117.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M26.937,117.72c0,0,-26.937,0,-26.937,0 0,0,0,-117.72,0,-117.72 0,0,26.937,0,26.937,0 20.387,0,36.913,16.526,36.913,36.912 0,0,0,43.895,0,43.895 0,20.387,-16.527,36.913,-36.913,36.913 0,0,0,0,0,0 0,0,0,0,0,0zM26.937,117.72" fill="#DA387D" id="vector_6" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0.01" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="73.82" height="117.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M36.91,117.72c-20.385,0,-36.91,-16.526,-36.91,-36.912 0,0,0,-43.895,0,-43.895 0,-20.386,16.525,-36.912,36.91,-36.912 20.385,0,36.91,16.526,36.91,36.912 0,0,0,43.895,0,43.895 0,20.386,-16.525,36.912,-36.91,36.912 0,0,0,0,0,0zM36.91,117.72" fill="#C3247D" id="vector_7" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Left Eye -->
+                        <svg x="293.73" y="114.95" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="70.77" height="98.69" style ="overflow:visible" opacity="1" label="Left EyeContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="1.44" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="69.33" height="69.33" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M34.665,69.33c19.145,0,34.665,-15.52,34.665,-34.665 0,-19.145,-15.52,-34.665,-34.665,-34.665 -19.145,0,-34.665,15.52,-34.665,34.665 0,19.145,15.52,34.665,34.665,34.665 0,0,0,0,0,0zM34.665,69.33" fill="#F9F6F9" id="vector_8" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="11.24" y="14.45" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="40.44" height="40.44" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M20.22,40.44c11.167,0,20.22,-9.053,20.22,-20.22 0,-11.167,-9.053,-20.22,-20.22,-20.22 -11.167,0,-20.22,9.053,-20.22,20.22 0,11.167,9.053,20.22,20.22,20.22 0,0,0,0,0,0zM20.22,40.44" fill="#453D81" id="vector_9" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="29.35" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="69.33" height="69.33" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M34.665,69.33c19.145,0,34.665,-15.52,34.665,-34.665 0,-19.145,-15.52,-34.665,-34.665,-34.665 -19.145,0,-34.665,15.52,-34.665,34.665 0,19.145,15.52,34.665,34.665,34.665 0,0,0,0,0,0zM34.665,69.33" fill="#FFDDF1" id="vector_10" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Hair -->
+                        <svg x="4.63" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="312.94" height="420.6" style ="overflow:visible" opacity="1" label="HairContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="194.85" y="50.24" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="75.82" height="83.8" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M37.91,0c-20.937,0,-37.91,16.973,-37.91,37.91 0,0,0,45.89,0,45.89 0,0,75.82,0,75.82,0 0,0,0,-45.89,0,-45.89 0.001,-20.937,-16.972,-37.91,-37.91,-37.91 0,0,0,0,0,0 0,0,0,0,0,0zM37.91,0" fill="#AC80DD" id="vector_11" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="194.85" y="50.24" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="49.22" height="83.8" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M49.22,1.71c-15.42,4.82,-26.61,19.21,-26.61,36.2 0,0,0,45.89,0,45.89 0,0,-22.61,0,-22.61,0 0,0,0,-45.89,0,-45.89 0,-20.93,16.97,-37.91,37.91,-37.91 3.94,0,7.73,0.6,11.31,1.71 0,0,0,0,0,0 0,0,0,0,0,0zM49.22,1.71" fill="#9D66D5" id="vector_12" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Horn -->
+                                            <svg x="217.98" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="94.96" height="165.99" style ="overflow:visible" opacity="1" label="HornContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <!-- Layer: Vector -->
+                                                                <svg x="0.61" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                                    <g label="flipped" transform="scale(1 1)">
+                                                                        <g label="layerRotation" transform="rotate(0)">
+                                                                            <svg x="-0" y="-0" width="87.09" height="165.99" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                                                <g clip-path="" label="maskPath">
+                                                                                    <g label="layerShadow" filter="">
+                                                                                    <path d="M87.09,165.99c0,0,-8.354,-159.125,-8.354,-159.125 -0.399,-7.595,-10.742,-9.515,-13.839,-2.568 0,0,-64.896,145.53,-64.896,145.53 0,0,87.09,16.162,87.09,16.162 0,0,0,0,0,0zM87.09,165.99" fill="#B1E4F9" id="vector_13" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                                                  
+                                                                                    </g>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                                <!-- Layer: Group -->
+                                                                <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                                    <g label="flipped" transform="scale(1 1)">
+                                                                        <g label="layerRotation" transform="rotate(0)">
+                                                                            <svg x="-0" y="-0" width="94.96" height="155.75" style ="overflow:visible" opacity="1" label="GroupContainer">
+                                                                                <g clip-path="" label="maskPath">
+                                                                                    <g label="layerShadow" filter="">
+                                                                                    <!-- Layer: Vector -->
+                                                                                    <svg x="0.61" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                                                        <g label="flipped" transform="scale(1 1)">
+                                                                                            <g label="layerRotation" transform="rotate(0)">
+                                                                                                <svg x="-0" y="-0" width="72.82" height="155.75" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                                                                    <g clip-path="" label="maskPath">
+                                                                                                        <g label="layerShadow" filter="">
+                                                                                                        <path d="M72.82,0.128c-0.812,-0.151,-1.962,1.517,-2.869,5.11 0,0,-38.041,150.512,-38.041,150.512 0,0,-31.91,-5.923,-31.91,-5.923 0,0,64.884,-145.53,64.884,-145.53 1.551,-3.473,4.919,-4.729,7.936,-4.169 0,0,0,0,0,0 0,0,0,0,0,0zM72.82,0.128" fill="#90D8F9" id="vector_14" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                                                                      
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </svg>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
+                                                                                    <!-- Layer: Vector -->
+                                                                                    <svg x="0" y="107.04" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                                                        <g label="flipped" transform="scale(1 1)">
+                                                                                            <g label="layerRotation" transform="rotate(0)">
+                                                                                                <svg x="-0" y="-0" width="94.96" height="31.94" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                                                                    <g clip-path="" label="maskPath">
+                                                                                                        <g label="layerShadow" filter="">
+                                                                                                        <path d="M8.042,31.776c-3.965,-0.736,-7.227,-3.882,-7.913,-8.09 -0.873,-5.361,2.765,-10.414,8.126,-11.288 0,0,75.286,-12.268,75.286,-12.268 5.363,-0.874,10.415,2.765,11.289,8.125 0.874,5.361,-2.765,10.414,-8.126,11.288 0,0,-75.286,12.268,-75.286,12.268 -1.152,0.187,-2.29,0.166,-3.376,-0.035 0,0,0,0,0,0zM8.042,31.776" fill="#90D8F9" id="vector_15" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                                                                      
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </svg>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
+                                                                                    <!-- Layer: Vector -->
+                                                                                    <svg x="22.19" y="61.29" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                                                        <g label="flipped" transform="scale(1 1)">
+                                                                                            <g label="layerRotation" transform="rotate(0)">
+                                                                                                <svg x="-0" y="-0" width="70.36" height="27.94" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                                                                    <g clip-path="" label="maskPath">
+                                                                                                        <g label="layerShadow" filter="">
+                                                                                                        <path d="M8.042,27.776c-3.964,-0.736,-7.226,-3.882,-7.912,-8.09 -0.874,-5.361,2.763,-10.416,8.124,-11.29 0,0,50.686,-8.266,50.686,-8.266 5.36,-0.874,10.415,2.763,11.29,8.124 0.874,5.361,-2.763,10.416,-8.124,11.29 0,0,-50.686,8.266,-50.686,8.266 -1.153,0.188,-2.292,0.167,-3.378,-0.034 0,0,0,0,0,0zM8.042,27.776" fill="#90D8F9" id="vector_16" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                                                                      
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </svg>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
+                                                                                    <!-- Layer: Vector -->
+                                                                                    <svg x="44.38" y="15.55" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                                                        <g label="flipped" transform="scale(1 1)">
+                                                                                            <g label="layerRotation" transform="rotate(0)">
+                                                                                                <svg x="-0" y="-0" width="45.78" height="23.93" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                                                                    <g clip-path="" label="maskPath">
+                                                                                                        <g label="layerShadow" filter="">
+                                                                                                        <path d="M8.043,23.766c-3.965,-0.736,-7.228,-3.884,-7.914,-8.094 -0.873,-5.362,2.765,-10.417,8.127,-11.29 0,0,26.106,-4.253,26.106,-4.253 5.36,-0.875,10.416,2.766,11.289,8.128 0.873,5.362,-2.765,10.417,-8.127,11.29 0,0,-26.106,4.253,-26.106,4.253 -1.152,0.188,-2.29,0.167,-3.375,-0.034 0,0,0,0,0,0zM8.043,23.766" fill="#90D8F9" id="vector_17" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                                                                      
+                                                                                                        </g>
+                                                                                                    </g>
+                                                                                                </svg>
+                                                                                            </g>
+                                                                                        </g>
+                                                                                    </svg>
+                                                                                    <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                                                                  
+                                                                                    </g>
+                                                                                </g>
+                                                                            </svg>
+                                                                        </g>
+                                                                    </g>
+                                                                </svg>
+                                                                <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="117.17" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="261.85" height="303.43" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M261.85,67.42c0,0,-51.03,0,-51.03,0 0.14,1.88,0.24,3.78,0.24,5.69 0,37.45,-28.15,68.3,-64.44,72.59 1.04,4.91,1.59,9.99,1.59,15.21 0,32.48,-21.2,60.01,-50.51,69.53 6.13,11.76,9.61,25.12,9.61,39.29 0,23.83,17.652,18.248,1.882,33.698 -8.64,-7.64,-15.878,-5.7,-23.408,-14.43 -5.13,-5.95,-38.314,4.832,-42.894,-1.578 -20.93,-29.31,-35.83,-63.22,-42.89,-99.921 2.1,-0.58,4.24,-1.07,6.41,-1.47 -2.87,-7.83,-4.43,-16.3,-4.43,-25.12 0,-37.45,28.15,-68.3,64.44,-72.59 -1.04,-4.91,-1.59,-9.99,-1.59,-15.21 0,-40.38,32.73,-73.11,73.11,-73.11 0,0,92.08,0,92.08,0 17.58,0,31.83,14.25,31.83,31.82 0,0,0,35.6,0,35.6 0,0,0,0,0,0zM261.85,67.42" fill="#AC80DD" id="vector_18" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="117.17" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="188.82" height="215.75" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M115.7,73.11c0,5.22,0.56,10.3,1.6,15.21 -36.29,4.29,-64.45,35.14,-64.45,72.59 0,8.82,1.57,17.29,4.44,25.12 -20.08,3.75,-37.68,14.54,-50.14,29.72 -2.91,-9.2,-5.3,-18.63,-7.15,-28.25 2.1,-0.58,4.24,-1.07,6.41,-1.47 -2.87,-7.83,-4.43,-16.3,-4.43,-25.12 0,-37.45,28.15,-68.3,64.44,-72.59 -1.04,-4.91,-1.59,-9.99,-1.59,-15.21 0,-40.38,32.73,-73.11,73.11,-73.11 0,0,50.88,0,50.88,0 -40.38,0,-73.12,32.73,-73.12,73.11 0,0,0,0,0,0 0,0,0,0,0,0zM115.7,73.11" fill="#9D66D5" id="vector_19" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Neck -->
+                        <svg x="47.52" y="153.61" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="235.45" height="358.39" style ="overflow:visible" opacity="1" label="NeckContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="14.57" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="220.88" height="358.39" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M220.88,150.42c0,0,0,206.56,0,206.56 -5.58,0.59,-11.21,0.99,-16.89,1.21 -3.34,0.13,-6.7,0.2,-10.08,0.2 -5.55,0,-11.06,-0.18,-16.52,-0.53 -5.82,-0.36,-11.58,-0.93,-17.29,-1.69 -63.75,-8.41,-120.1,-40.28,-160.1,-86.65 0,0,113.96,-269.52,113.96,-269.52 0,0,106.92,150.42,106.92,150.42 0,0,0,0,0,0zM220.88,150.42" fill="#FFDDF1" id="vector_20" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="150.15" height="314.64" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M150.15,141.26c0,0,-84.84,173.38,-84.84,173.38 -18.85,-12.75,-35.92,-27.94,-50.74,-45.12 -5.13,-5.95,-9.99,-12.13,-14.57,-18.54 0,0,128.53,-250.98,128.53,-250.98 0,0,18.48,26,18.48,26 0,0,3.14,115.26,3.14,115.26 0,0,0,0,0,0zM150.15,141.26" fill="#FFCEEC" id="vector_21" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Head -->
+                        <svg x="64.47" y="57.89" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="414.05" height="288.91" style ="overflow:visible" opacity="1" label="HeadContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="102.66" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="53.06" height="106.13" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M0,0c29.304,0,53.06,23.758,53.06,53.065 0,29.307,-23.756,53.065,-53.06,53.065 0,0,0,-106.13,0,-106.13 0,0,0,0,0,0zM0,0" fill="#FFCEEC" id="vector_22" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="111.57" y="95.72" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="302.48" height="193.19" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M302.48,32.56c0,0,0,92.69,0,92.69 0,8.08,-3.28,15.39,-8.57,20.69 -5.29,5.3,-12.61,8.57,-20.68,8.57 -15.52,0,-28.21,-12.09,-29.19,-27.36 0,0,-65.13,7.61,-65.13,7.61 -6.82,17.12,-18.59,31.72,-33.54,42.05 -14.95,10.33,-33.09,16.38,-52.64,16.38 -19.76,0,-38.07,-6.18,-53.11,-16.71 -15.98,-11.18,-28.27,-27.28,-34.68,-46.1 -3.2,-9.38,-4.94,-19.45,-4.94,-29.92 0,0,0,-100.46,0,-100.46 0,0,269.92,0,269.92,0 17.98,0,32.56,14.58,32.56,32.56 0,0,0,0,0,0 0,0,0,0,0,0zM302.48,32.56" fill="#FFDDF1" id="vector_23" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="95.72" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="121.99" height="60.99" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M121.99,0c0,6.49,-1.01,12.74,-2.9,18.61 -1.77,5.55,-4.32,10.76,-7.52,15.49 -10.96,16.22,-29.52,26.89,-50.58,26.89 -33.68,0,-60.99,-27.31,-60.99,-60.99 0,0,121.99,0,121.99,0 0,0,0,0,0,0zM121.99,0" fill="#FFCEEC" id="vector_24" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="355.07" y="123.31" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="22.08" height="22.08" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M11.04,22.08c-6.098,0,-11.04,-4.942,-11.04,-11.04 0,-6.098,4.942,-11.04,11.04,-11.04 6.098,0,11.04,4.942,11.04,11.04 0,6.098,-4.942,11.04,-11.04,11.04 0,0,0,0,0,0zM11.04,22.08" fill="#EAAADD" id="vector_25" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="387.01" y="123.31" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="22.08" height="22.08" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M11.04,22.08c-6.098,0,-11.04,-4.942,-11.04,-11.04 0,-6.098,4.942,-11.04,11.04,-11.04 6.098,0,11.04,4.942,11.04,11.04 0,6.098,-4.943,11.04,-11.04,11.04 0,0,0,0,0,0zM11.04,22.08" fill="#EAAADD" id="vector_26" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="111.57" y="95.71" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="105.84" height="193.19" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M105.84,192.27c-4.28,0.61,-8.66,0.92,-13.11,0.92 -51.21,0,-92.73,-41.52,-92.73,-92.73 0,0,0,-100.46,0,-100.46 0,0,26.16,0,26.16,0 0,0,0,100.46,0,100.46 0,46.78,34.65,85.47,79.68,91.81 0,0,0,0,0,0 0,0,0,0,0,0zM105.84,192.27" fill="#FFCEEC" id="vector_27" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Right Eye -->
+                        <svg x="211.2" y="114.95" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="78.32" height="111.1" style ="overflow:visible" opacity="1" label="Right EyeContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="4.49" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="69.33" height="69.33" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M34.665,69.33c19.145,0,34.665,-15.52,34.665,-34.665 0,-19.145,-15.52,-34.665,-34.665,-34.665 -19.145,0,-34.665,15.52,-34.665,34.665 0,19.145,15.52,34.665,34.665,34.665 0,0,0,0,0,0zM34.665,69.33" fill="#F9F6F9" id="vector_28" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="19.84" y="14.45" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="40.44" height="40.44" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M20.22,40.44c11.167,0,20.22,-9.053,20.22,-20.22 0,-11.167,-9.053,-20.22,-20.22,-20.22 -11.167,0,-20.22,9.053,-20.22,20.22 0,11.167,9.053,20.22,20.22,20.22 0,0,0,0,0,0zM20.22,40.44" fill="#453D81" id="vector_29" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="32.79" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="78.32" height="78.32" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M39.16,78.32c21.628,0,39.16,-17.532,39.16,-39.16 0,-21.628,-17.532,-39.16,-39.16,-39.16 -21.628,0,-39.16,17.532,-39.16,39.16 0,21.628,17.532,39.16,39.16,39.16 0,0,0,0,0,0zM39.16,78.32" fill="#FFDDF1" id="vector_30" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Mouth -->
+                        <svg x="334.07" y="211" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <animate attributeName="y" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.666667;0.888889;1" repeatCount="indefinite" values="211;218;211;211"/>
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="133.51" height="44.9" style ="overflow:visible" opacity="1" label="MouthContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="133.51" height="44.9" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M133.51,10.15c0,5.6,-4.54,10.14,-10.14,10.14 0,0,-65.12,0,-65.12,0 0.07,0.71,0.11,1.43,0.11,2.16 0,2.88,-0.54,5.64,-1.54,8.17 -3.26,8.36,-11.39,14.28,-20.91,14.28 0,0,-13.47,0,-13.47,0 -0.98,0,-1.94,-0.06,-2.88,-0.19 -5.04,-0.64,-9.57,-2.96,-12.99,-6.39 -2.17,-2.17,-3.9,-4.79,-5.03,-7.7 -0.99,-2.53,-1.54,-5.29,-1.54,-8.17 0,-0.73,0.03,-1.45,0.1,-2.16 1,-10.43,9.13,-18.78,19.46,-20.1 0.94,-0.13,1.9,-0.19,2.88,-0.19 0,0,100.93,0,100.93,0 2.8,0,5.34,1.14,7.17,2.97 1.83,1.84,2.97,4.37,2.97,7.18 0,0,0,0,0,0 0,0,0,0,0,0zM133.51,10.15" fill="#F9F6F9" id="vector_31" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="19.56" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="11.09" height="44.9" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M11.09,0c0,0,0,44.9,0,44.9 0,0,-8.21,0,-8.21,0 -0.98,0,-1.94,-0.06,-2.88,-0.19 0,0,0,-44.52,0,-44.52 0.94,-0.13,1.9,-0.19,2.88,-0.19 0,0,8.21,0,8.21,0 0,0,0,0,0,0zM11.09,0" fill="#DDDAEC" id="vector_32" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="58.58" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="11.08" height="20.29" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M0,0c0,0,11.08,0,11.08,0 0,0,0,20.29,0,20.29 0,0,-11.08,0,-11.08,0 0,0,0,-20.29,0,-20.29 0,0,0,0,0,0zM0,0" fill="#DDDAEC" id="vector_33" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="102.03" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="11.09" height="20.29" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M0,0c0,0,11.09,0,11.09,0 0,0,0,20.29,0,20.29 0,0,-11.09,0,-11.09,0 0,0,0,-20.29,0,-20.29 0,0,0,0,0,0zM0,0" fill="#DDDAEC" id="vector_34" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="20.29" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="58.36" height="10.33" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M58.36,2.16c0,2.88,-0.54,5.64,-1.54,8.17 0,0,-55.28,0,-55.28,0 -0.99,-2.53,-1.54,-5.29,-1.54,-8.17 0,-0.73,0.03,-1.45,0.1,-2.16 0,0,58.15,0,58.15,0 0.07,0.71,0.11,1.43,0.11,2.16 0,0,0,0,0,0zM58.36,2.16" fill="#DDDAEC" id="vector_35" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Right Hand -->
+                        <svg x="128" y="460" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <animate attributeName="y" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0.42 0 0.58 1;0.42 0 0.58 1;0.215 0.61 0.355 1" keyTimes="0;0.333333;0.444444;1" repeatCount="indefinite" values="460;334.73;334.74;475"/>
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="210.5" height="177.27" style ="overflow:visible" opacity="1" label="Right HandContainer">
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="146.65" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="63.85" height="117.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M26.937,117.72c0,0,-26.937,0,-26.937,0 0,0,0,-117.72,0,-117.72 0,0,26.937,0,26.937,0 20.387,0,36.913,16.526,36.913,36.912 0,0,0,43.896,0,43.896 0,20.386,-16.527,36.912,-36.913,36.912 0,0,0,0,0,0 0,0,0,0,0,0zM26.937,117.72" fill="#AC80DD" id="vector_36" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="109.74" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="73.82" height="117.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M36.91,117.72c-20.385,0,-36.91,-16.526,-36.91,-36.912 0,0,0,-43.896,0,-43.896 0,-20.386,16.525,-36.912,36.91,-36.912 20.385,0,36.91,16.526,36.91,36.912 0,0,0,43.896,0,43.896 0,20.386,-16.525,36.912,-36.91,36.912 0,0,0,0,0,0zM36.91,117.72" fill="#9D66D5" id="vector_37" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="36.91" y="30" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="116.65" height="57.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M109.738,0c0,0,-109.738,0,-109.738,0 0,0,0,57.72,0,57.72 0,0,109.738,0,109.738,0 3.811,0,6.912,-3.101,6.912,-6.912 0,0,0,-43.897,0,-43.897 0,-3.81,-3.101,-6.911,-6.912,-6.911 0,0,0,0,0,0zM109.738,0" fill="#AC80DD" id="vector_38" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="93.8" y="59.81" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="43.89" height="117.46" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M43.89,17.68c0,0,0,99.58,0,99.58 -3.34,0.13,-6.7,0.2,-10.08,0.2 -11.46,0,-22.75,-0.75,-33.81,-2.22 0,0,0,-115.24,0,-115.24 0,0,26.21,0,26.21,0 9.77,0,17.68,7.91,17.68,17.68 0,0,0,0,0,0 0,0,0,0,0,0zM43.89,17.68" fill="#FFDDF1" id="vector_39" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="93.8" y="59.81" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="17.29" height="116.93" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M17.29,17.68c0,0,0,99.25,0,99.25 -5.82,-0.36,-11.58,-0.93,-17.29,-1.69 0,0,0,-115.24,0,-115.24 0,0,10.33,0,10.33,0 3.85,0,6.96,7.91,6.96,17.68 0,0,0,0,0,0 0,0,0,0,0,0zM17.29,17.68" fill="#FFCEEC" id="vector_40" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="93.8" y="17.63" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="43.89" height="59.86" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M43.89,17.68c0,0,0,42.18,0,42.18 0,0,-43.89,0,-43.89,0 0,0,0,-59.86,0,-59.86 0,0,26.21,0,26.21,0 9.77,0,17.68,7.91,17.68,17.68 0,0,0,0,0,0zM43.89,17.68" fill="#453D81" id="vector_41" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="36.91" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="63.85" height="117.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M26.937,117.72c0,0,-26.937,0,-26.937,0 0,0,0,-117.72,0,-117.72 0,0,26.937,0,26.937,0 20.387,0,36.913,16.526,36.913,36.912 0,0,0,43.896,0,43.896 0,20.386,-16.527,36.912,-36.913,36.912 0,0,0,0,0,0 0,0,0,0,0,0zM26.937,117.72" fill="#AC80DD" id="vector_42" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="73.82" height="117.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M36.91,117.72c-20.385,0,-36.91,-16.526,-36.91,-36.912 0,0,0,-43.896,0,-43.896 0,-20.386,16.525,-36.912,36.91,-36.912 20.385,0,36.91,16.526,36.91,36.912 0,0,0,43.896,0,43.896 0,20.386,-16.525,36.912,-36.91,36.912 0,0,0,0,0,0zM36.91,117.72" fill="#9D66D5" id="vector_43" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="30" y="30" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="13.82" height="57.72" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M6.91,57.72c-3.811,0,-6.91,-3.101,-6.91,-6.912 0,0,0,-43.896,0,-43.896 0,-3.811,3.1,-6.912,6.91,-6.912 3.81,0,6.91,3.101,6.91,6.912 0,0,0,43.896,0,43.896 -0.001,3.811,-3.1,6.912,-6.91,6.912 0,0,0,0,0,0zM6.91,57.72" fill="#3342AA" id="vector_44" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Sweat Drop 1 -->
+                        <svg x="158.09" y="95" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <animate attributeName="y" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.333333;0.666667;1" repeatCount="indefinite" values="95;95;120;120"/>
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="53.08" height="64.08" style ="overflow:visible" opacity="0" label="Sweat Drop 1Container">
+                                        <animate attributeName="opacity" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.333333;0.666667;1" repeatCount="indefinite" values="0;0;1;0"/>
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="53.08" height="64.08" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M45.306,18.769c0,0,-18.766,-18.769,-18.766,-18.769 0,0,-18.767,18.769,-18.767,18.769 -10.364,10.365,-10.364,27.171,0,37.537 10.364,10.365,27.168,10.365,37.533,0 10.365,-10.365,10.365,-27.172,0,-37.537 0,0,0,0,0,0zM45.306,18.769" fill="#B1E4F9" id="vector_45" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="26.54" height="64.07" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M26.54,64.07c-6.794,0,-13.588,-2.591,-18.771,-7.773 -10.359,-10.365,-10.359,-27.166,0,-37.531 0,0,18.771,-18.766,18.771,-18.766 0,0,-5.608,18.766,-5.608,18.766 -3.094,10.365,-3.094,27.166,0,37.531 1.545,5.183,3.576,7.773,5.608,7.773 0,0,0,0,0,0zM26.54,64.07" fill="#90D8F9" id="vector_46" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <!-- Layer: Sweat Drop 2 -->
+                        <svg x="122.37" y="160" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                            <animate attributeName="y" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.222222;0.555556;1" repeatCount="indefinite" values="160;160;185;185"/>
+                            <g label="flipped" transform="scale(1 1)">
+                                <g label="layerRotation" transform="rotate(0)">
+                                    <svg x="-0" y="-0" width="53.08" height="64.08" style ="overflow:visible" opacity="0" label="Sweat Drop 2Container">
+                                        <animate attributeName="opacity" calcMode="spline" dur="0.9s" fill="freeze" keySplines="0 0 1 1;0.42 0 0.58 1;0.42 0 0.58 1;0.42 0 0.58 1" keyTimes="0;0.222222;0.555556;0.888889;1" repeatCount="indefinite" values="0;0;1;0;0"/>
+                                        <g clip-path="" label="maskPath">
+                                            <g label="layerShadow" filter="">
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="53.08" height="64.08" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M45.306,18.769c0,0,-18.766,-18.769,-18.766,-18.769 0,0,-18.767,18.769,-18.767,18.769 -10.364,10.365,-10.364,27.171,0,37.537 10.364,10.365,27.168,10.365,37.533,0 10.365,-10.366,10.365,-27.172,0,-37.537 0,0,0,0,0,0zM45.306,18.769" fill="#B1E4F9" id="vector_47" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <!-- Layer: Vector -->
+                                            <svg x="0" y="0" width="0.01" height="0.01" style ="overflow:visible" opacity="1" label="anchorPointContainer">
+                                                <g label="flipped" transform="scale(1 1)">
+                                                    <g label="layerRotation" transform="rotate(0)">
+                                                        <svg x="-0" y="-0" width="26.54" height="64.07" style ="overflow:visible" opacity="1" label="VectorContainer">
+                                                            <g clip-path="" label="maskPath">
+                                                                <g label="layerShadow" filter="">
+                                                                <path d="M26.54,64.07c-6.794,0,-13.588,-2.591,-18.771,-7.773 -10.359,-10.365,-10.359,-27.166,0,-37.531 0,0,18.771,-18.766,18.771,-18.766 0,0,-5.608,18.766,-5.608,18.766 -3.094,10.365,-3.094,27.166,0,37.531 1.545,5.182,3.576,7.773,5.608,7.773 0,0,0,0,0,0zM26.54,64.07" fill="#90D8F9" id="vector_48" stroke="#00000000" stroke-dasharray="0" stroke-dashoffset="0" stroke-miterlimit="4" stroke-width="1"/>
+                                              
+                                                                </g>
+                                                            </g>
+                                                        </svg>
+                                                    </g>
+                                                </g>
+                                            </svg>
+                                            <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+                          
+                                            </g>
+                                        </g>
+                                    </svg>
+                                </g>
+                            </g>
+                        </svg>
+                        <rect fill="none" height="100%" rx="0" stroke="#00000000" stroke-width="1" width="100%" x="0" y="0"/>
+      
+                        </g>
+                    </g>
+                </svg>
+            </g>
+        </g>
+    </svg>
+
+
+</svg>

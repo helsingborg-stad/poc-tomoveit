@@ -1,3 +1,19 @@
+@import "../../scss/config";
+@import "../../scss/colors";
+
 .statistics {
-  width: 100%;
+  height: 100%;
+  margin: 0 2rem;
+
+  &__chart-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .statistics {
+    margin: 0 10.6875rem;
+  }
 }

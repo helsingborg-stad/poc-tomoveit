@@ -8,7 +8,7 @@ const Avatar = () => {
   return (
     <div className={ style('avatar')} >
       <svg>
-        <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-sporty' } />
+        <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-tomoveit-avatar' } />
       </svg>
     </div>
   );
