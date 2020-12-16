@@ -24,10 +24,11 @@ const Home = () => {
   return (
     <div>
       <Container>
-        <p> Hej kompis! 👋 </p>
-        <p>
+        <h3> Hej kompis! 👋</h3>
+        <br/>
+        <h3>
           Flash Unicorn, men du kan kalla mig Flashy Flash, och jag kommer att hänga med dig genom dina nya äventyr.
-        </p>
+        </h3>
         <BottomContainer>
           <div className={ style('home__buttons')}>
             <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} />

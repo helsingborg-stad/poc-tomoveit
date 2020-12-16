@@ -63,7 +63,7 @@ const Login = () => {
   return (
     <div>
       <Container>
-        <p>Skriv in din PIN-kod:</p>
+        <h3>Skriv in din PIN-kod:</h3>
         {errorText && <div className={ style('login__error')}><p>😩</p><p>Nånting funkar inte just nu. Prova ladda om sidan.</p></div>}
         <BottomContainer>
           <Input handleChange={handleChange} />
