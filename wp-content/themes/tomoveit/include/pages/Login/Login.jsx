@@ -35,10 +35,7 @@ const Login = () => {
 
       axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getRunningActivity')
         .then((response) => {
-          console.log(response);
-          if (response !== false) {
-            dispatch(runningActivity(response.data));
-          }
+          dispatch(runningActivity(response.data));
         }, (error) => {
           console.log(error);
         });

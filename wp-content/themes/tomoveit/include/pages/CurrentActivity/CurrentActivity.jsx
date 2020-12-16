@@ -27,7 +27,7 @@ const CurrentActivity = () => {
     }, (error) => {
       console.log(error);
     });
-    history.push('/activities');
+    history.replace('/activities');
   };
 
   return (

@@ -21,7 +21,7 @@ const SingleActivity = () => {
     },
     ).then((response) => {
       dispatch(runningActivity(response.data));
-      history.push({ pathname: '/runningActivity' });
+      history.replace({ pathname: '/runningActivity' });
     }, (error) => {
       console.log(error);
     });

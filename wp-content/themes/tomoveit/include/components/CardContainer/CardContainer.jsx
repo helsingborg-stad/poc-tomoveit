@@ -14,7 +14,7 @@ const CardContainer = () => {
 
   const handleClick = (item) => {
     dispatch(selectCard(item));
-    history.push({ pathname: '/activity' });
+    history.replace({ pathname: '/activity' });
   };
 
   const cards = activities.map(item => {
