@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
-import { addActivities, runningActivity } from '../../actions/app';
+import { addActivities, runningActivity, setPin } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -16,16 +16,17 @@ const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
-  const [pin, setPin] = useState('');
+  const [pin, setPinCode] = useState('');
   const [logedIn, setLogedIn] = useState(false);
   const [errorText, setErrorText] = useState(false);
 
   const handleChange = (e) => {
-    setPin(e.target.value);
+    setPinCode(e.target.value);
   };
 
   useEffect(() => {
     if (logedIn) {
+      dispatch(setPin(pin));
       axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/activities')
         .then((response) => {
           dispatch(addActivities(response.data));
