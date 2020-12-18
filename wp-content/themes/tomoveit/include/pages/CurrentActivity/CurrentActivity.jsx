@@ -31,6 +31,11 @@ const CurrentActivity = () => {
     });
   };
 
+  const handleClickNo = () => {
+    history.replace('/activities');
+    dispatch(runningActivity(false));
+  };
+
   const modalOnClose = () => {
     history.replace('/activities');
     setShowModal(false);
@@ -79,7 +84,7 @@ const CurrentActivity = () => {
       </div>
       <div className={ style('current-activity__button')}>
         <Button handleClick={handleClickOk} to={'/welcome'} text={'JAG KLARA DET!'}/>
-        <Button handleClick={handleClickOk} whiteColor={true} to={'/welcome'} text={'JAG ÅNGRA MIG!'}/>
+        <Button handleClick={handleClickNo} whiteColor={true} to={'/welcome'} text={'JAG ÅNGRA MIG!'}/>
       </div>
       <Modal onClose={modalOnClose} open={showModal} group={runningActivityData.group} title={runningActivityData.title} />
     </div>
