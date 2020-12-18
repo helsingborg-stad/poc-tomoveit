@@ -11,7 +11,7 @@ import { useSelector } from 'react-redux';
 const style = classNames.bind(styles);
 
 const Home = () => {
-  const pin = useSelector(state => state.pin);
+  const pin = useSelector(state => state.app.pin);
 
   const handleClick = () => {
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/randomize')
@@ -31,7 +31,7 @@ const Home = () => {
         </h3>
         <BottomContainer>
           <div className={ style('home__buttons')}>
-            <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} />
+            { (pin === '1234') && <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} /> }
             <Button to={'/introduction'} text={'OKEJ'} />
           </div>
         </BottomContainer>

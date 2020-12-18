@@ -48,10 +48,14 @@
     height: 6.875rem;
     width: 100%;
     object-fit: cover;
+
+    img {
+      display: block;
+    }
   }
 }
 
-@media all and (min-width: $breakpoint-m) {
+@media all and (min-width: $breakpoint-l) {
   .card-container {
     display: flex;
     flex-direction: row;
@@ -59,17 +63,20 @@
   }
 
   .card {
-    height: 190px;
-    width: 305px;
+    height: 100%;
+
     padding-bottom: 0;
     cursor: pointer;
+
+    margin-bottom: 0;
 
     &:not(:last-child) {
       margin-right: 2rem;
     }
 
     &__image {
-      height: auto;
+      height: 190px;
+      width: 305px;
     }
   }
 }

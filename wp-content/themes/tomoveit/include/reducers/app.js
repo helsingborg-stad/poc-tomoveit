@@ -31,7 +31,6 @@ const reducer = (state = INITIAL_STATE, action) => {
       };
     case DELETE_ACTIVITY:
       return {
-        //activities: state.activities.filter(({ id }) => id !== action.id),
         ...state,
         activities: state.activities.filter(item => item.postId !== action.id),
       };
