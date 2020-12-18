@@ -37,7 +37,7 @@ const Statistics = () => {
 
     let colors = [];
     for (let i = 0; i < 5; i++) {
-      colors[i] = stepsSum[i] >= 15000 ? '#2ecc71' : '#4b4eff';
+      colors[i] = stepsSum[i] >= 10000 ? '#2ecc71' : '#4b4eff';
     }
 
     return new Chart(chartElement, {

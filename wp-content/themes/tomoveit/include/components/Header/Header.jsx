@@ -21,6 +21,10 @@ const Header = () => {
     else history.push({ pathname: '/statistics' });
   };
 
+  const handleClickBack = () => {
+    history.goBack();
+  };
+
   const defaultHeader = () => {
     return (
       <div className={ style('header')}>
@@ -61,9 +65,25 @@ const Header = () => {
     );
   };
 
+  const statsHeaderBack = () => {
+    return (
+      <div className={ style('header')}>
+        <div className={ style('header__back')} onClick={handleClickBack}>
+          <svg>
+            <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-arrow-left' } />
+          </svg>
+          <p>TILLBAKA</p>
+        </div>
+        <span>TITLE</span>
+        <div></div>
+      </div>
+    );
+  };
+
   const header = () => {
-    if (location.pathname === '/activity') return imageHeader();
-    else if (location.pathname === '/activities' || location.pathname === '/statistics') return statsHeader();
+    if (location.pathname === '/activity') return imageHeader(false);
+    else if (location.pathname === '/statistics') return statsHeaderBack();
+    else if (location.pathname === '/activities' || location.pathname === '/runningActivity') return statsHeader();
     else return defaultHeader();
   };
 
