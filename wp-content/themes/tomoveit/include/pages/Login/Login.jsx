@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
-import { addActivities, runningActivity, setPin } from '../../actions/app';
+import { addActivities, runningActivity, setPin, setData } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -27,12 +27,14 @@ const Login = () => {
   useEffect(() => {
     if (logedIn) {
       dispatch(setPin(pin));
-      axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/activities')
-        .then((response) => {
-          dispatch(addActivities(response.data));
-        }, (error) => {
-          console.log(error);
-        });
+      axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/activities', {
+        pin: pin,
+      },
+      ).then((response) => {
+        dispatch(addActivities(response.data));
+      }, (error) => {
+        console.log(error);
+      });
 
       axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getRunningActivity')
         .then((response) => {
@@ -40,6 +42,15 @@ const Login = () => {
         }, (error) => {
           console.log(error);
         });
+
+      axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/data', {
+        pin: pin,
+      },
+      ).then((response) => {
+        dispatch(setData(response.data));
+      }, (error) => {
+        console.log(error);
+      });
 
       history.push('/welcome');
     }

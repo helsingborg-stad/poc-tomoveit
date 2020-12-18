@@ -4,6 +4,7 @@ export const CHANGE_HEADER = 'CHANGE_HEADER';
 export const RUNNING_ACTIVITY = 'RUNNING_ACTIVITY';
 export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 export const SET_PIN = 'SET_PIN';
+export const SET_DATA = 'SET_DATA';
 
 export const addActivities = activities => {
   return {
@@ -44,5 +45,12 @@ export const setPin = pin => {
   return {
     type: SET_PIN,
     pin,
+  };
+};
+
+export const setData = data => {
+  return {
+    type: SET_DATA,
+    data,
   };
 };

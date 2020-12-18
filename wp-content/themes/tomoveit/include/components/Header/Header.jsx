@@ -12,6 +12,15 @@ const Header = () => {
   const location = useLocation();
   const history = useHistory();
 
+  const handleClick = () => {
+    history.push({ pathname: '/activities' });
+  };
+
+  const handleClickStats = () => {
+    if (location.pathname === '/statistics') history.push({ pathname: '/activities' });
+    else history.push({ pathname: '/statistics' });
+  };
+
   const defaultHeader = () => {
     return (
       <div className={ style('header')}>
@@ -24,8 +33,18 @@ const Header = () => {
     );
   };
 
-  const handleClick = () => {
-    history.push({ pathname: '/activities' });
+  const statsHeader = () => {
+    return (
+      <div className={ style('header')}>
+        <Avatar/>
+        <span>TITLE</span>
+        <div className={style('header__stats')} onClick={handleClickStats}>
+          <svg>
+            <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-stats' } />
+          </svg>
+        </div>
+      </div>
+    );
   };
 
   const imageHeader = () => {
@@ -42,8 +61,14 @@ const Header = () => {
     );
   };
 
+  const header = () => {
+    if (location.pathname === '/activity') return imageHeader();
+    else if (location.pathname === '/activities' || location.pathname === '/statistics') return statsHeader();
+    else return defaultHeader();
+  };
+
   return (
-    location.pathname === '/activity' ? imageHeader() : defaultHeader()
+    header()
   );
 };
 
