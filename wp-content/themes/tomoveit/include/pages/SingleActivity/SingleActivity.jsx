@@ -11,12 +11,14 @@ const style = classNames.bind(styles);
 
 const SingleActivity = () => {
   const selectedActivity = useSelector(state => state.app.selectedActivity);
+  const pin = useSelector(state => state.app.pin);
+
   const dispatch = useDispatch();
   const history = useHistory();
   const handleClick = () => {
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setActivity', {
       selectedPostId: selectedActivity.postId.toString(),
-      pin: '1234',
+      pin: pin,
     },
     ).then((response) => {
       dispatch(runningActivity(response.data));

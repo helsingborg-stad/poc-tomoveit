@@ -11,6 +11,7 @@ const style = classNames.bind(styles);
 
 const CurrentActivity = () => {
   const runningActivityData = useSelector(state => state.app.runningActivity[0]);
+  const pin = useSelector(state => state.app.pin);
   const titleColor = runningActivityData.group ? 'card-current__text--blue' : 'card-current__text--green';
   const history = useHistory();
   const dispatch = useDispatch();
@@ -18,6 +19,7 @@ const CurrentActivity = () => {
   const handleClickOk = () => {
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setDoneActivity', {
       postId: runningActivityData.postId,
+      pin: pin,
     },
     ).then((response) => {
       console.log(runningActivityData.postId);

@@ -92,8 +92,17 @@ class TomoveitRestApi_Routes {
         ]);
         register_rest_route($namespace, '/getRunningActivity', [
             [
-                'methods' => WP_REST_Server::READABLE,
+                'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_running_activity'],
+                'args' => [
+                    'pin' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
+                ],
             ],
         ]);
         register_rest_route($namespace, '/setDoneActivity', [
@@ -101,6 +110,13 @@ class TomoveitRestApi_Routes {
                 'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_set_done_activity'],
                 'postId' => [
+                    'required' => true,
+                    'validate_callback' => function($param, $request, $key) {
+                        if(!is_string($param)) return false;
+                        return $request;
+                    },
+                ],
+                'pin' => [
                     'required' => true,
                     'validate_callback' => function($param, $request, $key) {
                         if(!is_string($param)) return false;
@@ -208,7 +224,8 @@ class TomoveitRestApi_Routes {
 
     public function rest_set_activity($request){
         global $wpdb;
-        $mac = '00:1B:44:11:3A:B7';
+        $pin = $request->get_param('pin');
+        $mac = $this->find_mac($pin);
 
         $post = $request->get_param('selectedPostId');
 
@@ -222,10 +239,11 @@ class TomoveitRestApi_Routes {
         return $get_selected_post_data;
     }
 
-    public function rest_running_activity() {
+    public function rest_running_activity($request) {
         global $wpdb;
         $table = 'tomoveit_activity';
-        $mac = '00:1B:44:11:3A:B7';
+        $pin = $request->get_param('pin');
+        $mac = $this->find_mac($pin);
 
         $query = $wpdb->get_results("SELECT selected_activity FROM $table WHERE mac = '$mac'");
 
@@ -270,9 +288,11 @@ class TomoveitRestApi_Routes {
 
     public function rest_set_done_activity($request) {
         global $wpdb;
+        $pin = $request->get_param('pin');
+        $mac = $this->find_mac($pin);
         $post_id = $request->get_param('postId');
+
         $table = 'tomoveit_activity';
-        $mac = '00:1B:44:11:3A:B7';
 
         //$wpdb->query($wpdb->prepare("UPDATE $table SET used_activities = CONCAT(used_activities,'".",".$post_id."') WHERE mac = '$mac'"));
         $wpdb->query($wpdb->prepare("UPDATE $table SET used_activities = CONCAT(used_activities, ' ', $post_id) WHERE mac = '$mac'"));

@@ -36,12 +36,14 @@ const Login = () => {
         console.log(error);
       });
 
-      axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getRunningActivity')
-        .then((response) => {
-          dispatch(runningActivity(response.data));
-        }, (error) => {
-          console.log(error);
-        });
+      axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getRunningActivity', {
+        pin: pin,
+      },
+      ).then((response) => {
+        dispatch(runningActivity(response.data));
+      }, (error) => {
+        console.log(error);
+      });
 
       axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/data', {
         pin: pin,
