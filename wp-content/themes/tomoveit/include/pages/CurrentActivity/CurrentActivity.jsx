@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './CurrentActivity.scss';
 import { useSelector, useDispatch } from 'react-redux';
 import Button from '../../components/Button/Button.jsx';
+import Modal from '../../components/Modal/Modal.jsx';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { runningActivity, selectCard, deleteActivity } from '../../actions/app';
@@ -16,20 +17,26 @@ const CurrentActivity = () => {
   const history = useHistory();
   const dispatch = useDispatch();
 
+  const [showModal, setShowModal] = useState(false);
+
   const handleClickOk = () => {
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/setDoneActivity', {
       postId: runningActivityData.postId,
       pin: pin,
     },
     ).then((response) => {
-      console.log(runningActivityData.postId);
-      dispatch(deleteActivity(runningActivityData.postId));
-      dispatch(runningActivity(false));
-      dispatch(selectCard({}));
+      setShowModal(true);
     }, (error) => {
       console.log(error);
     });
+  };
+
+  const modalOnClose = () => {
     history.replace('/activities');
+    setShowModal(false);
+    dispatch(deleteActivity(runningActivityData.postId));
+    dispatch(runningActivity(false));
+    dispatch(selectCard({}));
   };
 
   return (
@@ -74,6 +81,7 @@ const CurrentActivity = () => {
         <Button handleClick={handleClickOk} to={'/welcome'} text={'JAG KLARA DET!'}/>
         <Button handleClick={handleClickOk} whiteColor={true} to={'/welcome'} text={'JAG ÅNGRA MIG!'}/>
       </div>
+      <Modal onClose={modalOnClose} open={showModal} group={runningActivityData.group} title={runningActivityData.title} />
     </div>
   );
 };
