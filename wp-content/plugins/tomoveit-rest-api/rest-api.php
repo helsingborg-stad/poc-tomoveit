@@ -183,7 +183,7 @@ class TomoveitRestApi_Routes {
         $pin = $request->get_param('pin');
         $result = array();
         global $wpdb;
-        $mac = $this->$this->find_mac($pin);
+        $mac = $this->find_mac($pin);
         $table_daily = 'tomoveit_daily_posts';
         $table_activity = 'tomoveit_activity';
 
