@@ -44,7 +44,7 @@ const Header = () => {
         <span>TITLE</span>
         <div className={style('header__stats')} onClick={handleClickStats}>
           <svg>
-            <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-stats' } />
+            <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-stats-mono' } />
           </svg>
         </div>
       </div>
