@@ -43,7 +43,7 @@ const Login = () => {
           console.log(error);
         });
 
-      axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/data', {
+      axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/data', {
         pin: pin,
       },
       ).then((response) => {

@@ -18,8 +18,17 @@ class TomoveitRestApi_Routes {
 
         register_rest_route($namespace, '/data', [
             [
-                'methods' => WP_REST_Server::READABLE,
+                'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_get_data'],
+                'args' => [
+                    'pin' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
+                ],
             ],
         ]);
         register_rest_route($namespace, '/login', [
@@ -39,8 +48,17 @@ class TomoveitRestApi_Routes {
         ]);
         register_rest_route($namespace, '/activities', [
             [
-                'methods' => WP_REST_Server::READABLE,
+                'methods' => WP_REST_Server::CREATABLE,
                 'callback' => [$this, 'rest_get_activities'],
+                'args' => [
+                    'pin' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
+                ],
             ],
         ]);
 
@@ -93,31 +111,63 @@ class TomoveitRestApi_Routes {
         ]);
     }
 
-    public function rest_get_data() {
-        $provider = CredentialProvider::defaultProvider();
+    public function rest_get_data($request) {
+        $pin = $request->get_param('pin');
+        $mac = $this->find_mac($pin);
+        $data_array = array();
+
+        $startDate = date("Y-m-d", strtotime('monday this week'));
+        $endDate  = date("Y-m-d", strtotime('friday this week'));
 
         $client = new DynamoDbClient([
             'region'  => 'eu-north-1',
             'version' => 'latest',
         ]);
+        try {
+        $result = $client->query([
+            'TableName' => 'ToMoveItBandData',
+            'KeyConditionExpression' => 'bandId = :v1 AND #date BETWEEN :date1 AND :date2',
+            'ProjectionExpression' => 'raw_data',
+            'ExpressionAttributeNames' => [
+                '#date' => 'date',
+            ],
+            'ExpressionAttributeValues' => [
+                ':v1' => [
+                    'S' => "{$mac}",
+                ],
+                ':date1' => [
+                    'S' => "{$startDate}",
+                ],
+                ':date2' => [
+                    'S' => "{$endDate}",
+                ],
+            ],
+        ]);
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
 
-        $result = $client->describeTable(array(
-            'TableName' => 'ToMoveItBandData'
-        ));
-        return $result['Table'];
+        foreach ($result['Items'] as $item) {
+            foreach ($item['raw_data'] as $raw) {
+                array_push($data_array, json_decode($raw));
+            }
+        }
+
+        return $data_array;
     }
 
     public function rest_login($request) {
         $pin = $request->get_param('pin');
-
-        if($pin === '1234') return 'ok';
+        $mac = $this->find_mac($pin);
+        if($mac) return 'ok';
         else return 'no';
     }
 
-    public function rest_get_activities() {
+    public function rest_get_activities($request) {
+        $pin = $request->get_param('pin');
         $result = array();
         global $wpdb;
-        $mac = '00:1B:44:11:3A:B7';
+        $mac = $this->$this->find_mac($pin);
         $table_daily = 'tomoveit_daily_posts';
         $table_activity = 'tomoveit_activity';
 
@@ -260,11 +310,28 @@ class TomoveitRestApi_Routes {
 
     public function find_mac($pin) {
         $mac = array(
-            "1234"=>"00:1B:44:11:3A:B7",
-            "1235"=>"01:2E:D4:11:3A:B4",
-            "1122"=> "00:1B:A4:A1:3A:A7"
+            "1234"=>"C6:4D:26:09:46:4B",  // admin
+            "0559"=>"EC:82:D8:BA:77:11",
+            "0535"=>"C6:4D:26:09:46:4B",
+            "0816"=> "ED:B7:AD:74:53:4B",
+            "0496"=>"F6:31:38:49:9A:A3",
+            "0486"=>"D5:65:44:90:DB:20",
+            "0309"=>"ED:6B:DB:59:18:02",
+            "0493"=>"C0:AB:EC:3B:DC:AA",
+            "0222"=>"DE:E3:5A:C8:EC:88",
+            "0074"=>"FF:84:9D:49:D9:23",
+            "0555"=>"D4:EC:C3:A6:1C:AC",
+            "0797"=>"D9:58:25:89:5D:8B",
+            "0269"=>"DA:F5:74:1D:2B:2D",
+            "0702"=>"CC:99:C3:91:35:89", // 2 staplar
+            "0502"=>"EE:2F:E2:02:EE:F7",
+            "0634"=>"FB:0F:4F:39:39:CB",
         );
 
-        return $mac[$pin];
+        if($mac[$pin]) {
+            return $mac[$pin];
+        } else {
+            return false;
+        }
     }
 }
