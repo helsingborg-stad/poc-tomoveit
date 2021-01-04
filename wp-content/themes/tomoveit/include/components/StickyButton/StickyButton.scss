@@ -24,8 +24,10 @@
   outline: none;
   border: none;
 
+  cursor: pointer;
+
   &:hover {
-    background: $color-black;
+    opacity: .8;
   }
 }
 

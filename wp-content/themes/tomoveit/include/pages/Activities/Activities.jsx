@@ -31,6 +31,9 @@ const Activities = () => {
         </div>
       }
       <CardContainer />
+      <div className={style('activities__bottom')}>
+        <span>PSSST! Om du orkar kan du göra alla 3(!)</span>
+      </div>
     </div>
   );
 };

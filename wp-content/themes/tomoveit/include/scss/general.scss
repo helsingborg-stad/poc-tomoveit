@@ -81,6 +81,10 @@ h5, .h5 {
   margin-bottom: .25rem;
 }
 
+button {
+  font-family: $font-monserant;
+}
+
 @media all and (min-width: $breakpoint-m) {
   p {
     font-style: italic;

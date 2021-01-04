@@ -2,7 +2,14 @@
 @import "../../scss/general.scss";
 
 .activities {
-  margin: 0 2rem;
+  margin: 0 2rem 5rem 2rem;
+  text-align: center;
+
+  &__text {
+    p {
+      margin-bottom: 2.5rem;
+    }
+  }
 
   &__celebrate {
     display: flex;
@@ -18,6 +25,14 @@
       height: auto;
       width: 100%;
     }
+  }
+
+  &__bottom {
+    margin-top: 5rem;
+  }
+
+  span {
+    margin-top: 5rem;
   }
 }
 
@@ -36,15 +51,16 @@
 
 @media all and (min-width: $breakpoint-l) {
   .activities {
-    margin: 0 9.0625rem;
+    margin: 0 9.0625rem 5rem 9.0625rem;
 
     &__text {
       padding-right: 12.375rem;
       padding-left: 12.375rem;
 
       p {
-        font-size: 27px;
-        line-height: 33px;
+        margin-bottom: 5rem;
+        font-size: 1.6875rem;
+        line-height: 2.0625rem;
         text-align: center;
       }
     }

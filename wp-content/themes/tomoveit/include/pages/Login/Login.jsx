@@ -98,7 +98,7 @@ const Login = () => {
     <div>
       <Container>
         <h3>Skriv in din PIN-kod:</h3>
-        {errorText && <div className={ style('login__error')}><p>😩</p><p>Nånting funkar inte just nu. Prova ladda om sidan.</p></div>}
+        {errorText && <div className={ style('login__error')}><h3>😩</h3><h3>Nånting funkar inte just nu. Prova ladda om sidan.</h3></div>}
         <BottomContainer>
           <Input handleChange={handleChange} />
           <Button loading={loading} handleClick={handleClick} to={'/welcome'} text={'LOGGA IN'}/>

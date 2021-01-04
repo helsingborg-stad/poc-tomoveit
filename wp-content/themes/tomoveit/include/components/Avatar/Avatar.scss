@@ -1,17 +1,17 @@
 @import '../../scss/config';
 
 .avatar {
-  font-size: 10px;
-  color: blue;
-
-  img {
-    height: 5rem;
-    width: 5rem;
+  svg {
+    height: 2.5rem;
+    width: 2.5rem;
   }
 }
 
 @media all and (min-width: $breakpoint-m) {
   .avatar {
-    //display: block;
+    svg {
+      height: 5rem;
+      width: 5rem;
+    }
   }
 }

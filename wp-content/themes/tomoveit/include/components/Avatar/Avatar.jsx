@@ -14,7 +14,9 @@ const Avatar = () => {
 
   return (
     <div className={ style('avatar')} onClick={handleClickAvatar} >
-      <img src="https://tomoveit.hbgtest.se/wp-content/uploads/2020/12/tomoveit-avatar.gif"/>
+      <svg>
+        <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-sporty' } />
+      </svg>
     </div>
   );
 };

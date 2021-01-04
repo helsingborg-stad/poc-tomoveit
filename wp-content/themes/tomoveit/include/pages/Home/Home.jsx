@@ -27,7 +27,7 @@ const Home = () => {
         <h3> Hej kompis! 👋</h3>
         <br/>
         <h3>
-          Flash Unicorn, men du kan kalla mig Flashy Flash, och jag kommer att hänga med dig genom dina nya äventyr.
+          Flash Unicorn, men du kan kalla mig <span className={ style('home__blue')}>Flashy Flash</span>, och jag kommer att hänga med dig genom dina nya äventyr.
         </h3>
         <BottomContainer>
           <div className={ style('home__buttons')}>
