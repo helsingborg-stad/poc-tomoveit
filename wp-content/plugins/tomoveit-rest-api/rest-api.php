@@ -180,10 +180,9 @@ class TomoveitRestApi_Routes {
         $mac = $this->find_mac($pin);
 
         $query = $wpdb->get_results("SELECT first_time FROM $table WHERE mac = '$mac'");
-
         $first_login = NULL;
         foreach($query as $item) {
-            $first_login = $item->first_login;
+            $first_login = $item->first_time;
         }
 
         if($first_login == '1') {
