@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Activities.scss';
 import classNames from 'classnames/bind';
 import CardContainer from '../../components/CardContainer/CardContainer.jsx';
+import { useHistory } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
 
@@ -9,6 +10,14 @@ const style = classNames.bind(styles);
 
 const Activities = () => {
   const activities = useSelector(state => state.app.activities);
+  const runningActivity = useSelector(state => state.app.runningActivity);
+  const history = useHistory();
+
+  useEffect(() => {
+    if (runningActivity) {
+      history.push({ pathname: '/runningActivity' });
+    }
+  }, []);
 
   return (
     <div className={style('activities')}>

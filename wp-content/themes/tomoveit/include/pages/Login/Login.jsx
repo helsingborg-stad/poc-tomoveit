@@ -18,6 +18,7 @@ const Login = () => {
 
   const [pin, setPinCode] = useState('');
   const [logedIn, setLogedIn] = useState(false);
+  const [firstLogin, setFirstLogin] = useState(false);
   const [errorText, setErrorText] = useState(false);
 
   const handleChange = (e) => {
@@ -54,7 +55,9 @@ const Login = () => {
         console.log(error);
       });
 
-      history.push('/welcome');
+      console.log(firstLogin);
+      if (firstLogin) history.push('/welcome');
+      else history.push('/activities');
     }
   }, [logedIn]);
 
@@ -63,7 +66,11 @@ const Login = () => {
       pin: pin,
     },
     ).then((response) => {
-      if (response.data === 'ok') {
+      if (response.data === '1') {
+        setFirstLogin(true);
+        setLogedIn(true);
+      } else if (response.data === '0') {
+        setFirstLogin(false);
         setLogedIn(true);
       } else {
         setErrorText(true);
