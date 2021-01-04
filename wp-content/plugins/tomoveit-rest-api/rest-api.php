@@ -173,9 +173,24 @@ class TomoveitRestApi_Routes {
     }
 
     public function rest_login($request) {
+        global $wpdb;
+        $table = 'tomoveit_activity';
+
         $pin = $request->get_param('pin');
         $mac = $this->find_mac($pin);
-        if($mac) return 'ok';
+
+        $query = $wpdb->get_results("SELECT first_time FROM $table WHERE mac = '$mac'");
+
+        $first_login = NULL;
+        foreach($query as $item) {
+            $first_login = $item->first_login;
+        }
+
+        if($first_login === '1') {
+            $wpdb->query($wpdb->prepare("UPDATE $table SET first_time = 0 WHERE mac = '$mac'"));
+        }
+
+        if($mac) return $first_login;
         else return 'no';
     }
 
