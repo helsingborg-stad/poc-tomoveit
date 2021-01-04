@@ -21,9 +21,20 @@ const Login = () => {
   const [firstLogin, setFirstLogin] = useState(false);
   const [errorText, setErrorText] = useState(false);
 
+  const [awaitActivities, setAwaitActivities] = useState(false);
+  const [awaitRunningActivities, setAwaitRunningActivities] = useState(false);
+  const [awaitAuth, setAwaitAuth] = useState(false);
+
   const handleChange = (e) => {
     setPinCode(e.target.value);
   };
+
+  useEffect(() => {
+    if (awaitActivities && awaitRunningActivities && awaitAuth) {
+      if (firstLogin) history.push('/welcome');
+      else history.push('/activities');
+    }
+  }, [awaitActivities, awaitRunningActivities, awaitAuth]);
 
   useEffect(() => {
     if (logedIn) {
@@ -33,6 +44,7 @@ const Login = () => {
       },
       ).then((response) => {
         dispatch(addActivities(response.data));
+        setAwaitActivities(true);
       }, (error) => {
         console.log(error);
       });
@@ -42,6 +54,7 @@ const Login = () => {
       },
       ).then((response) => {
         dispatch(runningActivity(response.data));
+        setAwaitRunningActivities(true);
       }, (error) => {
         console.log(error);
       });
@@ -54,10 +67,6 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
-
-      console.log(firstLogin);
-      if (firstLogin) history.push('/welcome');
-      else history.push('/activities');
     }
   }, [logedIn]);
 
@@ -75,6 +84,7 @@ const Login = () => {
       } else {
         setErrorText(true);
       }
+      setAwaitAuth(true);
     }, (error) => {
       console.log(error);
     });
