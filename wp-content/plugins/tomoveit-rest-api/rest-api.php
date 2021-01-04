@@ -186,7 +186,7 @@ class TomoveitRestApi_Routes {
             $first_login = $item->first_login;
         }
 
-        if($first_login === '1') {
+        if($first_login == '1') {
             $wpdb->query($wpdb->prepare("UPDATE $table SET first_time = 0 WHERE mac = '$mac'"));
         }
 
