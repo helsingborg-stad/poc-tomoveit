@@ -24,6 +24,7 @@ const Login = () => {
   const [awaitActivities, setAwaitActivities] = useState(false);
   const [awaitRunningActivities, setAwaitRunningActivities] = useState(false);
   const [awaitAuth, setAwaitAuth] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setPinCode(e.target.value);
@@ -31,6 +32,7 @@ const Login = () => {
 
   useEffect(() => {
     if (awaitActivities && awaitRunningActivities && awaitAuth) {
+      setLoading(false);
       if (firstLogin) history.push('/welcome');
       else history.push('/activities');
     }
@@ -71,6 +73,7 @@ const Login = () => {
   }, [logedIn]);
 
   const handleClick = (e) => {
+    setLoading(true);
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
@@ -82,6 +85,7 @@ const Login = () => {
         setFirstLogin(false);
         setLogedIn(true);
       } else {
+        setLoading(false);
         setErrorText(true);
       }
       setAwaitAuth(true);
@@ -97,7 +101,7 @@ const Login = () => {
         {errorText && <div className={ style('login__error')}><p>😩</p><p>Nånting funkar inte just nu. Prova ladda om sidan.</p></div>}
         <BottomContainer>
           <Input handleChange={handleChange} />
-          <Button handleClick={handleClick} to={'/welcome'} text={'LOGGA IN'}/>
+          <Button loading={loading} handleClick={handleClick} to={'/welcome'} text={'LOGGA IN'}/>
         </BottomContainer>
       </Container>
     </div>

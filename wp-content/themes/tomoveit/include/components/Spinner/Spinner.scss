@@ -1,0 +1,25 @@
+@import '../../../node_modules/spinkit/scss/spinners/8-circle.scss';
+@import '../../scss/colors';
+@import '../../scss/config';
+
+.spinner {
+  margin: 0 auto;
+
+  &--modal .sk-child {
+    height: 32px;
+    width: 32px;
+  }
+
+  .sk-child::before {
+    background-color: $color-white;
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .spinner {
+    .sk-child {
+      height: 32px;
+      width: 32px;
+    }
+  }
+}

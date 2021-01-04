@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Button.scss';
 import PropTypes from 'prop-types';
 import { useHistory } from 'react-router-dom';
+import Spinner from '../Spinner/Spinner.jsx';
 
 const style = classNames.bind(styles);
 
@@ -17,7 +18,7 @@ const Button = (props) => {
 
   return (
     <button onClick={props.handleClick ? props.handleClick : handleClick} className={ style('button', color)}>
-      {props.text}
+      {props.loading ? <Spinner /> : props.text}
     </button>
   );
 };
@@ -27,5 +28,6 @@ Button.propTypes = {
   to: PropTypes.any.isRequired,
   handleClick: PropTypes.func,
   whiteColor: PropTypes.bool,
+  loading: PropTypes.bool,
 };
 export default Button;
