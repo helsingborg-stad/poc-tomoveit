@@ -73,6 +73,7 @@ const Login = () => {
   }, [logedIn]);
 
   const handleClick = (e) => {
+    e.preventDefault();
     setLoading(true);
     axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
@@ -95,13 +96,15 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className={ style('login')}>
       <Container>
         <h3>Skriv in din PIN-kod:</h3>
         {errorText && <div className={ style('login__error')}><h3>😩</h3><h3>Nånting funkar inte just nu. Prova ladda om sidan.</h3></div>}
         <BottomContainer>
-          <Input handleChange={handleChange} />
-          <Button loading={loading} handleClick={handleClick} to={'/welcome'} text={'LOGGA IN'}/>
+          <form onSubmit={handleClick} className={ style('login__form')}>
+            <Input handleChange={handleChange} />
+            <Button type='submit' loading={loading} to={'/welcome'} text={'LOGGA IN'}/>
+          </form>
         </BottomContainer>
       </Container>
     </div>

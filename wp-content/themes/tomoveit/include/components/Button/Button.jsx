@@ -11,13 +11,14 @@ const Button = (props) => {
   const history = useHistory();
 
   const handleClick = () => {
-    history.push(props.to);
+    if (props.type !== 'submit') history.push(props.to);
   };
 
   const color = props.whiteColor ? 'button--white' : '';
+  const type = props.type ? props.type : '';
 
   return (
-    <button onClick={props.handleClick ? props.handleClick : handleClick} className={ style('button', color)}>
+    <button type={type} onKeyPress={props.handleClick} onClick={props.handleClick ? props.handleClick : handleClick} className={ style('button', color)}>
       {props.loading ? <Spinner /> : props.text}
     </button>
   );
@@ -29,5 +30,6 @@ Button.propTypes = {
   handleClick: PropTypes.func,
   whiteColor: PropTypes.bool,
   loading: PropTypes.bool,
+  type: PropTypes.string,
 };
 export default Button;
