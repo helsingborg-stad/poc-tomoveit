@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import styles from './Statistics.scss';
 import { useSelector } from 'react-redux';
 import { Chart } from 'chart.js';
+import ChartDataLabels from 'chartjs-plugin-datalabels';
 
 const style = classNames.bind(styles);
 
@@ -51,21 +52,51 @@ const Statistics = () => {
         }],
       },
       options: {
+        layout: {
+          padding: {
+            left: 0,
+            right: 0,
+            top: 50,
+            bottom: 0,
+          },
+        },
         scales: {
           xAxes: [{
             gridLines: {
               color: 'rgba(0, 0, 0, 0)',
+              drawBorder: false,
+              drawOnChartArea: false,
             },
           }],
           yAxes: [{
+            display: false,
             gridLines: {
               color: 'rgba(0, 0, 0, 0)',
+              drawBorder: false,
+              drawOnChartArea: false,
             },
           }],
         },
         responsive: true,
+        maintainAspectRatio: false,
         legend: {
           display: false,
+          labels: {
+            fontFamily: 'Montserrat',
+          },
+        },
+        plugins: {
+          // Change options for ALL labels of THIS CHART
+          datalabels: {
+            anchor: 'end',
+            align: 'top',
+            color: colors,
+            font: {
+              weight: 'bold',
+              size: 27,
+              style: 'italic',
+            },
+          },
         },
       },
     });

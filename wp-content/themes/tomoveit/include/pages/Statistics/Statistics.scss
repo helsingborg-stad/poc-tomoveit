@@ -32,13 +32,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
-
-    margin-bottom: 3.5rem;
+    text-align: center;
+    max-width: 880px;
+    min-height: 320px;
+    margin: 0 auto 3.5rem auto;
   }
 }
 
 @media all and (min-width: $breakpoint-m) {
   .statistics {
     margin: 0 10.6875rem;
+
+    &__chart-container {
+      min-height: 250px;
+    }
   }
 }

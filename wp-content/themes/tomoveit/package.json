@@ -22,6 +22,7 @@
     "babel-loader": "^8.0.4",
     "babel-polyfill": "^6.26.0",
     "chart.js": "^2.9.4",
+    "chartjs-plugin-datalabels": "^0.7.0",
     "classnames": "^2.2.6",
     "core-js": "^2.5.7",
     "css-loader": "^1.0.1",
