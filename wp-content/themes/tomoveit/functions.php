@@ -65,6 +65,34 @@ class EC_Theme {
                 'menu_icon'              => 'dashicons-hammer',
                 'supports'               => [ 'title', 'editor', 'thumbnail' ],
             ],
+            'armbands' => [
+                'labels' => [
+                    'name'               => _x('Armband', 'post type general name', $this->theme_locale),
+                    'singular_name'      => _x('Armband', 'post type singular name', $this->theme_locale),
+                    'menu_name'          => _x('Armband', 'admin menu', $this->theme_locale),
+                    'name_admin_bar'     => _x('Armband', 'add new on admin bar', $this->theme_locale),
+                    'add_new'            => _x('Lägg till', 'armband', $this->theme_locale),
+                    'add_new_item'       => __('Lägg till armband', $this->theme_locale),
+                    'new_item'           => __('Nytt armband', $this->theme_locale),
+                    'edit_item'          => __('Redigera armband', $this->theme_locale),
+                    'view_item'          => __('Visa armband', $this->theme_locale),
+                    'all_items'          => __('Alla armband', $this->theme_locale),
+                    'search_items'       => __('Sök armband', $this->theme_locale),
+                    'parent_item_colon'  => __('Förälder:', $this->theme_locale),
+                    'not_found'          => __('Inga armband hittades.', $this->theme_locale),
+                    'not_found_in_trash' => __('Inga armband hittades i papperskorgen.', $this->theme_locale)
+                ],
+                'public'                 => false,
+                'publicly_queryable'     => true,
+                'show_ui'                => true,
+                'show_in_menu'           => true,
+                'query_var'              => true,
+                'has_archive'            => false,
+                'hierarchical'           => false,
+                'menu_position'          => null,
+                'menu_icon'              => 'dashicons-smartphone',
+                'supports'               => [ 'title', 'editor', 'thumbnail' ],
+            ],
         ];
 
         foreach ($post_types as $name => $options){
