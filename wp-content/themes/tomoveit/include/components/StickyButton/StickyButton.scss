@@ -26,6 +26,8 @@
 
   cursor: pointer;
 
+  box-shadow: 0 20px 40px -20px rgba(50, 50, 93, .3);
+
   &:hover {
     opacity: .8;
   }
