@@ -35,6 +35,13 @@
       height: 1.3125rem;
     }
   }
+
+  span {
+    text-transform: uppercase;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 .header-image {

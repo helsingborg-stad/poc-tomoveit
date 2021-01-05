@@ -4,6 +4,8 @@ import styles from './Header.scss';
 import classNames from 'classnames/bind';
 import { useSelector } from 'react-redux';
 import { useLocation, useHistory } from 'react-router-dom';
+import moment from 'moment';
+import 'moment/locale/sv';
 
 const style = classNames.bind(styles);
 
@@ -26,22 +28,27 @@ const Header = () => {
   };
 
   const defaultHeader = () => {
+    const currentDate = moment(new Date()).format('dddd DD MMMM');
+    moment.locale('sv');
+
     return (
       <div className={ style('header')}>
         <Avatar/>
-        <span>TITLE</span>
+        <span>{currentDate}</span>
         <div>
-
         </div>
       </div>
     );
   };
 
   const statsHeader = () => {
+    const currentDate = moment(new Date()).format('dddd DD MMMM');
+    moment.locale('sv');
+
     return (
       <div className={ style('header')}>
         <Avatar/>
-        <span>TITLE</span>
+        <span>{currentDate}</span>
         <div className={style('header__stats')} onClick={handleClickStats}>
           <svg>
             <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-stats-mono' } />
@@ -66,6 +73,8 @@ const Header = () => {
   };
 
   const statsHeaderBack = () => {
+    let currentWeek = moment(new Date()).format('W');
+
     return (
       <div className={ style('header')}>
         <div className={ style('header__back')} onClick={handleClickBack}>
@@ -74,7 +83,7 @@ const Header = () => {
           </svg>
           <p>TILLBAKA</p>
         </div>
-        <span>TITLE</span>
+        <span>DENNA VECKA ({currentWeek})</span>
         <div></div>
       </div>
     );
