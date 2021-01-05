@@ -75,7 +75,7 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
+    axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
     ).then((response) => {

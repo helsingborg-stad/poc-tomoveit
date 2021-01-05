@@ -182,6 +182,17 @@ class TomoveitRestApi_Routes {
         $pin = $request->get_param('pin');
         $mac = $this->find_mac($pin);
 
+        $queryCheck = $wpdb->get_results("SELECT * FROM $table WHERE mac = '$mac'");
+
+        if (count($queryCheck) == 0) {
+            $wpdb->insert($table, array(
+                'mac' => $mac,
+                'selected_activities' => '',
+                'used_activities' => '',
+                'first_time' => 1,
+            ));
+        }
+
         $query = $wpdb->get_results("SELECT first_time FROM $table WHERE mac = '$mac'");
         $first_login = NULL;
         foreach($query as $item) {
@@ -346,7 +357,7 @@ class TomoveitRestApi_Routes {
     }
 
     public function find_mac($pin) {
-        $mac = array(
+        /*$mac = array(
             "1234"=>"C6:4D:26:09:46:4B",  // admin
             "0559"=>"EC:82:D8:BA:77:11",
             "0535"=>"C6:4D:26:09:46:4B",
@@ -363,12 +374,28 @@ class TomoveitRestApi_Routes {
             "0702"=>"CC:99:C3:91:35:89",
             "0502"=>"EE:2F:E2:02:EE:F7",
             "0634"=>"FB:0F:4F:39:39:CB",
+        );*/
+
+        $args = array(
+            'numberposts'	=> 1,
+            'post_type'		=> 'armbands',
+            'meta_key'		=> 'armbands_pin_code',
+            'meta_value'	=> $pin
         );
 
-        if($mac[$pin]) {
+        $the_query = new WP_Query( $args );
+
+        if(empty($the_query->posts)) {
+            return false;
+        } else {
+            $mac = get_field('armbands_mac_adress', $the_query->posts[0]->ID);
+            return $mac;
+        }
+
+        /*if($mac[$pin]) {
             return $mac[$pin];
         } else {
             return false;
-        }
+        }*/
     }
 }
