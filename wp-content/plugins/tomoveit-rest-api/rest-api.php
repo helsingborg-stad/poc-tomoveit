@@ -296,7 +296,7 @@ class TomoveitRestApi_Routes {
             'meta_query' => array(
             array(
                 'key'     => 'activity_group',
-                'value'   => true,
+                'value'   => 1,
                 )
             )
         ]);
@@ -308,7 +308,7 @@ class TomoveitRestApi_Routes {
             'meta_query' => array(
                 array(
                     'key'     => 'activity_group',
-                    'value'   => false,
+                    'value'   => 0,
                 )
             )
         ]);
