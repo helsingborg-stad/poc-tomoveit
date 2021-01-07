@@ -14,7 +14,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   useEffect(() => {
     if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
-      console.log(seconds);
     } else {
       setTimeoutRedirect(true);
       dispatch(setPin(''));
