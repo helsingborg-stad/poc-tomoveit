@@ -32,8 +32,8 @@ const CurrentActivity = () => {
   };
 
   const handleClickNo = () => {
-    history.replace('/activities');
     dispatch(runningActivity(false));
+    history.replace('/activities');
   };
 
   const modalOnClose = () => {

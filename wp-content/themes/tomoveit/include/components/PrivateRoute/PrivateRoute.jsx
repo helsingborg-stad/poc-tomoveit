@@ -9,13 +9,11 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const history = useHistory();
   const pin = useSelector(state => state.app.pin);
   const [seconds, setSeconds] = useState(600);
-  const [timeout, setTimeoutRedirect] = useState(false);
 
   useEffect(() => {
     if (seconds > 0) {
       setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
-      setTimeoutRedirect(true);
       dispatch(setPin(''));
       history.push('/');
     }

@@ -43,8 +43,13 @@ const Activities = () => {
         </div>
       }
       <CardContainer />
+
       <div className={style('activities__bottom')}>
-        { (pin === '1234') && <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} /> }
+        { (pin === '1234') &&
+          <div className={style('activities__button')}>
+            <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
+          </div>
+        }
         <span>PSSST! Om du orkar kan du göra alla 3(!)</span>
       </div>
     </div>
