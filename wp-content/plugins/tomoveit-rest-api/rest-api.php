@@ -289,13 +289,36 @@ class TomoveitRestApi_Routes {
         $postIds = array();
         global $wpdb;
 
-        $posts = get_posts([
-            'numberposts' => 3,
+        $postsGroup = get_posts([
+            'numberposts' => 2,
             'post_type' => 'activities',
-            'orderby' => 'rand'
+            'orderby' => 'rand',
+            'meta_query' => array(
+            array(
+                'key'     => 'activity_group',
+                'value'   => true,
+                )
+            )
         ]);
 
-        foreach ($posts as $item) {
+        $postsSingle = get_posts([
+            'numberposts' => 1,
+            'post_type' => 'activities',
+            'orderby' => 'rand',
+            'meta_query' => array(
+                array(
+                    'key'     => 'activity_group',
+                    'value'   => false,
+                )
+            )
+        ]);
+
+        foreach ($postsGroup as $item) {
+            $postId = $item->ID;
+            array_push($postIds, $postId );
+        }
+
+        foreach ($postsSingle as $item) {
             $postId = $item->ID;
             array_push($postIds, $postId );
         }
