@@ -6,6 +6,7 @@
 }
 
 .card {
+  transition: all 500ms ease-in-out;
   margin-bottom: 2.5rem;
   box-shadow: 0 8px 24px rgba(149, 157, 165, .2);
 

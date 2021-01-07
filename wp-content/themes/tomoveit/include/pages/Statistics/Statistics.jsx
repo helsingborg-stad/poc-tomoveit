@@ -4,6 +4,7 @@ import styles from './Statistics.scss';
 import { useSelector } from 'react-redux';
 import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+import moment from 'moment';
 
 const style = classNames.bind(styles);
 
@@ -21,17 +22,21 @@ const Statistics = () => {
     const chartElement = (document.getElementById('StatisticContainer')).getContext('2d');
 
     let stepsSum = [0, 0, 0, 0, 0];
-
     for (let i = 0; i < data.length; i++) {
-      let sumItem = 0;
-      const sums = data[i].reduce((acc, val, index) => {
-        let objects = Object.values(val);
-        let test = objects.map(m => {
-          sumItem = sumItem + m.steps;
+      if (data[i]) {
+        let objectsDate = Object.keys(data[i][0])[0];
+        const date = moment(objectsDate);
+
+        let sumItem = 0;
+        const sums = data[i].reduce((acc, val, index) => {
+          let objects = Object.values(val);
+          let test = objects.map(m => {
+            sumItem = sumItem + m.steps;
+          });
         });
-      });
-      if (sumItem >= 10000) setGoalsCompleted(goalsCompleted + 1);
-      stepsSum[i] = sumItem;
+        if (sumItem >= 10000) setGoalsCompleted(goalsCompleted + 1);
+        stepsSum[(date.day()) - 1] = sumItem;
+      }
     }
     const totalSum = stepsSum.reduce((result, number) => result + number);
     setTotalSteps(totalSum);
