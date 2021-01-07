@@ -22,7 +22,7 @@ const Activities = () => {
   return (
     <div className={style('activities')}>
       <div className={style('activities__text')}>
-        {activities.length !== 0 && <p>Hej! Här kommer dagens 3 förslag på vad du kan göra för att komma upp i dina 10 000 steg Dags att röra på sig! 💪</p>}
+        {activities.length !== 0 && <p>Hej! Här kommer dagens 3 förslag på vad du kan göra för att komma upp i dina 10 000 steg.<br/>Dags att röra på sig! 💪</p>}
       </div>
       { activities.length === 0 &&
         <div className={style('activities__celebrate')}>

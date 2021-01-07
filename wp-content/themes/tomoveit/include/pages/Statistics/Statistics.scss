@@ -17,6 +17,7 @@
       font-weight: bold;
       font-size: 3rem;
       line-height: 3.6875rem;
+      margin-bottom: 1rem;
     }
 
     span {
@@ -25,6 +26,8 @@
       font-size: 1rem;
       line-height: 1.6rem;
       color: $color-black;
+      margin-top: 1rem;
+      text-align: center;
     }
   }
 
@@ -42,6 +45,14 @@
 @media all and (min-width: $breakpoint-m) {
   .statistics {
     margin: 0 10.6875rem;
+
+    &__stats {
+      span {
+        font-weight: bold;
+        font-size: 16px;
+        line-height: 20px;
+      }
+    }
 
     &__chart-container {
       min-height: 250px;
