@@ -84,6 +84,21 @@ class TomoveitRestApi_Routes {
                 ],
             ],
         ]);
+        register_rest_route($namespace, '/resetActivity', [
+            [
+                'methods' => WP_REST_Server::CREATABLE,
+                'callback' => [$this, 'rest_reset_activity'],
+            ],
+            'args' => [
+                'pin' => [
+                    'required' => true,
+                    'validate_callback' => function($param, $request, $key) {
+                        if(!is_string($param)) return false;
+                        return $request;
+                    },
+                ],
+            ],
+        ]);
         register_rest_route($namespace, '/randomize', [
             [
                 'methods' => WP_REST_Server::READABLE,
@@ -265,6 +280,19 @@ class TomoveitRestApi_Routes {
         $get_selected_post_data = $this->prepare_post_data($post);
 
         return $get_selected_post_data;
+    }
+
+    public function rest_reset_activity($request){
+        global $wpdb;
+        $pin = $request->get_param('pin');
+        $mac = $this->find_mac($pin);
+
+        $table = 'tomoveit_activity';
+        $data = array('selected_activity'=> '');
+        $where = array('mac' => $mac);
+        $wpdb->update( $table, $data, $where);
+
+        return 200;
     }
 
     public function rest_running_activity($request) {

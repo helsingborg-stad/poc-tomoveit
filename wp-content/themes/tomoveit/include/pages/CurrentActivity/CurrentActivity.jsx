@@ -32,8 +32,15 @@ const CurrentActivity = () => {
   };
 
   const handleClickNo = () => {
-    dispatch(runningActivity(false));
-    history.replace('/activities');
+    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/resetActivity', {
+      pin: pin,
+    },
+    ).then(() => {
+      dispatch(runningActivity(false));
+      history.replace('/activities');
+    }, (error) => {
+      console.log(error);
+    });
   };
 
   const modalOnClose = () => {
