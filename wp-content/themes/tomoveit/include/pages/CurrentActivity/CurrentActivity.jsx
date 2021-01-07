@@ -36,11 +36,11 @@ const CurrentActivity = () => {
       pin: pin,
     },
     ).then(() => {
-      dispatch(runningActivity(false));
-      history.replace('/activities');
     }, (error) => {
       console.log(error);
     });
+    dispatch(runningActivity(false));
+    history.replace('/activities');
   };
 
   const modalOnClose = () => {
