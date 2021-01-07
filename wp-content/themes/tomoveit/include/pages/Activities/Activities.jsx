@@ -5,6 +5,8 @@ import CardContainer from '../../components/CardContainer/CardContainer.jsx';
 import { useHistory } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
+import Button from '../../components/Button/Button.jsx';
+import axios from 'axios';
 
 const style = classNames.bind(styles);
 
@@ -12,6 +14,16 @@ const Activities = () => {
   const activities = useSelector(state => state.app.activities);
   const runningActivity = useSelector(state => state.app.runningActivity);
   const history = useHistory();
+
+  const pin = useSelector(state => state.app.pin);
+
+  const handleClick = () => {
+    axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/randomize')
+      .then((response) => {
+      }, (error) => {
+        console.log(error);
+      });
+  };
 
   useEffect(() => {
     if (runningActivity) {
@@ -32,6 +44,7 @@ const Activities = () => {
       }
       <CardContainer />
       <div className={style('activities__bottom')}>
+        { (pin === '1234') && <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} /> }
         <span>PSSST! Om du orkar kan du göra alla 3(!)</span>
       </div>
     </div>
