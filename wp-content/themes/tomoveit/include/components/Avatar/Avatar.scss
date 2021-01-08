@@ -1,6 +1,9 @@
 @import '../../scss/config';
 
 .avatar {
+  z-index: 1;
+  cursor: pointer;
+
   svg {
     height: 2.5rem;
     width: 2.5rem;

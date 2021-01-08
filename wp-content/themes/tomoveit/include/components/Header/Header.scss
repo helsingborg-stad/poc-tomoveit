@@ -9,10 +9,13 @@
   margin: 0 1.25rem;
 
   &__stats {
+    z-index: 1;
+
     svg {
       cursor: pointer;
       width: 5rem;
       height: 5rem;
+      z-index: 1;
     }
   }
 
@@ -79,6 +82,7 @@
   svg {
     width: 2.5rem;
     height: 1.875rem;
+    z-index: 1;
   }
 
   p {

@@ -33,11 +33,11 @@
   }
 
   &__disabled {
-    opacity: .5;
     cursor: default;
+    background: $color-gray;
 
     &:hover {
-      opacity: .5;
+      opacity: 1;
     }
   }
 }

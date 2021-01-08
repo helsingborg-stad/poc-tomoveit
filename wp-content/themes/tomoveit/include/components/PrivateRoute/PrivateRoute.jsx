@@ -31,6 +31,7 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   }, []);
 
   const callEvent = e => {
+    e.preventDefault();
     dispatch(setPin(''));
   };
 
