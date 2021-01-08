@@ -22,8 +22,11 @@ const SingleActivity = () => {
       pin: pin,
     },
     ).then((response) => {
-      dispatch(runningActivity(response.data));
-      history.replace({ pathname: '/runningActivity' });
+      console.log(response.data);
+      if (response.data !== false) {
+        dispatch(runningActivity(response.data));
+        history.replace({ pathname: '/runningActivity' });
+      } else history.push({ pathname: '/' });
     }, (error) => {
       console.log(error);
     });
