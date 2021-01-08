@@ -27,6 +27,11 @@
       margin-bottom: 0;
       margin-left: 1.6875rem;
       display: none;
+
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.3125rem;
+      line-height: 1.625rem;
     }
 
     svg {
@@ -56,6 +61,13 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+
+    p {
+      font-style: italic;
+      font-weight: 900;
+      font-size: 1.3125rem;
+      line-height: 1.625rem;
+    }
 
     &--white {
       svg {
