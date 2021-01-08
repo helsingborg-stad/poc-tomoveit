@@ -93,6 +93,34 @@ class EC_Theme {
                 'menu_icon'              => 'dashicons-smartphone',
                 'supports'               => [ 'title', 'editor', 'thumbnail' ],
             ],
+            'texts' => [
+                'labels' => [
+                    'name'               => _x('Texter', 'post type general name', $this->theme_locale),
+                    'singular_name'      => _x('Texter', 'post type singular name', $this->theme_locale),
+                    'menu_name'          => _x('Texter', 'admin menu', $this->theme_locale),
+                    'name_admin_bar'     => _x('Texter', 'add new on admin bar', $this->theme_locale),
+                    'add_new'            => _x('Lägg till', 'text', $this->theme_locale),
+                    'add_new_item'       => __('Lägg till text', $this->theme_locale),
+                    'new_item'           => __('Ny text', $this->theme_locale),
+                    'edit_item'          => __('Redigera text', $this->theme_locale),
+                    'view_item'          => __('Visa texter', $this->theme_locale),
+                    'all_items'          => __('Alla texter', $this->theme_locale),
+                    'search_items'       => __('Sök texter', $this->theme_locale),
+                    'parent_item_colon'  => __('Förälder:', $this->theme_locale),
+                    'not_found'          => __('Inga texter hittades.', $this->theme_locale),
+                    'not_found_in_trash' => __('Inga texter hittades i papperskorgen.', $this->theme_locale)
+                ],
+                'public'                 => false,
+                'publicly_queryable'     => true,
+                'show_ui'                => true,
+                'show_in_menu'           => true,
+                'query_var'              => true,
+                'has_archive'            => false,
+                'hierarchical'           => false,
+                'menu_position'          => null,
+                'menu_icon'              => 'dashicons-editor-aligncenter',
+                'supports'               => [ 'title', 'editor', 'thumbnail' ],
+            ],
         ];
 
         foreach ($post_types as $name => $options){
