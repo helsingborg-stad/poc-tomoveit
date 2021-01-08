@@ -59,9 +59,9 @@ const CurrentActivity = () => {
       </div>
       <div className={ style('current-activity__warp')}>
         <div key={runningActivityData.title} className={style('card-current')}>
-          <div className={style('card-current_image-container')}>
+          <div className={style('card-current__image-container')}>
             { !runningActivityData.group &&
-            <svg className={style('card-current__svg')}>
+            <svg className={style('card-current__svg', 'card-current__svg--single')}>
               <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-single'}/>
             </svg>
             }

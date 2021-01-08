@@ -19,11 +19,12 @@ const CardContainer = () => {
 
   const cards = activities.map(item => {
     const titleColor = item.group ? 'card__text--blue' : 'card__text--green';
+
     return (
       <div key={item.title} className={style('card')} onClick={() => handleClick(item)}>
         <div className={style('card__image-container')}>
           { !item.group &&
-            <svg className={style('card__svg')}>
+            <svg className={style('card__svg', 'card__svg--single')}>
               <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-single'}/>
             </svg>
           }
