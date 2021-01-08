@@ -9,12 +9,14 @@ const style = classNames.bind(styles);
 const StickyButton = (props) => {
   const history = useHistory();
 
+  const disableClass = props.disable ? 'sticky-button__disabled' : '';
+
   const handleClick = () => {
     history.push(props.to);
   };
 
   return (
-    <button onClick={props.handleClick ? props.handleClick : handleClick} className={ style('sticky-button')}>
+    <button disabled={props.disable} onClick={props.handleClick ? props.handleClick : handleClick} className={ style('sticky-button', disableClass)}>
       {props.text}
     </button>
   );
@@ -24,5 +26,6 @@ StickyButton.propTypes = {
   text: PropTypes.any.isRequired,
   to: PropTypes.any.isRequired,
   handleClick: PropTypes.func,
+  disable: PropTypes.bool,
 };
 export default StickyButton;

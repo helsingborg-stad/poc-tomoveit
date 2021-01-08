@@ -51,6 +51,10 @@ const CurrentActivity = () => {
     dispatch(selectCard({}));
   };
 
+  const handleClickCard = (item) => {
+    history.push({ pathname: '/activity' });
+  };
+
   return (
     <div className={ style('current-activity')} >
       <div className={ style('current-activity__title')}>
@@ -58,7 +62,7 @@ const CurrentActivity = () => {
         <p>Försök göra aktiviteten under dagen. Glöm inte att ha skoj 😄</p>
       </div>
       <div className={ style('current-activity__warp')}>
-        <div key={runningActivityData.title} className={style('card-current')}>
+        <div key={runningActivityData.title} onClick={handleClickCard} className={style('card-current')}>
           <div className={style('card-current__image-container')}>
             { !runningActivityData.group &&
             <svg className={style('card-current__svg', 'card-current__svg--single')}>
@@ -79,16 +83,6 @@ const CurrentActivity = () => {
         </div>
       </div>
 
-      <div className={ style('current-activity__description')}>
-        <p className={ style('current-activity__text-title')}>Beskrivning</p>
-        <p>{runningActivityData.description}</p>
-        <p className={ style('current-activity__text-title')}>Vad du behöver</p>
-        <p>{runningActivityData.needed}</p>
-        <p className={ style('current-activity__text-title')}>Antal</p>
-        <p>{runningActivityData.numbers}</p>
-        <p className={ style('current-activity__text-title')}>Instruktioner</p>
-        <p>{runningActivityData.instruction}</p>
-      </div>
       <div className={ style('current-activity__button')}>
         <Button handleClick={handleClickOk} to={'/welcome'} text={'JAG KLARA DET!'}/>
         <Button handleClick={handleClickNo} whiteColor={true} to={'/welcome'} text={'JAG ÅNGRA MIG!'}/>

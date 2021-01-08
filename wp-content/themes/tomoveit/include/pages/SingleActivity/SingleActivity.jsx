@@ -11,6 +11,7 @@ const style = classNames.bind(styles);
 
 const SingleActivity = () => {
   const selectedActivity = useSelector(state => state.app.selectedActivity);
+  const runningActivityData = useSelector(state => state.app.runningActivity[0]);
   const pin = useSelector(state => state.app.pin);
 
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const SingleActivity = () => {
       <p>{selectedActivity.numbers}</p>
       <p className={ style('single-activity__text-title')}>Instruktioner</p>
       <p>{selectedActivity.instruction}</p>
-      <StickyButton to='/' text='KÖR!' handleClick={handleClick}/>
+      <StickyButton disable={!!runningActivityData} to='/' text='KÖR!' handleClick={handleClick}/>
     </div>
   );
 };
