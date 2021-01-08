@@ -48,10 +48,10 @@ const CurrentActivity = () => {
     setShowModal(false);
     dispatch(deleteActivity(runningActivityData.postId));
     dispatch(runningActivity(false));
-    dispatch(selectCard({}));
   };
 
   const handleClickCard = (item) => {
+    dispatch(selectCard(runningActivityData));
     history.push({ pathname: '/activity' });
   };
 
