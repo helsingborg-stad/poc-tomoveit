@@ -68,6 +68,8 @@
     top: 50%;
     left: 50%;
 
+    z-index: 1;
+
     width: 1.6875rem;
     height: 1.6875rem;
     transform: translate(-50%, -50%);
@@ -96,6 +98,8 @@
     height: 6.875rem;
     width: 100%;
     object-fit: cover;
+
+    filter: brightness(50%);
   }
 }
 
