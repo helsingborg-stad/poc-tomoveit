@@ -56,10 +56,15 @@
     flex-direction: row;
     align-items: center;
     cursor: pointer;
+
+    &--white {
+      svg {
+        fill: $color-white;
+      }
+    }
   }
 
   svg {
-
     width: 2.5rem;
     height: 1.875rem;
   }

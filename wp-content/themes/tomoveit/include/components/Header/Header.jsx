@@ -62,7 +62,7 @@ const Header = () => {
     return (
       <div className={ style('header-image')}>
         <img src={image} alt='' />
-        <div className={ style('header-image__back')} onClick={handleClick}>
+        <div className={ style('header-image__back', 'header-image__back--white')} onClick={handleClick}>
           <svg>
             <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-arrow-left' } />
           </svg>
