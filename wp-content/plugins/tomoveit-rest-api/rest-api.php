@@ -272,6 +272,8 @@ class TomoveitRestApi_Routes {
 
         $post = $request->get_param('selectedPostId');
 
+        if(!$this->check_valid_if_post($post)) return false;
+
         $table = 'tomoveit_activity';
         $data = array('selected_activity'=> $post);
         $where = array('mac' => $mac);
@@ -280,6 +282,20 @@ class TomoveitRestApi_Routes {
         $get_selected_post_data = $this->prepare_post_data($post);
 
         return $get_selected_post_data;
+    }
+
+    public function check_valid_if_post($postId){
+        global $wpdb;
+
+        $table_daily = 'tomoveit_daily_posts';
+
+        $query = $wpdb->prepare("SELECT post1, post2, post3 FROM $table_daily WHERE id = 1");
+        $query_result = $wpdb->get_row($query, ARRAY_A);
+
+        foreach ($query_result as $id) {
+            if ($id == $postId) return true;
+        }
+        return false;
     }
 
     public function rest_reset_activity($request){
