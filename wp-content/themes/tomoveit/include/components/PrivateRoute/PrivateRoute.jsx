@@ -11,13 +11,28 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const [seconds, setSeconds] = useState(600);
 
   useEffect(() => {
+    let timeout;
     if (seconds > 0) {
-      setTimeout(() => setSeconds(seconds - 1), 1000);
+      timeout = setTimeout(() => setSeconds(seconds - 1), 1000);
     } else {
       dispatch(setPin(''));
       history.push('/');
     }
+    return () => {
+      clearTimeout(timeout);
+    };
   });
+
+  useEffect(() => {
+    window.addEventListener('beforeunload', callEvent);
+    return () => {
+      window.removeEventListener('beforeunload', callEvent);
+    };
+  }, []);
+
+  const callEvent = e => {
+    dispatch(setPin(''));
+  };
 
   return (
     <Route
