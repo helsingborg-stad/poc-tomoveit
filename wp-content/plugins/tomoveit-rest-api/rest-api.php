@@ -355,8 +355,14 @@ class TomoveitRestApi_Routes {
         if($first_login == '1') {
             $wpdb->query($wpdb->prepare("UPDATE $table SET first_time = 0 WHERE mac = '$mac'"));
         }
+        $admin = $this->find_if_admin($pin);
 
-        if($mac) return $first_login;
+        $res = array(
+            "firstTime" => $first_login,
+            "admin" => $admin,
+        );
+
+        if($mac) return $res;
         else return 'no';
     }
 
@@ -602,5 +608,24 @@ class TomoveitRestApi_Routes {
         } else {
             return false;
         }*/
+    }
+
+    public function find_if_admin($pin) {
+        $args = array(
+            'numberposts'	=> 1,
+            'post_type'		=> 'armbands',
+            'meta_key'		=> 'armbands_pin_code',
+            'meta_value'	=> $pin
+        );
+
+        $the_query = new WP_Query( $args );
+
+        if(empty($the_query->posts)) {
+            return false;
+        } else {
+            $admin = get_field('armbands_admin', $the_query->posts[0]->ID);
+
+            return $admin;
+        }
     }
 }

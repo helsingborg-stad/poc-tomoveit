@@ -56,7 +56,6 @@ const Login = () => {
       axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
         .then((response) => {
           dispatch(setTexts(response.data));
-          console.log('ok');
         }, (error) => {
           console.log(error);
         });
@@ -79,7 +78,7 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
-      if (pin === '1234') {
+      if (pin === '2020') {
         axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
           pin: pin,
         },

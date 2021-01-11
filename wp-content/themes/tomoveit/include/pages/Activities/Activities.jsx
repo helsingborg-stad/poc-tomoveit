@@ -48,7 +48,7 @@ const Activities = () => {
       <CardContainer />
 
       <div className={style('activities__bottom')}>
-        { (pin === '1234') &&
+        { (pin === '2020') &&
           <div className={style('activities__button')}>
             <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
           </div>

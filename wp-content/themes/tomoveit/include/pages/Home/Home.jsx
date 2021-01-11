@@ -32,7 +32,7 @@ const Home = () => {
         </h3>
         <BottomContainer>
           <div className={ style('home__buttons')}>
-            { (pin === '1234') && <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} /> }
+            { (pin === '2020') && <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick} /> }
             <Button to={'/introduction'} text={'OKEJ'} />
           </div>
         </BottomContainer>
