@@ -16,7 +16,7 @@ const Activities = () => {
   const runningActivity = useSelector(state => state.app.runningActivity);
   const history = useHistory();
 
-  const pin = useSelector(state => state.app.pin);
+  const admin = useSelector(state => state.app.admin);
 
   const handleClick = () => {
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/randomize')
@@ -48,7 +48,7 @@ const Activities = () => {
       <CardContainer />
 
       <div className={style('activities__bottom')}>
-        { (pin === '2020') &&
+        { admin &&
           <div className={style('activities__button')}>
             <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
           </div>

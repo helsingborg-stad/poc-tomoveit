@@ -7,6 +7,7 @@ import {
   SET_PIN,
   SET_DATA,
   SET_TEXTS,
+  SET_ADMIN,
 } from '../actions/app';
 
 const INITIAL_STATE = {
@@ -57,6 +58,11 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         texts: action.texts,
+      };
+    case SET_ADMIN:
+      return {
+        ...state,
+        admin: action.admin,
       };
     default: return state;
   }

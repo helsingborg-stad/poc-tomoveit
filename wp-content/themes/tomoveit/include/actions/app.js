@@ -6,6 +6,7 @@ export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 export const SET_PIN = 'SET_PIN';
 export const SET_DATA = 'SET_DATA';
 export const SET_TEXTS = 'SET_TEXTS';
+export const SET_ADMIN = 'SET_ADMIN';
 
 export const addActivities = activities => {
   return {
@@ -60,5 +61,12 @@ export const setTexts = texts => {
   return {
     type: SET_TEXTS,
     texts,
+  };
+};
+
+export const setAdmin = admin => {
+  return {
+    type: SET_ADMIN,
+    admin,
   };
 };

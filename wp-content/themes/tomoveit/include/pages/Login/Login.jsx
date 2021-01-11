@@ -8,7 +8,7 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
-import { addActivities, runningActivity, setPin, setData, setTexts } from '../../actions/app';
+import { addActivities, runningActivity, setPin, setData, setTexts, setAdmin } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -16,6 +16,7 @@ const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
   const texts = useSelector(state => state.app.texts);
+  const admin = useSelector(state => state.app.admin);
 
   const [pin, setPinCode] = useState('');
   const [logedIn, setLogedIn] = useState(false);
@@ -78,7 +79,7 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
-      if (pin === '2020') {
+      if (admin) {
         axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
           pin: pin,
         },
@@ -109,12 +110,23 @@ const Login = () => {
       pin: pin,
     },
     ).then((response) => {
-      if (response.data === '1') {
+      console.log(response.data.firstTime);
+      if (response.data.firstTime === '1') {
         setFirstLogin(true);
         setLogedIn(true);
-      } else if (response.data === '0') {
+        if (response.data.admin) {
+          dispatch(setAdmin(true));
+        } else {
+          dispatch(setAdmin(false));
+        }
+      } else if (response.data.firstTime === '0') {
         setFirstLogin(false);
         setLogedIn(true);
+        if (response.data.admin) {
+          dispatch(setAdmin(true));
+        } else {
+          dispatch(setAdmin(false));
+        }
       } else {
         setLoading(false);
         setErrorText(true);
