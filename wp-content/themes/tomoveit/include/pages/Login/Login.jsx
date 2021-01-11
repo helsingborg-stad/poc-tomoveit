@@ -34,6 +34,7 @@ const Login = () => {
   };
 
   useEffect(() => {
+    dispatch(setData([]));
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
       .then((response) => {
         dispatch(setTexts(response.data));
@@ -111,23 +112,18 @@ const Login = () => {
       pin: pin,
     },
     ).then((response) => {
-      console.log(response.data.firstTime);
+      if (response.data.admin) {
+        dispatch(setAdmin(true));
+      } else {
+        dispatch(setAdmin(false));
+      }
+
       if (response.data.firstTime === '1') {
         setFirstLogin(true);
         setLogedIn(true);
-        if (response.data.admin) {
-          dispatch(setAdmin(true));
-        } else {
-          dispatch(setAdmin(false));
-        }
       } else if (response.data.firstTime === '0') {
         setFirstLogin(false);
         setLogedIn(true);
-        if (response.data.admin) {
-          dispatch(setAdmin(true));
-        } else {
-          dispatch(setAdmin(false));
-        }
       } else {
         setLoading(false);
         setErrorText(true);
