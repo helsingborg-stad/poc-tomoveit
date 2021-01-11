@@ -12,6 +12,7 @@ const style = classNames.bind(styles);
 
 const CurrentActivity = () => {
   const runningActivityData = useSelector(state => state.app.runningActivity[0]);
+  const texts = useSelector(state => state.app.texts);
   const pin = useSelector(state => state.app.pin);
   const titleColor = runningActivityData.group ? 'card-current__text--blue' : 'card-current__text--green';
   const history = useHistory();
@@ -60,8 +61,8 @@ const CurrentActivity = () => {
     <div className={ style('area')}>
       <div className={ style('current-activity')} >
         <div className={ style('current-activity__title')}>
-          <h1>Du har valt en aktivitet</h1>
-          <p>Försök göra aktiviteten under dagen. Glöm inte att ha skoj 😄</p>
+          <h1>{texts.textsActivityChosen1}</h1>
+          <p>{texts.textsActivityChosen2}</p>
         </div>
         <div className={ style('current-activity__warp')}>
           <div key={runningActivityData.title} onClick={handleClickCard} className={style('card-current')}>
