@@ -278,10 +278,7 @@ class TomoveitRestApi_Routes {
 
         $client = new DynamoDbClient([
             'region'  => 'eu-north-1',
-            'version' => 'latest','credentials' => [
-                'key'    => 'AKIAYL7SP3G6R37TVJUH',
-                'secret' => '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',
-            ],
+            'version' => 'latest',
         ]);
         try {
             $params = [

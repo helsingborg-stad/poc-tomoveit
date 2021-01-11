@@ -80,7 +80,7 @@ const Login = () => {
         console.log(error);
       });
       if (pin === '1234') {
-        axios.post('https://tomoveit.hbgtest.se/TomoveitRestApi/v1/adminData', {
+        axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
           pin: pin,
         },
         ).then((response) => {
