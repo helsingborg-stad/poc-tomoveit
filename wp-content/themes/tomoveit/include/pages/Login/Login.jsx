@@ -52,6 +52,13 @@ const Login = () => {
   useEffect(() => {
     if (logedIn) {
       dispatch(setPin(pin));
+      axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
+        .then((response) => {
+          dispatch(setTexts(response.data));
+          console.log('ok');
+        }, (error) => {
+          console.log(error);
+        });
       axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/activities', {
         pin: pin,
       },
@@ -109,7 +116,7 @@ const Login = () => {
   return (
     <div className={ style('login')}>
       <Container>
-        <h3>{texts.textLogin ? texts.textLogin : 'Skriv in din PIN-kod:'}</h3>
+        <h3>Skriv in din PIN-kod:</h3>
         {errorText && <div className={ style('login__error')}><h3>😩</h3><h3>Nånting funkar inte just nu. Prova ladda om sidan.</h3></div>}
         <BottomContainer>
           <form onSubmit={handleClick} className={ style('login__form')}>
