@@ -37,6 +37,21 @@ class TomoveitRestApi_Routes {
                 ],
             ],
         ]);
+        register_rest_route($namespace, '/adminData', [
+            [
+                'methods' => WP_REST_Server::CREATABLE,
+                'callback' => [$this, 'rest_get_admin_data'],
+                'args' => [
+                    'pin' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
+                ],
+            ],
+        ]);
         register_rest_route($namespace, '/login', [
             [
                 'methods' => WP_REST_Server::CREATABLE,
@@ -248,6 +263,70 @@ class TomoveitRestApi_Routes {
                 array_push($data_array, json_decode($raw));
             }
         }
+
+        return $data_array;
+    }
+
+    public function rest_get_admin_data($request) {
+        $data_array = array();
+
+        //$startDate = date("Y-m-d", strtotime('monday this week'));
+        //$endDate  = date("Y-m-d", strtotime('friday this week'));
+
+        $startDate = '2020-12-14';
+        $endDate = '2020-12-18';
+
+        $client = new DynamoDbClient([
+            'region'  => 'eu-north-1',
+            'version' => 'latest','credentials' => [
+                'key'    => 'AKIAYL7SP3G6R37TVJUH',
+                'secret' => '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',
+            ],
+        ]);
+        try {
+            $params = [
+                'TableName' => 'ToMoveItBandData',
+                'ProjectionExpression' => 'raw_data',
+                'FilterExpression' => '#date between :date1 and :date2',
+                'ExpressionAttributeNames' => [
+                    '#date' => 'date',
+                ],
+                'ExpressionAttributeValues' => [
+                    ':date1' => [
+                        'S' => "{$startDate}",
+                    ],
+                    ':date2' => [
+                        'S' => "{$endDate}",
+                    ],
+                ],
+            ];
+
+            while (true) {
+                $result = $client->scan($params);
+
+                foreach ($result['Items'] as $item) {
+                    foreach ($item['raw_data'] as $raw) {
+                        array_push($data_array, json_decode($raw));
+                    }
+                }
+
+                if (isset($result['LastEvaluatedKey'])) {
+                    $params['ExclusiveStartKey'] = $result['LastEvaluatedKey'];
+                } else {
+                    break;
+                }
+            }
+        } catch (Exception $e) {
+            return $e->getMessage();
+        }
+
+       /* $data_array2 = array();
+
+        foreach ($data_array as $item) {
+            foreach($item as $key=>$value){
+                array_push($data_array2, json_encode($value, true));
+            }
+        }*/
 
         return $data_array;
     }
