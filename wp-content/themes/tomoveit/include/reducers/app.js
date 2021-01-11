@@ -1,4 +1,13 @@
-import { ADD_ACTIVITIES, SELECTED_CARD, CHANGE_HEADER, RUNNING_ACTIVITY, DELETE_ACTIVITY, SET_PIN, SET_DATA } from '../actions/app';
+import {
+  ADD_ACTIVITIES,
+  SELECTED_CARD,
+  CHANGE_HEADER,
+  RUNNING_ACTIVITY,
+  DELETE_ACTIVITY,
+  SET_PIN,
+  SET_DATA,
+  SET_TEXTS,
+} from '../actions/app';
 
 const INITIAL_STATE = {
   activities: [],
@@ -44,7 +53,11 @@ const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         data: action.data,
       };
-
+    case SET_TEXTS:
+      return {
+        ...state,
+        texts: action.texts,
+      };
     default: return state;
   }
 };

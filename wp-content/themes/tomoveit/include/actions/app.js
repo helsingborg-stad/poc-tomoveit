@@ -5,6 +5,7 @@ export const RUNNING_ACTIVITY = 'RUNNING_ACTIVITY';
 export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
 export const SET_PIN = 'SET_PIN';
 export const SET_DATA = 'SET_DATA';
+export const SET_TEXTS = 'SET_TEXTS';
 
 export const addActivities = activities => {
   return {
@@ -52,5 +53,12 @@ export const setData = data => {
   return {
     type: SET_DATA,
     data,
+  };
+};
+
+export const setTexts = texts => {
+  return {
+    type: SET_TEXTS,
+    texts,
   };
 };

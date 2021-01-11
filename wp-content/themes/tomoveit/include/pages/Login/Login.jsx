@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import Container from '../../components/Container/Container.jsx';
 import Input from '../../components/Input/Input.jsx';
 import Button from '../../components/Button/Button.jsx';
@@ -8,13 +8,14 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
-import { addActivities, runningActivity, setPin, setData } from '../../actions/app';
+import { addActivities, runningActivity, setPin, setData, setTexts } from '../../actions/app';
 
 const style = classNames.bind(styles);
 
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const texts = useSelector(state => state.app.texts);
 
   const [pin, setPinCode] = useState('');
   const [logedIn, setLogedIn] = useState(false);
@@ -33,7 +34,8 @@ const Login = () => {
   useEffect(() => {
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
       .then((response) => {
-        console.log(response.data.text_login);
+        dispatch(setTexts(response.data));
+        console.log(response.data.textLogin);
       }, (error) => {
         console.log(error);
       });
@@ -107,7 +109,7 @@ const Login = () => {
   return (
     <div className={ style('login')}>
       <Container>
-        <h3>Skriv in din PIN-kod:</h3>
+        <h3>{texts.textLogin}</h3>
         {errorText && <div className={ style('login__error')}><h3>😩</h3><h3>Nånting funkar inte just nu. Prova ladda om sidan.</h3></div>}
         <BottomContainer>
           <form onSubmit={handleClick} className={ style('login__form')}>
