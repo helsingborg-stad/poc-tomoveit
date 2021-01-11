@@ -16,6 +16,12 @@ class TomoveitRestApi_Routes {
         $version = '1';
         $namespace = 'TomoveitRestApi/v' . $version;
 
+        register_rest_route($namespace, '/getTexts', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_get_texts'],
+            ],
+        ]);
         register_rest_route($namespace, '/data', [
             [
                 'methods' => WP_REST_Server::CREATABLE,
@@ -140,6 +146,29 @@ class TomoveitRestApi_Routes {
                 ],
             ],
         ]);
+    }
+
+    public function rest_get_texts() {
+        $postId = '';
+        $result = array();
+
+        $post = get_posts([
+            'numberposts' => 1,
+            'post_type' => 'texts',
+            'orderby' => 'ASC',
+        ]);
+
+        foreach ($post as $item) {
+            $postId = $item->ID;
+        }
+
+        $text1 = get_field('texts_login_text', $postId);
+
+        array_push($result, (object)[
+            'text_login' => $text1,
+        ]);
+
+        return $result;
     }
 
     public function rest_get_data($request) {
