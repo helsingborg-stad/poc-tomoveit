@@ -35,7 +35,7 @@ const Login = () => {
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
       .then((response) => {
         dispatch(setTexts(response.data));
-        console.log(response.data.textLogin);
+        console.log('ok');
       }, (error) => {
         console.log(error);
       });
