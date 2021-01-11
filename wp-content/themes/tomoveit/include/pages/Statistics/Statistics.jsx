@@ -70,7 +70,7 @@ const Statistics = () => {
     setTotalSteps(totalSum);
 
     let colors = [];
-    if (admin) {
+    if (!admin) {
       for (let i = 0; i < 5; i++) {
         colors[i] = stepsSum[i] >= 10000 ? '#2ecc71' : '#4b4eff';
       }

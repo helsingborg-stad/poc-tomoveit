@@ -79,6 +79,7 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
+      console.log(admin);
       if (admin) {
         axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
           pin: pin,
