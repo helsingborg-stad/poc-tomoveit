@@ -109,7 +109,7 @@ const Login = () => {
   return (
     <div className={ style('login')}>
       <Container>
-        <h3>{texts.textLogin}</h3>
+        <h3>{texts.textLogin ? texts.textLogin : 'Skriv in din PIN-kod:'}</h3>
         {errorText && <div className={ style('login__error')}><h3>😩</h3><h3>Nånting funkar inte just nu. Prova ladda om sidan.</h3></div>}
         <BottomContainer>
           <form onSubmit={handleClick} className={ style('login__form')}>
