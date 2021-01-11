@@ -12,6 +12,7 @@ const style = classNames.bind(styles);
 
 const Activities = () => {
   const activities = useSelector(state => state.app.activities);
+  const texts = useSelector(state => state.app.texts);
   const runningActivity = useSelector(state => state.app.runningActivity);
   const history = useHistory();
 
@@ -34,11 +35,13 @@ const Activities = () => {
   return (
     <div className={style('activities')}>
       <div className={style('activities__text')}>
-        {activities.length !== 0 && <p>Hej! Här kommer dagens 3 förslag på vad du kan göra för att komma upp i dina 10 000 steg.<br/>Dags att röra på sig! 💪</p>}
+        {activities.length === 3 && <p>{texts.textsActivities1}</p>}
+        {activities.length === 2 && <p>{texts.textsActivities2}</p>}
+        {activities.length === 1 && <p>{texts.textsActivities3}</p>}
       </div>
       { activities.length === 0 &&
         <div className={style('activities__celebrate')}>
-          <h3>Boom! 🎉💪️👏<br/>Du har provat dig igenom alla aktiviteterna idag.<br/>Men imorgon kommer det 3 nya! ⚡️</h3>
+          <h3>{texts.textsActivitiesDone1}<br/> {texts.textsActivitiesDone2}</h3>
           <img src="https://tomoveit.hbgtest.se/wp-content/uploads/2020/12/tomoveit-celebrate.gif" alt="tomoveit-celebrate"/>
         </div>
       }
@@ -50,7 +53,7 @@ const Activities = () => {
             <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
           </div>
         }
-        <span>PSSST! Om du orkar kan du göra alla 3(!)</span>
+        <span>{texts.textsActivitiesBottom}</span>
       </div>
     </div>
   );

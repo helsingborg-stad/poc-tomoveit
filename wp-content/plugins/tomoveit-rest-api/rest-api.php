@@ -172,8 +172,11 @@ class TomoveitRestApi_Routes {
         $text9 = get_field('texts_activities_1', $postId);
         $text10 = get_field('texts_activities_2', $postId);
         $text11 = get_field('texts_activities_3', $postId);
-        $text12 = get_field('texts_celebrate_1', $postId);
-        $text13 = get_field('texts_celebrate_2', $postId);
+        $text12 = get_field('texts_activities_done_1', $postId);
+        $text13 = get_field('texts_activities_done_2', $postId);
+        $text14 = get_field('texts_celebrate_1', $postId);
+        $text15 = get_field('texts_celebrate_2', $postId);
+        $text16 = get_field('texts_activities_bottom_text', $postId);
 
         $result = array(
             "textLogin" => $text1,
@@ -187,8 +190,11 @@ class TomoveitRestApi_Routes {
             "textsActivities1" => $text9,
             "textsActivities2" => $text10,
             "textsActivities3" => $text11,
-            "textsCelebrate1" => $text12,
-            "textsCelebrate2" => $text13,
+            "textsActivitiesDone1" => $text12,
+            "textsActivitiesDone2" => $text13,
+            "textsCelebrate1" => $text14,
+            "textsCelebrate2" => $text15,
+            "textsActivitiesBottom" => $text16,
         );
 
         return $result;

@@ -12,6 +12,7 @@ const style = classNames.bind(styles);
 
 const Home = () => {
   const pin = useSelector(state => state.app.pin);
+  const texts = useSelector(state => state.app.texts);
 
   const handleClick = () => {
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/randomize')
@@ -24,10 +25,10 @@ const Home = () => {
   return (
     <div>
       <Container>
-        <h3> Hej kompis! 👋</h3>
+        <h3> {texts.textWelcome1}</h3>
         <br/>
         <h3>
-          Flash Unicorn, men du kan kalla mig <span className={ style('home__blue')}>Flashy Flash</span>, och jag kommer att hänga med dig genom dina nya äventyr.
+          {texts.textWelcome2} <span className={ style('home__blue')}>{texts.textWelcomeBlue}</span> {texts.textWelcome3}
         </h3>
         <BottomContainer>
           <div className={ style('home__buttons')}>
