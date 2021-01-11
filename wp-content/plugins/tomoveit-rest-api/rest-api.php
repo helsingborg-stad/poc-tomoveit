@@ -150,7 +150,6 @@ class TomoveitRestApi_Routes {
 
     public function rest_get_texts() {
         $postId = '';
-        $result = array();
 
         $post = get_posts([
             'numberposts' => 1,
@@ -165,7 +164,7 @@ class TomoveitRestApi_Routes {
         $text1 = get_field('texts_login_text', $postId);
 
         $result = array(
-            "text_login" => $text1,
+            "textLogin" => $text1,
         );
 
         return $result;

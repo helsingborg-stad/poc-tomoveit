@@ -31,6 +31,15 @@ const Login = () => {
   };
 
   useEffect(() => {
+    axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
+      .then((response) => {
+        console.log(response.data.text_login);
+      }, (error) => {
+        console.log(error);
+      });
+  }, []);
+
+  useEffect(() => {
     if (awaitActivities && awaitRunningActivities && awaitAuth) {
       setLoading(false);
       if (firstLogin) history.push('/welcome');
