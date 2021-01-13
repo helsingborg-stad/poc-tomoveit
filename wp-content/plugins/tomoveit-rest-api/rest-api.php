@@ -224,11 +224,8 @@ class TomoveitRestApi_Routes {
         $mac = $this->find_mac($pin);
         $data_array = array();
 
-        //$startDate = date("Y-m-d", strtotime('monday this week'));
-        //$endDate  = date("Y-m-d", strtotime('friday this week'));
-
-        $startDate = '2020-12-14';
-        $endDate = '2020-12-18';
+        $startDate = date("Y-m-d", strtotime('monday this week'));
+        $endDate  = date("Y-m-d", strtotime('friday this week'));
 
         $client = new DynamoDbClient([
             'region'  => 'eu-north-1',
@@ -270,11 +267,8 @@ class TomoveitRestApi_Routes {
     public function rest_get_admin_data($request) {
         $data_array = array();
 
-        //$startDate = date("Y-m-d", strtotime('monday this week'));
-        //$endDate  = date("Y-m-d", strtotime('friday this week'));
-
-        $startDate = '2020-12-14';
-        $endDate = '2020-12-18';
+        $startDate = date("Y-m-d", strtotime('monday this week'));
+        $endDate  = date("Y-m-d", strtotime('friday this week'));
 
         $client = new DynamoDbClient([
             'region'  => 'eu-north-1',
