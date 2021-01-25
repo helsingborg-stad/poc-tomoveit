@@ -311,14 +311,6 @@ class TomoveitRestApi_Routes {
             return $e->getMessage();
         }
 
-       /* $data_array2 = array();
-
-        foreach ($data_array as $item) {
-            foreach($item as $key=>$value){
-                array_push($data_array2, json_encode($value, true));
-            }
-        }*/
-
         return $data_array;
     }
 
@@ -328,6 +320,11 @@ class TomoveitRestApi_Routes {
 
         $pin = $request->get_param('pin');
         $mac = $this->find_mac($pin);
+        if(!$mac) return ([
+           'error' => 'Fel pinkod'
+        ]);
+
+
 
         $queryCheck = $wpdb->get_results("SELECT * FROM $table WHERE mac = '$mac'");
 

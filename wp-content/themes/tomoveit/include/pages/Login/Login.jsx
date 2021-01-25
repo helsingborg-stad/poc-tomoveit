@@ -22,6 +22,7 @@ const Login = () => {
   const [logedIn, setLogedIn] = useState(false);
   const [firstLogin, setFirstLogin] = useState(false);
   const [errorText, setErrorText] = useState(false);
+  const [errorWrongPin, setErrorWrongPin] = useState(false);
 
   const [awaitActivities, setAwaitActivities] = useState(false);
   const [awaitRunningActivities, setAwaitRunningActivities] = useState(false);
@@ -108,7 +109,7 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
+    axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
     ).then((response) => {
@@ -116,6 +117,10 @@ const Login = () => {
         dispatch(setAdmin(true));
       } else {
         dispatch(setAdmin(false));
+      }
+
+      if (response.data.error) {
+        setErrorWrongPin(true);
       }
 
       if (response.data.firstTime === '1') {
@@ -138,7 +143,7 @@ const Login = () => {
     <div className={ style('login')}>
       <Container>
         <h3>Skriv in din PIN-kod:</h3>
-        {errorText && <div className={ style('login__error')}><h3>😩</h3><h3>Nånting funkar inte just nu. Prova ladda om sidan.</h3></div>}
+        {(errorText || errorWrongPin) && <div className={ style('login__error')}><h3>😩</h3><h3>{ errorWrongPin ? 'Fel pinkod.' : 'Nånting funkar inte just nu. Prova ladda om sidan.'}</h3></div>}
         <BottomContainer>
           <form onSubmit={handleClick} className={ style('login__form')}>
             <Input handleChange={handleChange} />
