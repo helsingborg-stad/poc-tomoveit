@@ -331,10 +331,11 @@ class TomoveitRestApi_Routes {
 
         $queryCheck = $wpdb->get_results("SELECT * FROM $table WHERE mac = '$mac'");
 
+
         if (count($queryCheck) == 0) {
             $wpdb->insert($table, array(
                 'mac' => $mac,
-                'selected_activities' => '',
+                'selected_activity' => '',
                 'used_activities' => '',
                 'first_time' => 1,
             ));
