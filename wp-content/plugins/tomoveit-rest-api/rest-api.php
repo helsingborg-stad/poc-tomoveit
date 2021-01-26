@@ -161,6 +161,12 @@ class TomoveitRestApi_Routes {
                 ],
             ],
         ]);
+        register_rest_route($namespace, '/resetIntroduction', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_reset_introduction'],
+            ],
+        ]);
     }
 
     public function rest_get_texts() {
@@ -530,6 +536,13 @@ class TomoveitRestApi_Routes {
         $wpdb->query($wpdb->prepare("UPDATE $table SET selected_activity = '' WHERE mac = '$mac'"));
     }
 
+    public function rest_reset_introduction() {
+        global $wpdb;
+        $table = 'tomoveit_activity';
+
+        $wpdb->query($wpdb->prepare("UPDATE $table SET first_time=1"));
+        return new WP_REST_Response(NULL, 200);
+    }
 
     public function prepare_post_data($post_id) {
             $result = array();
