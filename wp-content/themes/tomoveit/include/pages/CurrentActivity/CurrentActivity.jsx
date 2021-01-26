@@ -7,6 +7,7 @@ import Modal from '../../components/Modal/Modal.jsx';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import { runningActivity, selectCard, deleteActivity } from '../../actions/app';
+import { replaceLineBreaksWithHTML } from '../../util/util';
 
 const style = classNames.bind(styles);
 
@@ -61,8 +62,8 @@ const CurrentActivity = () => {
     <div className={ style('area')}>
       <div className={ style('current-activity')} >
         <div className={ style('current-activity__title')}>
-          <h1>{texts.textsActivityChosen1}</h1>
-          <p>{texts.textsActivityChosen2}</p>
+          <h1>{replaceLineBreaksWithHTML(texts.textsActivityChosen1)}</h1>
+          <p>{replaceLineBreaksWithHTML(texts.textsActivityChosen2)}</p>
         </div>
         <div className={ style('current-activity__warp')}>
           <div key={runningActivityData.title} onClick={handleClickCard} className={style('card-current')}>

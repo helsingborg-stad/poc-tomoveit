@@ -9,6 +9,7 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
 import { addActivities, runningActivity, setPin, setData, setTexts, setAdmin } from '../../actions/app';
+import { replaceLineBreaksWithHTML } from '../../util/util.js';
 
 const style = classNames.bind(styles);
 
@@ -109,7 +110,7 @@ const Login = () => {
   const handleClick = (e) => {
     e.preventDefault();
     setLoading(true);
-    axios.post('http://tomoveit.test/wp-json/TomoveitRestApi/v1/login', {
+    axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/login', {
       pin: pin,
     },
     ).then((response) => {
@@ -142,7 +143,7 @@ const Login = () => {
   return (
     <div className={ style('login')}>
       <Container>
-        <h3>Skriv in din PIN-kod:</h3>
+        <h3>{replaceLineBreaksWithHTML(texts.textLogin)}</h3>
         {(errorText || errorWrongPin) && <div className={ style('login__error')}><h3>😩</h3><h3>{ errorWrongPin ? 'Fel pinkod.' : 'Nånting funkar inte just nu. Prova ladda om sidan.'}</h3></div>}
         <BottomContainer>
           <form onSubmit={handleClick} className={ style('login__form')}>

@@ -5,6 +5,7 @@ import Container from '../../components/Container/Container.jsx';
 
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { replaceLineBreaksWithHTML } from '../../util/util';
 
 const Introduction = () => {
   const history = useHistory();
@@ -22,11 +23,11 @@ const Introduction = () => {
 
   return (
     <Container>
-      <h3>{texts.textIntroduction1}</h3>
+      <h3>{replaceLineBreaksWithHTML(texts.textIntroduction1)}</h3>
       <br/>
-      <h3>{texts.textIntroduction2}</h3>
+      <h3>{replaceLineBreaksWithHTML(texts.textIntroduction2)}</h3>
       <br/>
-      <h3>{texts.textIntroduction3}</h3>
+      <h3>{replaceLineBreaksWithHTML(texts.textIntroduction3)}</h3>
       <BottomContainer>
         <Button to={'/activities'} text={'YES!'} handleClick={handleClick}/>
       </BottomContainer>

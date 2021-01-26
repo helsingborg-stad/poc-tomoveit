@@ -7,6 +7,7 @@ import Container from '../../components/Container/Container.jsx';
 import BottomContainer from '../../components/Presentational/BottomContainer/BottomContainer.jsx';
 import axios from 'axios';
 import { useSelector } from 'react-redux';
+import { replaceLineBreaksWithHTML } from '../../util/util';
 
 const style = classNames.bind(styles);
 
@@ -25,10 +26,10 @@ const Home = () => {
   return (
     <div>
       <Container>
-        <h3> {texts.textWelcome1}</h3>
+        <h3> {replaceLineBreaksWithHTML(texts.textWelcome1)}</h3>
         <br/>
         <h3>
-          {texts.textWelcome2} <span className={ style('home__blue')}>{texts.textWelcomeBlue}</span> {texts.textWelcome3}
+          {replaceLineBreaksWithHTML(texts.textWelcome2)} <span className={ style('home__blue')}>{replaceLineBreaksWithHTML(texts.textWelcomeBlue)}</span> {replaceLineBreaksWithHTML(texts.textWelcome3)}
         </h3>
         <BottomContainer>
           <div className={ style('home__buttons')}>

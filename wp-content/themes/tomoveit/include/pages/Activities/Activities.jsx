@@ -7,6 +7,7 @@ import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import Button from '../../components/Button/Button.jsx';
 import axios from 'axios';
+import { replaceLineBreaksWithHTML } from '../../util/util';
 
 const style = classNames.bind(styles);
 
@@ -35,13 +36,13 @@ const Activities = () => {
   return (
     <div className={style('activities')}>
       <div className={style('activities__text')}>
-        {activities.length === 3 && <p>{texts.textsActivities1}</p>}
-        {activities.length === 2 && <p>{texts.textsActivities2}</p>}
-        {activities.length === 1 && <p>{texts.textsActivities3}</p>}
+        {activities.length === 3 && <p>{replaceLineBreaksWithHTML(texts.textsActivities1)}</p>}
+        {activities.length === 2 && <p>{replaceLineBreaksWithHTML(texts.textsActivities2)}</p>}
+        {activities.length === 1 && <p>{replaceLineBreaksWithHTML(texts.textsActivities3)}</p>}
       </div>
       { activities.length === 0 &&
         <div className={style('activities__celebrate')}>
-          <h3>{texts.textsActivitiesDone1}<br/> {texts.textsActivitiesDone2}</h3>
+          <h3>{replaceLineBreaksWithHTML(texts.textsActivitiesDone1)}<br/> {replaceLineBreaksWithHTML(texts.textsActivitiesDone2)}</h3>
           <img src="https://tomoveit.hbgtest.se/wp-content/uploads/2020/12/tomoveit-celebrate.gif" alt="tomoveit-celebrate"/>
         </div>
       }
@@ -53,7 +54,7 @@ const Activities = () => {
             <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
           </div>
         }
-        <span>{texts.textsActivitiesBottom}</span>
+        <span>{replaceLineBreaksWithHTML(texts.textsActivitiesBottom)}</span>
       </div>
     </div>
   );
