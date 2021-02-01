@@ -82,14 +82,12 @@ class TomoveitRestApi_Routes {
                 ],
             ],
         ]);
-
         register_rest_route($namespace, '/companyActivities', [
             [
                 'methods' => WP_REST_Server::READABLE,
                 'callback' => [$this, 'rest_get_company_activities'],
             ],
         ]);
-
         register_rest_route($namespace, '/setActivity', [
             [
                 'methods' => WP_REST_Server::CREATABLE,
@@ -425,6 +423,8 @@ class TomoveitRestApi_Routes {
         foreach ($posts as $post) {
             array_push($activities, (object)[
                 'title' => get_the_title($post->ID),
+                'id' => $post->ID,
+                'cardText' => get_field('company_card_text', $post->ID),
                 'videoUrl' => get_field('company_video_url', $post->ID),
                 'description' => get_field('company_description', $post->ID),
                 'who' => get_field('company_who', $post->ID),
