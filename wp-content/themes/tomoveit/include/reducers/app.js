@@ -1,5 +1,6 @@
 import {
   ADD_ACTIVITIES,
+  ADD_COMPANY_ACTIVITIES,
   SELECTED_CARD,
   CHANGE_HEADER,
   RUNNING_ACTIVITY,
@@ -8,6 +9,7 @@ import {
   SET_DATA,
   SET_TEXTS,
   SET_ADMIN,
+  SELECT_COMPANY_ACTIVITY,
 } from '../actions/app';
 
 const INITIAL_STATE = {
@@ -63,6 +65,16 @@ const reducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         admin: action.admin,
+      };
+    case ADD_COMPANY_ACTIVITIES:
+      return {
+        ...state,
+        companyActivities: action.activities,
+      };
+    case SELECT_COMPANY_ACTIVITY:
+      return {
+        ...state,
+        companyActivityId: action.companyActivityId,
       };
     default: return state;
   }

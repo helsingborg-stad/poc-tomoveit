@@ -1,0 +1,119 @@
+@import '../../scss/colors';
+@import '../../scss/config';
+
+.company-activities {
+  margin: 0;
+
+  h1 {
+    font-style: italic;
+    font-weight: 900;
+    font-size: 24px;
+    line-height: 29px;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  &__container {
+    margin-top: 2.5rem;
+  }
+}
+
+.card {
+  transition: all 500ms ease-in-out;
+  margin-bottom: 2.5rem;
+  box-shadow: 0 8px 24px rgba(149, 157, 165, .2);
+
+  &__title {
+    color: $color-green;
+  }
+
+  p {
+    margin-bottom: 0;
+    text-align: left;
+  }
+
+  &__svg {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    z-index: 1;
+
+    width: 4rem;
+    height: 4rem;
+    transform: translate(-50%, -50%);
+    fill: $color-white;
+
+    &--single {
+      width: 3rem;
+      height: 2.8rem;
+    }
+  }
+
+  &__image-container {
+    position: relative;
+  }
+
+  &__text {
+    padding: 1.25rem;
+
+    &--blue {
+      color: $color-light-blue;
+    }
+
+    &--green {
+      color: $color-light-green;
+    }
+  }
+
+  &__image {
+    display: block;
+
+    height: 6.875rem;
+    width: 100%;
+    object-fit: cover;
+
+    filter: brightness(50%);
+
+    img {
+      display: block;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-l) {
+  .company-activities {
+    transition: all 1s ease-in-out;
+    margin-left: 9.125rem;
+    margin-right: 9.125rem;
+
+    &__container {
+      margin-top: 5rem;
+
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 5rem;
+      row-gap: 5rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      line-height: 2.75rem;
+    }
+  }
+
+  .card {
+    width: 100%;
+
+    padding-bottom: 0;
+    cursor: pointer;
+
+    margin-bottom: 0;
+
+    &__image {
+      height: 190px;
+      width: 100%;
+    }
+  }
+}

@@ -1,5 +1,7 @@
 export const ADD_ACTIVITIES = 'ADD_ACTIVITIES';
+export const ADD_COMPANY_ACTIVITIES = 'ADD_COMPANY_ACTIVITIES';
 export const SELECTED_CARD = 'SELECTED_CARD';
+export const SELECT_COMPANY_ACTIVITY = 'SELECT_COMPANY_ACTIVITY';
 export const CHANGE_HEADER = 'CHANGE_HEADER';
 export const RUNNING_ACTIVITY = 'RUNNING_ACTIVITY';
 export const DELETE_ACTIVITY = 'DELETE_ACTIVITY';
@@ -68,5 +70,19 @@ export const setAdmin = admin => {
   return {
     type: SET_ADMIN,
     admin,
+  };
+};
+
+export const addCompanyActivities = activities => {
+  return {
+    type: ADD_COMPANY_ACTIVITIES,
+    activities,
+  };
+};
+
+export const selectCompanyActivity = companyActivityId => {
+  return {
+    type: SELECT_COMPANY_ACTIVITY,
+    companyActivityId,
   };
 };

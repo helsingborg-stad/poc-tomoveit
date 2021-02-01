@@ -14,6 +14,7 @@ import SingleActivity from '../../pages/SingleActivity/SingleActivity.jsx';
 import CurrentActivity from '../../pages/CurrentActivity/CurrentActivity.jsx';
 import Statistics from '../../pages/Statistics/Statistics.jsx';
 import PrivateRoute from '../PrivateRoute/PrivateRoute.jsx';
+import CompanyActivities from '../../pages/CompanyActivities/CompanyActivities.jsx';
 
 const store = configureStore();
 
@@ -31,6 +32,7 @@ const App = () => {
             <PrivateRoute path="/activity" component={SingleActivity} />
             <PrivateRoute path="/runningActivity" component={CurrentActivity} />
             <PrivateRoute path="/statistics" component={Statistics} />
+            <PrivateRoute path="/föreningar" component={CompanyActivities} />
           </Switch>
         </HashRouter>
       </PersistGate>

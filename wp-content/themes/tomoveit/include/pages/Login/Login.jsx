@@ -9,14 +9,12 @@ import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
 import { addActivities, runningActivity, setPin, setData, setTexts, setAdmin } from '../../actions/app';
-import { replaceLineBreaksWithHTML } from '../../util/util.js';
 
 const style = classNames.bind(styles);
 
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const texts = useSelector(state => state.app.texts);
   const admin = useSelector(state => state.app.admin);
 
   const [pin, setPinCode] = useState('');
@@ -40,7 +38,6 @@ const Login = () => {
     axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getTexts')
       .then((response) => {
         dispatch(setTexts(response.data));
-        console.log('ok');
       }, (error) => {
         console.log(error);
       });
@@ -82,7 +79,6 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
-      console.log(admin);
       if (admin) {
         axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
           pin: pin,
