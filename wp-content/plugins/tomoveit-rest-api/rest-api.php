@@ -83,6 +83,13 @@ class TomoveitRestApi_Routes {
             ],
         ]);
 
+        register_rest_route($namespace, '/companyActivities', [
+            [
+                'methods' => WP_REST_Server::READABLE,
+                'callback' => [$this, 'rest_get_company_activities'],
+            ],
+        ]);
+
         register_rest_route($namespace, '/setActivity', [
             [
                 'methods' => WP_REST_Server::CREATABLE,
@@ -405,6 +412,33 @@ class TomoveitRestApi_Routes {
         }
 
         return $result;
+    }
+
+    public function rest_get_company_activities() {
+        $activities = [];
+
+        $posts = get_posts([
+            'numberposts' => -1,
+            'post_type' => 'activities_company',
+        ]);
+
+        foreach ($posts as $post) {
+            array_push($activities, (object)[
+                'title' => get_the_title($post->ID),
+                'videoUrl' => get_field('company_video_url', $post->ID),
+                'description' => get_field('company_description', $post->ID),
+                'who' => get_field('company_who', $post->ID),
+                'needed' => get_field('company_needed', $post->ID),
+                'when' => get_field('company_when', $post->ID),
+                'howMany' => get_field('company_how_many', $post->ID),
+                'friends' => get_field('company_friend', $post->ID),
+                'address' => get_field('company_where', $post->ID),
+                'image' => get_field('company_image', $post->ID),
+                'author' => get_field('company_author', $post->ID),
+            ]);
+        }
+
+        return $activities;
     }
 
     public function rest_set_activity($request){
