@@ -396,6 +396,7 @@ class TomoveitRestApi_Routes {
                 $instruction = get_field('activity_instruktioner', $id);
                 $videoUrl = get_field('activity_youtube_link', $id);
                 $author = get_field('activity_author', $id);
+                $videoText = get_field('activity_video_text', $id);
 
                 array_push($result, (object)[
                     'title' => $title,
@@ -409,6 +410,7 @@ class TomoveitRestApi_Routes {
                     'videoUrl' => $videoUrl,
                     'author' => $author,
                     'postId' => $postId,
+                    'videoText' => $videoText,
                 ]);
             }
         }
@@ -430,6 +432,7 @@ class TomoveitRestApi_Routes {
                 'id' => $post->ID,
                 'cardText' => get_field('company_card_text', $post->ID),
                 'videoUrl' => get_field('company_video_url', $post->ID),
+                'videoText' => get_field('company_video_text', $post->ID),
                 'description' => get_field('company_description', $post->ID),
                 'who' => get_field('company_who', $post->ID),
                 'needed' => get_field('company_needed', $post->ID),
@@ -605,6 +608,7 @@ class TomoveitRestApi_Routes {
             $instruction = get_field('activity_instruktioner', $post_id);
             $videoUrl = get_field('activity_youtube_link', $post_id);
             $author = get_field('activity_author',  $post_id);
+            $videoText = get_field('activity_video_text', $post_id);
 
             array_push($result, (object)[
                 'title' => $title ,
@@ -618,6 +622,7 @@ class TomoveitRestApi_Routes {
                 'postId' => $postId,
                 'videoUrl' => $videoUrl,
                 'author' => $author,
+                'videoText' => $videoText,
             ]);
 
         return $result;
