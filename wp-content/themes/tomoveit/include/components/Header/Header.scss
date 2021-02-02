@@ -17,8 +17,8 @@
 
     svg {
       cursor: pointer;
-      width: 5rem;
-      height: 5rem;
+      width: 2.5rem;
+      height: 2.5rem;
       z-index: 1;
     }
   }
@@ -116,6 +116,13 @@
     align-items: center;
     flex: 0 0 33%;
     margin: 0 5.5rem;
+
+    &__stats {
+      svg {
+        width: 5rem;
+        height: 5rem;
+      }
+    }
 
     &__back {
       span {
