@@ -11,6 +11,9 @@ const style = classNames.bind(styles);
 
 const Header = () => {
   const image = useSelector(state => state.app.selectedActivity.image);
+  const companyActivityId = useSelector(state => state.app.companyActivityId);
+  const companyActivities = useSelector(state => state.app.companyActivities);
+
   const location = useLocation();
   const history = useHistory();
 
@@ -21,6 +24,10 @@ const Header = () => {
   const handleClickStats = () => {
     if (location.pathname === '/statistics') history.push({ pathname: '/activities' });
     else history.push({ pathname: '/statistics' });
+  };
+
+  const handleClickCompany = () => {
+    history.push({ pathname: '/föreningar' });
   };
 
   const handleClickBack = () => {
@@ -49,8 +56,13 @@ const Header = () => {
       <div className={ style('header')}>
         <Avatar/>
         <span>{currentDate}</span>
-        <div className={style('header__stats')} onClick={handleClickStats}>
-          <svg>
+        <div className={style('header__stats')}>
+          { companyActivities &&
+            <svg className={style('header__clubsvg')} onClick={handleClickCompany}>
+              <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-sports-club-menu'}/>
+            </svg>
+          }
+          <svg onClick={handleClickStats}>
             <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-stats-mono' } />
           </svg>
         </div>
@@ -63,6 +75,22 @@ const Header = () => {
       <div className={ style('header-image')}>
         <img src={image} alt='' />
         <div className={ style('header-image__back', 'header-image__back--white')} onClick={handleClick}>
+          <svg>
+            <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-arrow-left' } />
+          </svg>
+          <p>TILLBAKA</p>
+        </div>
+      </div>
+    );
+  };
+
+  const companyImageHeader = () => {
+    const imgUrl = companyActivities.find(item => item.id === companyActivityId).image;
+
+    return (
+      <div className={ style('header-image')}>
+        <img src={imgUrl} alt='' />
+        <div className={ style('header-image__back', 'header-image__back--white')} onClick={handleClickBack}>
           <svg>
             <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-arrow-left' } />
           </svg>
@@ -92,7 +120,8 @@ const Header = () => {
   const header = () => {
     if (location.pathname === '/activity') return imageHeader(false);
     else if (location.pathname === '/statistics') return statsHeaderBack();
-    else if (location.pathname === '/activities' || location.pathname === '/runningActivity') return statsHeader();
+    else if (location.pathname === '/aktivitet') return companyImageHeader();
+    else if (location.pathname === '/activities' || location.pathname === '/runningActivity' || location.pathname === '/föreningar') return statsHeader();
     else return defaultHeader();
   };
 

@@ -435,6 +435,15 @@ class TomoveitRestApi_Routes {
                 'address' => get_field('company_where', $post->ID),
                 'image' => get_field('company_image', $post->ID),
                 'author' => get_field('company_author', $post->ID),
+                'published' => get_the_date('d M Y', $post->ID),
+                'link' => get_field('company_link', $post->ID),
+                'directions' => get_field('company_directions', $post->ID),
+                'addressLink' => get_field('company_address_link', $post->ID),
+                'imageUrl1' => get_field('company_image_1', $post->ID),
+                'imageUrl2' => get_field('company_image_2', $post->ID),
+                'imageUrl3' => get_field('company_image_3', $post->ID),
+                'imageUrl4' => get_field('company_image_4', $post->ID),
+                'imageUrl5' => get_field('company_image_5', $post->ID),
             ]);
         }
 

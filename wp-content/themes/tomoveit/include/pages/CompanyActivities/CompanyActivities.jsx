@@ -1,32 +1,30 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './CompanyActivities.scss';
 import classNames from 'classnames/bind';
 
 import { useDispatch, useSelector } from 'react-redux';
-import axios from 'axios';
-import { addCompanyActivities } from '../../actions/app';
+import { selectCompanyActivity } from '../../actions/app';
+import { useHistory } from 'react-router-dom';
 
 const style = classNames.bind(styles);
 
 const CompanyActivities = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
   const companyActivities = useSelector(state => state.app.companyActivities);
 
-  useEffect(() => {
-    axios.get('http://tomoveit.test/wp-json/TomoveitRestApi/v1/companyActivities')
-      .then((response) => {
-        dispatch(addCompanyActivities(response.data));
-      }, (error) => {
-        console.log(error);
-      });
-  }, []);
+  const handleClick = (id) => {
+    dispatch(selectCompanyActivity(id));
+    history.push({ pathname: '/aktivitet' });
+    console.log(id);
+  };
 
   const cards = companyActivities.map(item => {
     return (
-      <div key={item.title} className={style('card')}>
+      <div key={item.title} className={style('card')} onClick={() => handleClick(item.id)}>
         <div className={style('card__image-container')}>
           <svg className={style('card__svg')}>
-            <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-group'}/>
+            <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-sports-club'}/>
           </svg>
           <img className={style('card__image')} src={item.image} alt={'Alt'} />
         </div>

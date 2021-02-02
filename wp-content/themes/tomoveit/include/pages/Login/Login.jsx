@@ -8,7 +8,15 @@ import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import classNames from 'classnames/bind';
 import styles from '../Login/Login.scss';
-import { addActivities, runningActivity, setPin, setData, setTexts, setAdmin } from '../../actions/app';
+import {
+  addActivities,
+  runningActivity,
+  setPin,
+  setData,
+  setTexts,
+  setAdmin,
+  addCompanyActivities,
+} from '../../actions/app';
 
 const style = classNames.bind(styles);
 
@@ -69,6 +77,13 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
+
+      axios.get('http://tomoveit.test/wp-json/TomoveitRestApi/v1/companyActivities')
+        .then((response) => {
+          dispatch(addCompanyActivities(response.data));
+        }, (error) => {
+          console.log(error);
+        });
 
       axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/getRunningActivity', {
         pin: pin,

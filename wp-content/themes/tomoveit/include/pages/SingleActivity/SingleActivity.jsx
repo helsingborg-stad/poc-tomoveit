@@ -32,7 +32,7 @@ const SingleActivity = () => {
       console.log(error);
     });
   };
-
+  console.log(replaceLineBreaksWithHTML(selectedActivity.instruction));
   const titleColor = selectedActivity.group ? 'single-activity__title--blue' : 'single-activity__title--green';
   return (
     <div className={ style('single-activity')}>
