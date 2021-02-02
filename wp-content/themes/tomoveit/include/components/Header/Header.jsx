@@ -51,16 +51,16 @@ const Header = () => {
   const statsHeader = () => {
     const currentDate = moment(new Date()).format('dddd DD MMMM');
     moment.locale('sv');
-
+    console.log(companyActivities.length);
     return (
       <div className={ style('header')}>
         <Avatar/>
         <span>{currentDate}</span>
         <div className={style('header__stats')}>
-          { companyActivities &&
-            <svg className={style('header__clubsvg')} onClick={handleClickCompany}>
+          { companyActivities
+            ? <svg className={style('header__clubsvg')} onClick={handleClickCompany}>
               <use xlinkHref={'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-sports-club-menu'}/>
-            </svg>
+            </svg> : ''
           }
           <svg onClick={handleClickStats}>
             <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-stats-mono' } />

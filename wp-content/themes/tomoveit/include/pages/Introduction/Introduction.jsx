@@ -13,10 +13,8 @@ const Introduction = () => {
   const texts = useSelector(state => state.app.texts);
   const handleClick = () => {
     if (runningActivity) {
-      console.log('runningActivity');
       history.push({ pathname: '/runningActivity' });
     } else {
-      console.log('/activities');
       history.push({ pathname: '/activities' });
     }
   };

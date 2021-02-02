@@ -7,6 +7,7 @@ import StickyButton from '../../components/StickyButton/StickyButton.jsx';
 import axios from 'axios';
 import { runningActivity } from '../../actions/app';
 import { replaceLineBreaksWithHTML } from '../../util/util';
+import ReactPlayer from 'react-player';
 
 const style = classNames.bind(styles);
 
@@ -23,7 +24,6 @@ const SingleActivity = () => {
       pin: pin,
     },
     ).then((response) => {
-      console.log(response.data);
       if (response.data !== false) {
         dispatch(runningActivity(response.data));
         history.replace({ pathname: '/runningActivity' });
@@ -32,20 +32,41 @@ const SingleActivity = () => {
       console.log(error);
     });
   };
-  console.log(replaceLineBreaksWithHTML(selectedActivity.instruction));
   const titleColor = selectedActivity.group ? 'single-activity__title--blue' : 'single-activity__title--green';
   return (
     <div className={ style('single-activity')}>
-      <h1 className={style(titleColor)}>{selectedActivity.title}</h1>
-      <p className={ style('single-activity__text-title')}>Beskrivning</p>
-      <p>{replaceLineBreaksWithHTML(selectedActivity.description)}</p>
-      <p className={ style('single-activity__text-title')}>Vad du behöver</p>
-      <p>{replaceLineBreaksWithHTML(selectedActivity.needed)}</p>
-      <p className={ style('single-activity__text-title')}>Antal</p>
-      <p>{selectedActivity.numbers}</p>
-      <p className={ style('single-activity__text-title')}>Instruktioner</p>
-      <p>{replaceLineBreaksWithHTML(selectedActivity.instruction)}</p>
-      <StickyButton disable={!!runningActivityData} to='/' text='KÖR!' handleClick={handleClick}/>
+      <div>
+        <h1>{selectedActivity.title}</h1>
+        <p className={ style('single-activity__text-title', titleColor)}>Beskrivning</p>
+        <p>{replaceLineBreaksWithHTML(selectedActivity.description)}</p>
+        <p className={ style('single-activity__text-title', titleColor)}>Vad du behöver</p>
+        <p>{replaceLineBreaksWithHTML(selectedActivity.needed)}</p>
+        <p className={ style('single-activity__text-title', titleColor)}>Antal</p>
+        <p>{selectedActivity.numbers}</p>
+        <p className={ style('single-activity__text-title', titleColor)}>Instruktioner</p>
+        <p>{replaceLineBreaksWithHTML(selectedActivity.instruction)}</p>
+        {selectedActivity.videoUrl &&
+        <>
+          <p className={ style('single-activity__text-title', titleColor)}>Video</p>
+          <div className={style('single-activity__player-wrapper')}>
+            <ReactPlayer
+              className='react-player'
+              url={selectedActivity.videoUrl}
+              width='100%'
+              height='100%'
+            />
+          </div>
+        </>
+        }
+        <StickyButton disable={!!runningActivityData} to='/' text='KÖR!' handleClick={handleClick}/>
+        {selectedActivity.author &&
+        <>
+          <div className={style('single-activity__line')}></div>
+          <p className={style('single-activity__text-title', titleColor)}>Denna aktivitet är skapad av </p>
+          <p>{selectedActivity.author}</p>
+        </>
+        }
+      </div>
     </div>
   );
 };
