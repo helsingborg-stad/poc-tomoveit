@@ -78,7 +78,7 @@ const Login = () => {
         console.log(error);
       });
 
-      axios.get('http://tomoveit.test/wp-json/TomoveitRestApi/v1/companyActivities')
+      axios.get('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/companyActivities')
         .then((response) => {
           dispatch(addCompanyActivities(response.data));
         }, (error) => {
