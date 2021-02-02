@@ -65,7 +65,7 @@ const SingleCompanyActivities = () => {
           <div className={style('company-single__line')}></div>
           <p className={style('company-single__text-title')}>Denna sida är skapad av?</p>
           <p>{data.author}</p>
-          <StickyButton to={data.link} text='KÖR!' handleClick={handleClick} colorGreen={true} outsideLink={true}/>
+          <StickyButton to={data.link} text='PROVA' handleClick={handleClick} colorGreen={true} outsideLink={true}/>
         </div>
       </div>
     </div>
