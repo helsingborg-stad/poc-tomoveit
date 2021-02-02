@@ -34,6 +34,7 @@ const SingleCompanyActivities = () => {
               width='100%'
               height='100%'
             />
+            { data.videoText && <p>{data.videoText}</p> }
           </div>
         }
         <div className={style('company-single__content')}>

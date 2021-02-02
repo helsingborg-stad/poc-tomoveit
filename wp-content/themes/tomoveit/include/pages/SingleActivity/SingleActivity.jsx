@@ -55,6 +55,7 @@ const SingleActivity = () => {
               width='100%'
               height='100%'
             />
+            { selectedActivity.videoText && <p>{selectedActivity.videoText}</p> }
           </div>
         </>
         }
