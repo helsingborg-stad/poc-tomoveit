@@ -604,7 +604,7 @@ class TomoveitRestApi_Routes {
             $numbers = get_field('activity_numbers', $post_id);
             $instruction = get_field('activity_instruktioner', $post_id);
             $videoUrl = get_field('activity_youtube_link', $post_id);
-            $author = get_field('activity_author', $post_id);
+            $author = get_field('activity_author',  $post_id);
 
             array_push($result, (object)[
                 'title' => $title ,

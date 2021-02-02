@@ -111,7 +111,8 @@ const Header = () => {
           </svg>
           <p>TILLBAKA</p>
         </div>
-        <span>DENNA VECKA ({currentWeek})</span>
+        { (location.pathname !== '/föreningar') && <span>DENNA VECKA ({currentWeek})</span> }
+        { location.pathname === '/föreningar' && <span>PROVA EN FÖRENING</span> }
         <div></div>
       </div>
     );
@@ -119,9 +120,9 @@ const Header = () => {
 
   const header = () => {
     if (location.pathname === '/activity') return imageHeader(false);
-    else if (location.pathname === '/statistics') return statsHeaderBack();
+    else if (location.pathname === '/statistics' || location.pathname === '/föreningar') return statsHeaderBack();
     else if (location.pathname === '/aktivitet') return companyImageHeader();
-    else if (location.pathname === '/activities' || location.pathname === '/runningActivity' || location.pathname === '/föreningar') return statsHeader();
+    else if (location.pathname === '/activities' || location.pathname === '/runningActivity') return statsHeader();
     else return defaultHeader();
   };
 

@@ -59,11 +59,13 @@ const Activities = () => {
       <div className={style('activities__bottom')}>
         { admin &&
           <>
-            <div className={style('activities__button')}>
-              <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
-            </div>
-            <div className={style('activities__button')}>
-              <Button to={'/introduction'} text={'ÅTERSTÄLL INTRODUKTION'} handleClick={handleClickResetIntro}/>
+            <div>
+              <div className={style('activities__button')}>
+                <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
+              </div>
+              <div className={style('activities__button')}>
+                <Button to={'/introduction'} text={'ÅTERSTÄLL INTRODUKTION'} handleClick={handleClickResetIntro}/>
+              </div>
             </div>
           </>
         }
