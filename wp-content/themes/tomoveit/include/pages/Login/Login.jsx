@@ -97,6 +97,8 @@ const Login = () => {
       if (admin) {
         axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
           pin: pin,
+          start_date: '',
+          end_date: '',
         },
         ).then((response) => {
           dispatch(setData(response.data));

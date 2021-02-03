@@ -1,28 +1,70 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Statistics.scss';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import moment from 'moment';
+import axios from 'axios';
+import { setData } from '../../actions/app';
+import { thousandSeparator } from '../../util/util';
 
 const style = classNames.bind(styles);
 
 const Statistics = () => {
   const data = useSelector(state => state.app.data);
   const admin = useSelector(state => state.app.admin);
+  const pin = useSelector(state => state.app.pin);
+  const dispatch = useDispatch();
   const [totalSteps, setTotalSteps] = useState(0);
   const [totalStepsClass, setTotalStepsClass] = useState(0);
+  const [loding, setLoading] = useState(false);
+
+  const [date, setdate] = useState(new Date());
 
   const [stepArray, stepArraySet] = useState([]);
 
   useEffect(() => {
-    const chart = createChart(data);
-    return () => chart.destroy();
-  }, []);
+    let monday = moment(date).startOf('week');
+    let sunday = moment(date).startOf('week').add(6, 'days');
+
+    setLoading(true);
+    if (admin) {
+      axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
+        pin: pin,
+        start_date: monday,
+        end_date: sunday,
+      },
+      ).then((response) => {
+        dispatch(setData(response.data));
+        setLoading(false);
+      }, (error) => {
+        console.log(error);
+      });
+    } else {
+      axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/data', {
+        pin: pin,
+        start_date: monday,
+        end_date: sunday,
+      },
+      ).then((response) => {
+        dispatch(setData(response.data));
+        setLoading(false);
+      }, (error) => {
+        console.log(error);
+      });
+    }
+  }, [date]);
+
+  useEffect(() => {
+    if (!loding) {
+      const chart = createChart(data);
+      return () => chart.destroy();
+    }
+  }, [loding]);
 
   const formatAdminData = (data) => {
-    let stepsSum = [0, 0, 0, 0, 0];
+    let stepsSum = [0, 0, 0, 0, 0, 0, 0];
     for (let i = 0; i < data.length; i++) {
       if (data[i]) {
         let objectsDate = Object.keys(data[i][0])[0];
@@ -48,7 +90,7 @@ const Statistics = () => {
   const createChart = (data, goalsCompletedClass, setGoalsCompletedClass) => {
     const chartElement = (document.getElementById('StatisticContainer')).getContext('2d');
 
-    let stepsSum = [0, 0, 0, 0, 0];
+    let stepsSum = [0, 0, 0, 0, 0, 0, 0];
     for (let i = 0; i < data.length; i++) {
       if (data[i]) {
         let objectsDate = Object.keys(data[i][0])[0];
@@ -71,11 +113,11 @@ const Statistics = () => {
 
     let colors = [];
     if (!admin) {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 7; i++) {
         colors[i] = stepsSum[i] >= 10000 ? '#2ecc71' : '#4b4eff';
       }
     } else {
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 7; i++) {
         colors[i] = stepsSum[i] >= 160000 ? '#2ecc71' : '#4b4eff';
       }
     }
@@ -83,7 +125,7 @@ const Statistics = () => {
     return new Chart(chartElement, {
       type: 'bar',
       data: {
-        labels: ['MÅNDAG', 'TISDAG', 'ONSDAG', 'TORSDAG', 'FREDAG'],
+        labels: ['MÅNDAG', 'TISDAG', 'ONSDAG', 'TORSDAG', 'FREDAG', 'LÖRDAG', 'SÖNDAG'],
         datasets: [{
           label: '# antal steg',
           data: admin ? formatAdminData(data) : stepsSum,
@@ -130,6 +172,9 @@ const Statistics = () => {
             anchor: 'end',
             align: 'top',
             color: colors,
+            formatter: function(value, context) {
+              return thousandSeparator(value.toString());
+            },
             font: {
               weight: 'bold',
               size: 27,
@@ -143,7 +188,7 @@ const Statistics = () => {
 
   const countCompletedClass = () => {
     let temp = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 7; i++) {
       if (stepArray[i] >= 160000) {
         temp = temp + 1;
       }
@@ -153,7 +198,7 @@ const Statistics = () => {
 
   const countCompleted = () => {
     let temp = 0;
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 7; i++) {
       if (stepArray[i] >= 10000) {
         temp = temp + 1;
       }
@@ -161,10 +206,18 @@ const Statistics = () => {
     return temp;
   };
 
+  const handleClickLeft = () => {
+    setdate(moment(date).subtract(1, 'week').toDate());
+  };
+
+  const handleClickRight = () => {
+    setdate(moment(date).add(1, 'week').toDate());
+  };
+
   return (
     <div className={ style('statistics')}>
       <div className={ style('statistics__stats')}>
-        <h1>{admin ? totalStepsClass : totalSteps}</h1>
+        <h1>{admin ? thousandSeparator(totalStepsClass) : thousandSeparator(totalSteps)}</h1>
         <h3>Totalt antal steg hittills</h3>
         { !admin &&
           <span>Snyggt jobbat! Du har klarat ditt mål {countCompleted()} av 5 dagar 👏💪</span>
@@ -172,6 +225,15 @@ const Statistics = () => {
         { admin &&
         <span>Snyggt jobbat! Ni har klarat ert mål {countCompletedClass()} av 5 dagar 👏💪</span>
         }
+      </div>
+      <div className={ style('statistics__wrapper')}>
+        <svg className={ style('statistics__arrow-left')} onClick={handleClickLeft}>
+          <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-arrow-left' } />
+        </svg>
+        <p>Vecka {moment(date).format('w')} ( {moment(date).startOf('week').format('DD MMMM')} — {moment(date).startOf('week').add(6, 'days').format('DD MMMM')} )</p>
+        <svg className={ style('statistics__arrow-right')} onClick={handleClickRight}>
+          <use xlinkHref={ 'wp-content/themes/tomoveit/dist/spritemap.svg#order-icon-arrow-left' } />
+        </svg>
       </div>
       <div className={ style('statistics__chart-container')}>
         <canvas className={ style('statistics__chart')} id="StatisticContainer">

@@ -5,6 +5,33 @@
   height: 100%;
   margin: 0 2rem;
 
+  &__wrapper {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    p {
+      margin-bottom: 0;
+      font-weight: 900;
+    }
+
+    svg {
+      cursor: pointer;
+      width: 30px;
+      height: 30px;
+    }
+  }
+
+  &__arrow-left {
+    margin-right: 2rem;
+  }
+
+  &__arrow-right {
+    margin-left: 2rem;
+    transform: rotate(180deg);
+  }
+
   &__stats {
     display: flex;
     flex-direction: column;

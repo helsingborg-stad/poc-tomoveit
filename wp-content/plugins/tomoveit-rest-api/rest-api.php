@@ -49,6 +49,20 @@ class TomoveitRestApi_Routes {
                             return $request;
                         },
                     ],
+                    'start_date' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
+                    'end_date' => [
+                        'required' => true,
+                        'validate_callback' => function($param, $request, $key) {
+                            if(!is_string($param)) return false;
+                            return $request;
+                        },
+                    ],
                 ],
             ],
         ]);
@@ -233,10 +247,16 @@ class TomoveitRestApi_Routes {
     public function rest_get_data($request) {
         $pin = $request->get_param('pin');
         $mac = $this->find_mac($pin);
+
         $data_array = array();
 
         $startDate = date("Y-m-d", strtotime('monday this week'));
-        $endDate  = date("Y-m-d", strtotime('friday this week'));
+        $endDate  = date("Y-m-d", strtotime('sunday this week'));
+
+        if($request->get_param('start_date') && $request->get_param('end_date')) {
+            $startDate = $request->get_param('start_date');
+            $endDate = $request->get_param('end_date');
+        }
 
         $client = new DynamoDbClient([
             'region'  => 'eu-north-1',
@@ -279,7 +299,12 @@ class TomoveitRestApi_Routes {
         $data_array = array();
 
         $startDate = date("Y-m-d", strtotime('monday this week'));
-        $endDate  = date("Y-m-d", strtotime('friday this week'));
+        $endDate  = date("Y-m-d", strtotime('sunday this week'));
+
+        if($request->get_param('start_date') && $request->get_param('end_date')) {
+            $startDate = $request->get_param('start_date');
+            $endDate = $request->get_param('end_date');
+        }
 
         $client = new DynamoDbClient([
             'region'  => 'eu-north-1',
@@ -335,10 +360,7 @@ class TomoveitRestApi_Routes {
            'error' => 'Fel pinkod'
         ]);
 
-
-
         $queryCheck = $wpdb->get_results("SELECT * FROM $table WHERE mac = '$mac'");
-
 
         if (count($queryCheck) == 0) {
             $wpdb->insert($table, array(
