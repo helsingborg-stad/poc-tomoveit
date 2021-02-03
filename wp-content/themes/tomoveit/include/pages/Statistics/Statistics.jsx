@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import classNames from 'classnames/bind';
 import styles from './Statistics.scss';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { Chart } from 'chart.js';
+/* eslint-disable */
 import ChartDataLabels from 'chartjs-plugin-datalabels';
+/* eslint-enable */
 import moment from 'moment';
 import axios from 'axios';
 import { thousandSeparator } from '../../util/util';
@@ -69,9 +71,9 @@ const Statistics = () => {
         const date = moment(objectsDate);
 
         let sumItem = 0;
-        const sums = data[i].reduce((acc, val, index) => {
+        data[i].reduce((acc, val, index) => {
           let objects = Object.values(val);
-          let test = objects.map(m => {
+          objects.map(m => {
             sumItem = sumItem + m.steps;
           });
         });
@@ -85,7 +87,7 @@ const Statistics = () => {
     return stepsSum;
   };
 
-  const createChart = (data, goalsCompletedClass, setGoalsCompletedClass) => {
+  const createChart = (data) => {
     const chartElement = (document.getElementById('StatisticContainer')).getContext('2d');
 
     let stepsSum = [0, 0, 0, 0, 0, 0, 0];
@@ -95,9 +97,9 @@ const Statistics = () => {
         const date = moment(objectsDate);
 
         let sumItem = 0;
-        const sums = data[i].reduce((acc, val, index) => {
+        data[i].reduce((acc, val, index) => {
           let objects = Object.values(val);
-          let test = objects.map(m => {
+          objects.map(m => {
             sumItem = sumItem + m.steps;
           });
         });

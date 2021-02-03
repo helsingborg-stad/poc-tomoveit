@@ -1,12 +1,11 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { Route, Redirect, useHistory } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { setPin } from '../../actions/app';
 
 const PrivateRoute = ({ component: Component, ...rest }) => {
   const dispatch = useDispatch();
-  const history = useHistory();
   const pin = useSelector(state => state.app.pin);
 
   useEffect(() => {

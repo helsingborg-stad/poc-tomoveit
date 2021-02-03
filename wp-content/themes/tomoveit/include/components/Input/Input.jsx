@@ -12,7 +12,7 @@ const Input = (props) => {
   }, []);
 
   return (
-    <input autoFocus onChange={props.handleChange} type="password" maxLength='4' ref={inputRef} required />
+    <input className={style('input-field')} autoFocus onChange={props.handleChange} type="password" maxLength='4' ref={inputRef} required name="password" autoComplete="off" />
   );
 };
 

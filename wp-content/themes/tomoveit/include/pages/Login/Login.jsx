@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Container from '../../components/Container/Container.jsx';
 import Input from '../../components/Input/Input.jsx';
 import Button from '../../components/Button/Button.jsx';
@@ -23,7 +23,6 @@ const style = classNames.bind(styles);
 const Login = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const admin = useSelector(state => state.app.admin);
 
   const [pin, setPinCode] = useState('');
   const [logedIn, setLogedIn] = useState(false);
