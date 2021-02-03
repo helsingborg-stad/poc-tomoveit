@@ -6,7 +6,6 @@ import { Chart } from 'chart.js';
 import ChartDataLabels from 'chartjs-plugin-datalabels';
 import moment from 'moment';
 import axios from 'axios';
-import { setData } from '../../actions/app';
 import { thousandSeparator } from '../../util/util';
 
 const style = classNames.bind(styles);
@@ -14,7 +13,6 @@ const style = classNames.bind(styles);
 const Statistics = () => {
   const admin = useSelector(state => state.app.admin);
   const pin = useSelector(state => state.app.pin);
-  const dispatch = useDispatch();
   const [totalSteps, setTotalSteps] = useState(0);
   const [totalStepsClass, setTotalStepsClass] = useState(0);
   const [loding, setLoading] = useState(false);
