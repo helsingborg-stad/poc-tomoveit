@@ -34,7 +34,6 @@ const Login = () => {
   const [awaitActivities, setAwaitActivities] = useState(false);
   const [awaitRunningActivities, setAwaitRunningActivities] = useState(false);
   const [awaitAuth, setAwaitAuth] = useState(false);
-  const [awaitData, setAwaitData] = useState(false);
   const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
@@ -52,12 +51,12 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    if (awaitActivities && awaitRunningActivities && awaitAuth && awaitData) {
+    if (awaitActivities && awaitRunningActivities && awaitAuth) {
       setLoading(false);
       if (firstLogin) history.push('/welcome');
       else history.push('/activities');
     }
-  }, [awaitActivities, awaitRunningActivities, awaitAuth, awaitData]);
+  }, [awaitActivities, awaitRunningActivities, awaitAuth]);
 
   useEffect(() => {
     if (logedIn) {
@@ -94,29 +93,6 @@ const Login = () => {
       }, (error) => {
         console.log(error);
       });
-      if (admin) {
-        axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/adminData', {
-          pin: pin,
-          start_date: '',
-          end_date: '',
-        },
-        ).then((response) => {
-          dispatch(setData(response.data));
-          setAwaitData(true);
-        }, (error) => {
-          console.log(error);
-        });
-      } else {
-        axios.post('https://tomoveit.hbgtest.se/wp-json/TomoveitRestApi/v1/data', {
-          pin: pin,
-        },
-        ).then((response) => {
-          dispatch(setData(response.data));
-          setAwaitData(true);
-        }, (error) => {
-          console.log(error);
-        });
-      }
     }
   }, [logedIn]);
 

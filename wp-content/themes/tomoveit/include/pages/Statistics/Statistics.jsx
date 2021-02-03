@@ -12,7 +12,6 @@ import { thousandSeparator } from '../../util/util';
 const style = classNames.bind(styles);
 
 const Statistics = () => {
-  const data = useSelector(state => state.app.data);
   const admin = useSelector(state => state.app.admin);
   const pin = useSelector(state => state.app.pin);
   const dispatch = useDispatch();
@@ -23,6 +22,7 @@ const Statistics = () => {
   const [date, setdate] = useState(new Date());
 
   const [stepArray, stepArraySet] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
     let monday = moment(date).startOf('week');
@@ -36,7 +36,7 @@ const Statistics = () => {
         end_date: sunday,
       },
       ).then((response) => {
-        dispatch(setData(response.data));
+        setData(response.data);
         setLoading(false);
       }, (error) => {
         console.log(error);
@@ -48,7 +48,7 @@ const Statistics = () => {
         end_date: sunday,
       },
       ).then((response) => {
-        dispatch(setData(response.data));
+        setData(response.data);
         setLoading(false);
       }, (error) => {
         console.log(error);
