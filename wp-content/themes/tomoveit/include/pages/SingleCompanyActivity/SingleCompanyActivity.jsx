@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './SingleCompanyActivity.scss';
 import classNames from 'classnames/bind';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector } from 'react-redux';
 import moment from 'moment';
 import ReactPlayer from 'react-player';
 import { replaceLineBreaksWithHTML } from '../../util/util';
@@ -17,9 +17,7 @@ const SingleCompanyActivities = () => {
   const datePublished = moment(data.published).format('DD MMMM YYYY');
   moment.locale('sv');
 
-  const handleClick = () => {
-    console.log('Hej');
-  };
+  const handleClick = () => {};
 
   return (
     <div className={style('company-single')}>

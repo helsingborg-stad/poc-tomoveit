@@ -1,6 +1,6 @@
 import React from 'react';
 import { Route, Switch, HashRouter } from 'react-router-dom';
-import { Provider, useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/integration/react';
 
 import configureStore from '../../store/store';

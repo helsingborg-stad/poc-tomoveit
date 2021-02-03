@@ -16,7 +16,6 @@ const CompanyActivities = () => {
   const handleClick = (id) => {
     dispatch(selectCompanyActivity(id));
     history.push({ pathname: '/aktivitet' });
-    console.log(id);
   };
 
   const cards = companyActivities.map(item => {

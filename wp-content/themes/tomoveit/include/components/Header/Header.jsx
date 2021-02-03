@@ -51,7 +51,6 @@ const Header = () => {
   const statsHeader = () => {
     const currentDate = moment(new Date()).format('dddd DD MMMM');
     moment.locale('sv');
-    console.log(companyActivities.length);
     return (
       <div className={ style('header')}>
         <Avatar/>

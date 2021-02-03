@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames/bind';
 import styles from './StickyButton.scss';
 import PropTypes from 'prop-types';
-import { useHistory, Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const style = classNames.bind(styles);
 
@@ -24,7 +24,7 @@ const StickyButton = (props) => {
       </button>
     }
     { props.outsideLink &&
-      <a href={props.to}>
+      <a href={props.to} target="_blank" rel="noreferrer">
         <button disabled={props.disable} onClick={props.handleClick ? props.handleClick : handleClick} className={style('sticky-button', disableClass, colorStyle)}>
           {props.text}
         </button>

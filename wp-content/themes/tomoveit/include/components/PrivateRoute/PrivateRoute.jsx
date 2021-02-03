@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Route, Redirect, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
@@ -8,7 +8,6 @@ const PrivateRoute = ({ component: Component, ...rest }) => {
   const dispatch = useDispatch();
   const history = useHistory();
   const pin = useSelector(state => state.app.pin);
-  const [seconds, setSeconds] = useState(600);
 
   useEffect(() => {
     window.addEventListener('beforeunload', callEvent);
