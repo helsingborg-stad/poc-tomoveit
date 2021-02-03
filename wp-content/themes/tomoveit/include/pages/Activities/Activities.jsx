@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styles from './Activities.scss';
 import classNames from 'classnames/bind';
 import CardContainer from '../../components/CardContainer/CardContainer.jsx';
+import RoundButton from '../../components/RoundButton/RoundButton.jsx';
 import { useHistory } from 'react-router-dom';
 
 import { useSelector } from 'react-redux';
@@ -59,17 +60,17 @@ const Activities = () => {
       <div className={style('activities__bottom')}>
         { admin &&
           <>
-            <div>
+            <div className={style('activities__button-container')}>
               <div className={style('activities__button')}>
-                <Button to={'/introduction'} text={'SLUMPA NYA AKTIVITETER'} handleClick={handleClick}/>
+                <RoundButton handleClick={handleClick}/>
               </div>
               <div className={style('activities__button')}>
-                <Button to={'/introduction'} text={'ÅTERSTÄLL INTRODUKTION'} handleClick={handleClickResetIntro}/>
+                <Button whiteColor={true} to={'/introduction'} text={'AKTIVERA INTRO'} handleClick={handleClickResetIntro}/>
               </div>
             </div>
           </>
         }
-        <span>{replaceLineBreaksWithHTML(texts.textsActivitiesBottom)}</span>
+        { !admin && <span>{replaceLineBreaksWithHTML(texts.textsActivitiesBottom)}</span> }
       </div>
     </div>
   );

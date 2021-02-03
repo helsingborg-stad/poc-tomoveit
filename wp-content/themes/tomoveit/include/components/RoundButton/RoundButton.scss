@@ -1,0 +1,48 @@
+@import '../../scss/colors';
+@import '../../scss/config';
+
+.round-button {
+  height: 5.5rem;
+  width: 5.5rem;
+  border-radius: 50%;
+
+  background: $color-blue;
+  color: $color-white;
+
+  outline: none;
+  border: none;
+
+  cursor: pointer;
+
+  box-shadow: 0 20px 40px -20px rgba(50, 50, 93, .3);
+
+  svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+  }
+
+  &--green {
+    background: $color-green;
+  }
+
+  &:hover {
+    opacity: .8;
+  }
+
+  &__disabled {
+    cursor: default;
+    background: $color-gray;
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+}
+
+@media all and (min-width: $breakpoint-m) {
+  .round-button {
+    bottom: 2.1875rem;
+    right: 15%;
+  }
+}
