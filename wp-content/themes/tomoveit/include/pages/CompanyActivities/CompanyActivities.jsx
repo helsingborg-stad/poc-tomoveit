@@ -39,7 +39,7 @@ const CompanyActivities = () => {
   return (
     <div className={style('company-activities')}>
       <h1>Föreningar i Helsingborg ⭐️</h1>
-      <p>Här är en lista på föreningar du kan prova</p>
+      <h3>Här är en lista på föreningar du kan prova</h3>
       <div className={style('company-activities__container')}>
         {cards}
       </div>
