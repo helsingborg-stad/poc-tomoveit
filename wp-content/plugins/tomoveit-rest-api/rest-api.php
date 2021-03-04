@@ -421,7 +421,7 @@ class TomoveitRestApi_Routes {
                 $videoText = get_field('activity_video_text', $id);
 
                 array_push($result, (object)[
-                    'title' => $title,
+                    'title' => html_entity_decode($title),
                     'time' => $time,
                     'image' => $image,
                     'group' => $group,
@@ -450,7 +450,7 @@ class TomoveitRestApi_Routes {
 
         foreach ($posts as $post) {
             array_push($activities, (object)[
-                'title' => get_the_title($post->ID),
+                'title' => html_entity_decode(get_the_title($post->ID)),
                 'id' => $post->ID,
                 'cardText' => get_field('company_card_text', $post->ID),
                 'videoUrl' => get_field('company_video_url', $post->ID),
@@ -633,7 +633,7 @@ class TomoveitRestApi_Routes {
             $videoText = get_field('activity_video_text', $post_id);
 
             array_push($result, (object)[
-                'title' => $title ,
+                'title' => html_entity_decode($title),
                 'time' => $time,
                 'image' => $image,
                 'group' => $group,
